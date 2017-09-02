@@ -1,0 +1,551 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A2D3E361F5AC429002510BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2D3E351F5AC429002510BA /* AppDelegate.swift */; };
+		0A2D3E381F5AC429002510BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2D3E371F5AC429002510BA /* ViewController.swift */; };
+		0A2D3E3A1F5AC429002510BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A2D3E391F5AC429002510BA /* Assets.xcassets */; };
+		0A2D3E3D1F5AC429002510BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A2D3E3B1F5AC429002510BA /* Main.storyboard */; };
+		0A2D3E481F5AC429002510BA /* NovaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2D3E471F5AC429002510BA /* NovaTests.swift */; };
+		C7C0F097F9B57511A910882B /* Pods_NovaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DA0F492030018D20CFAE96 /* Pods_NovaTests.framework */; };
+		D66A14C50FA584C6D730E794 /* Pods_Nova.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0669D620C4B59A400E346FD /* Pods_Nova.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0A2D3E441F5AC429002510BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0A2D3E2A1F5AC429002510BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0A2D3E311F5AC429002510BA;
+			remoteInfo = Nova;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0A2D3E321F5AC429002510BA /* Nova.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nova.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A2D3E351F5AC429002510BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0A2D3E371F5AC429002510BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0A2D3E391F5AC429002510BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0A2D3E3C1F5AC429002510BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0A2D3E3E1F5AC429002510BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A2D3E431F5AC429002510BA /* NovaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NovaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A2D3E471F5AC429002510BA /* NovaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovaTests.swift; sourceTree = "<group>"; };
+		0A2D3E491F5AC429002510BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A9F092B320C0E2817A2E2FC /* Pods-NovaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NovaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NovaTests/Pods-NovaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		502E88D784855DD21FED6890 /* Pods-NovaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NovaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NovaTests/Pods-NovaTests.release.xcconfig"; sourceTree = "<group>"; };
+		A4DA0F492030018D20CFAE96 /* Pods_NovaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NovaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0669D620C4B59A400E346FD /* Pods_Nova.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nova.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D57D9960546F68381E0CE6AC /* Pods-Nova.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nova.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nova/Pods-Nova.release.xcconfig"; sourceTree = "<group>"; };
+		E682A32DA9858E4E2B99FEAA /* Pods-Nova.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nova.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nova/Pods-Nova.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0A2D3E2F1F5AC429002510BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D66A14C50FA584C6D730E794 /* Pods_Nova.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A2D3E401F5AC429002510BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7C0F097F9B57511A910882B /* Pods_NovaTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A2D3E291F5AC429002510BA = {
+			isa = PBXGroup;
+			children = (
+				0A2D3E341F5AC429002510BA /* Nova */,
+				0A2D3E461F5AC429002510BA /* NovaTests */,
+				0A2D3E331F5AC429002510BA /* Products */,
+				373DC7F17D492F0CC248FC5F /* Pods */,
+				5E24209C43AB1147232BC40B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0A2D3E331F5AC429002510BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0A2D3E321F5AC429002510BA /* Nova.app */,
+				0A2D3E431F5AC429002510BA /* NovaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0A2D3E341F5AC429002510BA /* Nova */ = {
+			isa = PBXGroup;
+			children = (
+				0A2D3E351F5AC429002510BA /* AppDelegate.swift */,
+				0A2D3E371F5AC429002510BA /* ViewController.swift */,
+				0A2D3E391F5AC429002510BA /* Assets.xcassets */,
+				0A2D3E3B1F5AC429002510BA /* Main.storyboard */,
+				0A2D3E3E1F5AC429002510BA /* Info.plist */,
+			);
+			path = Nova;
+			sourceTree = "<group>";
+		};
+		0A2D3E461F5AC429002510BA /* NovaTests */ = {
+			isa = PBXGroup;
+			children = (
+				0A2D3E471F5AC429002510BA /* NovaTests.swift */,
+				0A2D3E491F5AC429002510BA /* Info.plist */,
+			);
+			path = NovaTests;
+			sourceTree = "<group>";
+		};
+		373DC7F17D492F0CC248FC5F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E682A32DA9858E4E2B99FEAA /* Pods-Nova.debug.xcconfig */,
+				D57D9960546F68381E0CE6AC /* Pods-Nova.release.xcconfig */,
+				3A9F092B320C0E2817A2E2FC /* Pods-NovaTests.debug.xcconfig */,
+				502E88D784855DD21FED6890 /* Pods-NovaTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5E24209C43AB1147232BC40B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D0669D620C4B59A400E346FD /* Pods_Nova.framework */,
+				A4DA0F492030018D20CFAE96 /* Pods_NovaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0A2D3E311F5AC429002510BA /* Nova */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A2D3E4C1F5AC429002510BA /* Build configuration list for PBXNativeTarget "Nova" */;
+			buildPhases = (
+				4B078266B90405575F3ED1BF /* [CP] Check Pods Manifest.lock */,
+				0A2D3E2E1F5AC429002510BA /* Sources */,
+				0A2D3E2F1F5AC429002510BA /* Frameworks */,
+				0A2D3E301F5AC429002510BA /* Resources */,
+				4EA4CF2B09EEAE8664AD94A0 /* [CP] Embed Pods Frameworks */,
+				2F4ACFE3AA2EEAE0D58D7D76 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Nova;
+			productName = Nova;
+			productReference = 0A2D3E321F5AC429002510BA /* Nova.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0A2D3E421F5AC429002510BA /* NovaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A2D3E4F1F5AC429002510BA /* Build configuration list for PBXNativeTarget "NovaTests" */;
+			buildPhases = (
+				F5F06FB63AAD4B0DD71D1DB2 /* [CP] Check Pods Manifest.lock */,
+				0A2D3E3F1F5AC429002510BA /* Sources */,
+				0A2D3E401F5AC429002510BA /* Frameworks */,
+				0A2D3E411F5AC429002510BA /* Resources */,
+				F65F6A97F3A22362F5C7D325 /* [CP] Embed Pods Frameworks */,
+				006574A1D9FD0612E31F9F8B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0A2D3E451F5AC429002510BA /* PBXTargetDependency */,
+			);
+			name = NovaTests;
+			productName = NovaTests;
+			productReference = 0A2D3E431F5AC429002510BA /* NovaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0A2D3E2A1F5AC429002510BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Andrej Jurkin";
+				TargetAttributes = {
+					0A2D3E311F5AC429002510BA = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = XJF3S8KP2L;
+						ProvisioningStyle = Automatic;
+					};
+					0A2D3E421F5AC429002510BA = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = XJF3S8KP2L;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0A2D3E311F5AC429002510BA;
+					};
+				};
+			};
+			buildConfigurationList = 0A2D3E2D1F5AC429002510BA /* Build configuration list for PBXProject "Nova" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0A2D3E291F5AC429002510BA;
+			productRefGroup = 0A2D3E331F5AC429002510BA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0A2D3E311F5AC429002510BA /* Nova */,
+				0A2D3E421F5AC429002510BA /* NovaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0A2D3E301F5AC429002510BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A2D3E3A1F5AC429002510BA /* Assets.xcassets in Resources */,
+				0A2D3E3D1F5AC429002510BA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A2D3E411F5AC429002510BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		006574A1D9FD0612E31F9F8B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NovaTests/Pods-NovaTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2F4ACFE3AA2EEAE0D58D7D76 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nova/Pods-Nova-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B078266B90405575F3ED1BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4EA4CF2B09EEAE8664AD94A0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nova/Pods-Nova-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5F06FB63AAD4B0DD71D1DB2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F65F6A97F3A22362F5C7D325 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NovaTests/Pods-NovaTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0A2D3E2E1F5AC429002510BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A2D3E381F5AC429002510BA /* ViewController.swift in Sources */,
+				0A2D3E361F5AC429002510BA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A2D3E3F1F5AC429002510BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A2D3E481F5AC429002510BA /* NovaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0A2D3E451F5AC429002510BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0A2D3E311F5AC429002510BA /* Nova */;
+			targetProxy = 0A2D3E441F5AC429002510BA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0A2D3E3B1F5AC429002510BA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0A2D3E3C1F5AC429002510BA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0A2D3E4A1F5AC429002510BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0A2D3E4B1F5AC429002510BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		0A2D3E4D1F5AC429002510BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E682A32DA9858E4E2B99FEAA /* Pods-Nova.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = XJF3S8KP2L;
+				INFOPLIST_FILE = Nova/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jurkin.osx.Nova;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		0A2D3E4E1F5AC429002510BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D57D9960546F68381E0CE6AC /* Pods-Nova.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = XJF3S8KP2L;
+				INFOPLIST_FILE = Nova/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jurkin.osx.Nova;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		0A2D3E501F5AC429002510BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A9F092B320C0E2817A2E2FC /* Pods-NovaTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = XJF3S8KP2L;
+				INFOPLIST_FILE = NovaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jurkin.osx.NovaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nova.app/Contents/MacOS/Nova";
+			};
+			name = Debug;
+		};
+		0A2D3E511F5AC429002510BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 502E88D784855DD21FED6890 /* Pods-NovaTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = XJF3S8KP2L;
+				INFOPLIST_FILE = NovaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jurkin.osx.NovaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nova.app/Contents/MacOS/Nova";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0A2D3E2D1F5AC429002510BA /* Build configuration list for PBXProject "Nova" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A2D3E4A1F5AC429002510BA /* Debug */,
+				0A2D3E4B1F5AC429002510BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A2D3E4C1F5AC429002510BA /* Build configuration list for PBXNativeTarget "Nova" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A2D3E4D1F5AC429002510BA /* Debug */,
+				0A2D3E4E1F5AC429002510BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0A2D3E4F1F5AC429002510BA /* Build configuration list for PBXNativeTarget "NovaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A2D3E501F5AC429002510BA /* Debug */,
+				0A2D3E511F5AC429002510BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0A2D3E2A1F5AC429002510BA /* Project object */;
+}
