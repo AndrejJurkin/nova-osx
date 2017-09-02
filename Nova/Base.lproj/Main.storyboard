@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1611" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -653,20 +655,22 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Nova" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="70" y="-100"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="196" y="240" width="320" height="540"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minSize" type="size" width="320" height="540"/>
+                        <value key="maxSize" type="size" width="320" height="1080"/>
                     </window>
                     <connections>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
@@ -676,18 +680,71 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="MainViewController" customModule="Nova" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="420"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <box boxType="custom" borderType="none" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="dB6-80-ECC">
+                                <rect key="frame" x="0.0" y="320" width="320" height="100"/>
+                                <view key="contentView" id="wWS-93-A7b">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6sw-R0-WmF">
+                                            <rect key="frame" x="20" y="20" width="280" height="46"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="46" id="JFS-6c-P3m"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" placeholderString="Search..." drawsBackground="YES" id="fV0-Ls-lxm">
+                                                <font key="font" size="24" name="Avenir-Book"/>
+                                                <color key="textColor" red="0.5568627451" green="0.59999999999999998" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </textFieldCell>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="6sw-R0-WmF" secondAttribute="bottom" constant="20" id="12G-R7-mLp"/>
+                                        <constraint firstItem="6sw-R0-WmF" firstAttribute="leading" secondItem="wWS-93-A7b" secondAttribute="leading" constant="20" id="8Ac-3o-G8a"/>
+                                        <constraint firstAttribute="trailing" secondItem="6sw-R0-WmF" secondAttribute="trailing" constant="20" id="pvm-qR-NHK"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="qLc-xu-CuD"/>
+                                </constraints>
+                                <color key="borderColor" red="0.87450980389999999" green="0.90980392160000001" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="fillColor" red="0.87450980389999999" green="0.90980392160000001" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </box>
+                            <box boxType="custom" borderType="none" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="uhf-Ye-ahm">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                <view key="contentView" id="tGh-yd-YeK">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <color key="borderColor" red="0.87450980389999999" green="0.90980392160000001" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="fillColor" red="0.1215686275" green="0.20000000000000001" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </box>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="uhf-Ye-ahm" secondAttribute="trailing" id="FLt-JE-qAU"/>
+                            <constraint firstItem="dB6-80-ECC" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="IFb-1K-FeV"/>
+                            <constraint firstItem="dB6-80-ECC" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="Jrb-po-Chq"/>
+                            <constraint firstAttribute="trailing" secondItem="dB6-80-ECC" secondAttribute="trailing" id="YMO-NI-P0E"/>
+                            <constraint firstItem="uhf-Ye-ahm" firstAttribute="top" secondItem="dB6-80-ECC" secondAttribute="bottom" id="iG7-hD-1YN"/>
+                            <constraint firstAttribute="bottom" secondItem="uhf-Ye-ahm" secondAttribute="bottom" id="sln-As-upV"/>
+                            <constraint firstItem="uhf-Ye-ahm" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="zP2-HV-SI0"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchTextField" destination="6sw-R0-WmF" id="mrP-lZ-Yug"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="1058"/>
         </scene>
     </scenes>
 </document>

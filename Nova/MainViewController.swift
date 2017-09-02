@@ -8,7 +8,9 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class MainViewController: NSViewController {
+    
+    @IBOutlet weak var searchTextField: NSTextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,14 @@ class ViewController: NSViewController {
         didSet {
         // Update the view, if already loaded.
         }
+    }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        
+        self.view.window?.titleVisibility = .hidden
+        self.view.window?.titlebarAppearsTransparent = true
+        self.view.window?.styleMask.insert(.fullSizeContentView)
     }
 }
 

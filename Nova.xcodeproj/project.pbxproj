@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0A2D3E361F5AC429002510BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2D3E351F5AC429002510BA /* AppDelegate.swift */; };
-		0A2D3E381F5AC429002510BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2D3E371F5AC429002510BA /* ViewController.swift */; };
+		0A2D3E381F5AC429002510BA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2D3E371F5AC429002510BA /* MainViewController.swift */; };
 		0A2D3E3A1F5AC429002510BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A2D3E391F5AC429002510BA /* Assets.xcassets */; };
 		0A2D3E3D1F5AC429002510BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A2D3E3B1F5AC429002510BA /* Main.storyboard */; };
 		0A2D3E481F5AC429002510BA /* NovaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2D3E471F5AC429002510BA /* NovaTests.swift */; };
+		0A2D3E551F5AFA2A002510BA /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2D3E541F5AFA2A002510BA /* R.swift */; };
 		C7C0F097F9B57511A910882B /* Pods_NovaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DA0F492030018D20CFAE96 /* Pods_NovaTests.framework */; };
 		D66A14C50FA584C6D730E794 /* Pods_Nova.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0669D620C4B59A400E346FD /* Pods_Nova.framework */; };
 /* End PBXBuildFile section */
@@ -29,13 +30,14 @@
 /* Begin PBXFileReference section */
 		0A2D3E321F5AC429002510BA /* Nova.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nova.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A2D3E351F5AC429002510BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0A2D3E371F5AC429002510BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0A2D3E371F5AC429002510BA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0A2D3E391F5AC429002510BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A2D3E3C1F5AC429002510BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A2D3E3E1F5AC429002510BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A2D3E431F5AC429002510BA /* NovaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NovaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A2D3E471F5AC429002510BA /* NovaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovaTests.swift; sourceTree = "<group>"; };
 		0A2D3E491F5AC429002510BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A2D3E541F5AFA2A002510BA /* R.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
 		3A9F092B320C0E2817A2E2FC /* Pods-NovaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NovaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NovaTests/Pods-NovaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		502E88D784855DD21FED6890 /* Pods-NovaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NovaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NovaTests/Pods-NovaTests.release.xcconfig"; sourceTree = "<group>"; };
 		A4DA0F492030018D20CFAE96 /* Pods_NovaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NovaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,8 +89,9 @@
 		0A2D3E341F5AC429002510BA /* Nova */ = {
 			isa = PBXGroup;
 			children = (
+				0A2D3E541F5AFA2A002510BA /* R.swift */,
 				0A2D3E351F5AC429002510BA /* AppDelegate.swift */,
-				0A2D3E371F5AC429002510BA /* ViewController.swift */,
+				0A2D3E371F5AC429002510BA /* MainViewController.swift */,
 				0A2D3E391F5AC429002510BA /* Assets.xcassets */,
 				0A2D3E3B1F5AC429002510BA /* Main.storyboard */,
 				0A2D3E3E1F5AC429002510BA /* Info.plist */,
@@ -328,7 +331,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A2D3E381F5AC429002510BA /* ViewController.swift in Sources */,
+				0A2D3E551F5AFA2A002510BA /* R.swift in Sources */,
+				0A2D3E381F5AC429002510BA /* MainViewController.swift in Sources */,
 				0A2D3E361F5AC429002510BA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,6 +540,7 @@
 				0A2D3E4E1F5AC429002510BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0A2D3E4F1F5AC429002510BA /* Build configuration list for PBXNativeTarget "NovaTests" */ = {
 			isa = XCConfigurationList;
@@ -544,6 +549,7 @@
 				0A2D3E511F5AC429002510BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
