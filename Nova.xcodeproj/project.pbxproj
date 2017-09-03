@@ -12,9 +12,10 @@
 		0A2D3E3A1F5AC429002510BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A2D3E391F5AC429002510BA /* Assets.xcassets */; };
 		0A2D3E3D1F5AC429002510BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A2D3E3B1F5AC429002510BA /* Main.storyboard */; };
 		0A2D3E481F5AC429002510BA /* NovaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2D3E471F5AC429002510BA /* NovaTests.swift */; };
-		0A2D3E551F5AFA2A002510BA /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2D3E541F5AFA2A002510BA /* R.swift */; };
-		C7C0F097F9B57511A910882B /* Pods_NovaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DA0F492030018D20CFAE96 /* Pods_NovaTests.framework */; };
-		D66A14C50FA584C6D730E794 /* Pods_Nova.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0669D620C4B59A400E346FD /* Pods_Nova.framework */; };
+		0A2D3E551F5AFA2A002510BA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2D3E541F5AFA2A002510BA /* Constants.swift */; };
+		0A2D3E5A1F5B4F24002510BA /* CoinMarketCapProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2D3E591F5B4F24002510BA /* CoinMarketCapProvider.swift */; };
+		0AF23FA11F5BEC4200AB0D15 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF23FA01F5BEC4200AB0D15 /* Ticker.swift */; };
+		D418FF040586A9DD73E9A005 /* Pods_Nova.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AC2ED320E03871B42E360B4 /* Pods_Nova.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,13 +38,13 @@
 		0A2D3E431F5AC429002510BA /* NovaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NovaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A2D3E471F5AC429002510BA /* NovaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovaTests.swift; sourceTree = "<group>"; };
 		0A2D3E491F5AC429002510BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0A2D3E541F5AFA2A002510BA /* R.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
-		3A9F092B320C0E2817A2E2FC /* Pods-NovaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NovaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NovaTests/Pods-NovaTests.debug.xcconfig"; sourceTree = "<group>"; };
-		502E88D784855DD21FED6890 /* Pods-NovaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NovaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NovaTests/Pods-NovaTests.release.xcconfig"; sourceTree = "<group>"; };
-		A4DA0F492030018D20CFAE96 /* Pods_NovaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NovaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D0669D620C4B59A400E346FD /* Pods_Nova.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nova.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D57D9960546F68381E0CE6AC /* Pods-Nova.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nova.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nova/Pods-Nova.release.xcconfig"; sourceTree = "<group>"; };
-		E682A32DA9858E4E2B99FEAA /* Pods-Nova.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nova.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nova/Pods-Nova.debug.xcconfig"; sourceTree = "<group>"; };
+		0A2D3E541F5AFA2A002510BA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0A2D3E591F5B4F24002510BA /* CoinMarketCapProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinMarketCapProvider.swift; sourceTree = "<group>"; };
+		0AF23FA01F5BEC4200AB0D15 /* Ticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
+		207457C11AEF35045A801412 /* Pods-Nova.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nova.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nova/Pods-Nova.release.xcconfig"; sourceTree = "<group>"; };
+		4AC2ED320E03871B42E360B4 /* Pods_Nova.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nova.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C31629810B46A92A7F784CDD /* Pods-Nova.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nova.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nova/Pods-Nova.debug.xcconfig"; sourceTree = "<group>"; };
+		DB43C4AF6E52B7B34E2E6C3C /* Pods_NovaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NovaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D66A14C50FA584C6D730E794 /* Pods_Nova.framework in Frameworks */,
+				D418FF040586A9DD73E9A005 /* Pods_Nova.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +60,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7C0F097F9B57511A910882B /* Pods_NovaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,8 +72,8 @@
 				0A2D3E341F5AC429002510BA /* Nova */,
 				0A2D3E461F5AC429002510BA /* NovaTests */,
 				0A2D3E331F5AC429002510BA /* Products */,
-				373DC7F17D492F0CC248FC5F /* Pods */,
-				5E24209C43AB1147232BC40B /* Frameworks */,
+				E32EDFE3368E06439B9064F1 /* Pods */,
+				F2B85A38647AABC95B5FF6C8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,7 +89,8 @@
 		0A2D3E341F5AC429002510BA /* Nova */ = {
 			isa = PBXGroup;
 			children = (
-				0A2D3E541F5AFA2A002510BA /* R.swift */,
+				0A2D3E561F5B4EAE002510BA /* data */,
+				0A2D3E541F5AFA2A002510BA /* Constants.swift */,
 				0A2D3E351F5AC429002510BA /* AppDelegate.swift */,
 				0A2D3E371F5AC429002510BA /* MainViewController.swift */,
 				0A2D3E391F5AC429002510BA /* Assets.xcassets */,
@@ -108,22 +109,29 @@
 			path = NovaTests;
 			sourceTree = "<group>";
 		};
-		373DC7F17D492F0CC248FC5F /* Pods */ = {
+		0A2D3E561F5B4EAE002510BA /* data */ = {
 			isa = PBXGroup;
 			children = (
-				E682A32DA9858E4E2B99FEAA /* Pods-Nova.debug.xcconfig */,
-				D57D9960546F68381E0CE6AC /* Pods-Nova.release.xcconfig */,
-				3A9F092B320C0E2817A2E2FC /* Pods-NovaTests.debug.xcconfig */,
-				502E88D784855DD21FED6890 /* Pods-NovaTests.release.xcconfig */,
+				0A2D3E591F5B4F24002510BA /* CoinMarketCapProvider.swift */,
+				0AF23FA01F5BEC4200AB0D15 /* Ticker.swift */,
+			);
+			name = data;
+			sourceTree = "<group>";
+		};
+		E32EDFE3368E06439B9064F1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C31629810B46A92A7F784CDD /* Pods-Nova.debug.xcconfig */,
+				207457C11AEF35045A801412 /* Pods-Nova.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		5E24209C43AB1147232BC40B /* Frameworks */ = {
+		F2B85A38647AABC95B5FF6C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D0669D620C4B59A400E346FD /* Pods_Nova.framework */,
-				A4DA0F492030018D20CFAE96 /* Pods_NovaTests.framework */,
+				4AC2ED320E03871B42E360B4 /* Pods_Nova.framework */,
+				DB43C4AF6E52B7B34E2E6C3C /* Pods_NovaTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -135,12 +143,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A2D3E4C1F5AC429002510BA /* Build configuration list for PBXNativeTarget "Nova" */;
 			buildPhases = (
-				4B078266B90405575F3ED1BF /* [CP] Check Pods Manifest.lock */,
+				D325D3843B7EE25F13F42E0F /* [CP] Check Pods Manifest.lock */,
 				0A2D3E2E1F5AC429002510BA /* Sources */,
 				0A2D3E2F1F5AC429002510BA /* Frameworks */,
 				0A2D3E301F5AC429002510BA /* Resources */,
-				4EA4CF2B09EEAE8664AD94A0 /* [CP] Embed Pods Frameworks */,
-				2F4ACFE3AA2EEAE0D58D7D76 /* [CP] Copy Pods Resources */,
+				122A1166610F127D6296BD09 /* [CP] Embed Pods Frameworks */,
+				5787E495D0977E4A24807FAD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -155,12 +163,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A2D3E4F1F5AC429002510BA /* Build configuration list for PBXNativeTarget "NovaTests" */;
 			buildPhases = (
-				F5F06FB63AAD4B0DD71D1DB2 /* [CP] Check Pods Manifest.lock */,
 				0A2D3E3F1F5AC429002510BA /* Sources */,
 				0A2D3E401F5AC429002510BA /* Frameworks */,
 				0A2D3E411F5AC429002510BA /* Resources */,
-				F65F6A97F3A22362F5C7D325 /* [CP] Embed Pods Frameworks */,
-				006574A1D9FD0612E31F9F8B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,52 +239,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		006574A1D9FD0612E31F9F8B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NovaTests/Pods-NovaTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2F4ACFE3AA2EEAE0D58D7D76 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nova/Pods-Nova-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4B078266B90405575F3ED1BF /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		4EA4CF2B09EEAE8664AD94A0 /* [CP] Embed Pods Frameworks */ = {
+		122A1166610F127D6296BD09 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -294,7 +254,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nova/Pods-Nova-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F5F06FB63AAD4B0DD71D1DB2 /* [CP] Check Pods Manifest.lock */ = {
+		5787E495D0977E4A24807FAD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nova/Pods-Nova-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D325D3843B7EE25F13F42E0F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -309,21 +284,6 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		F65F6A97F3A22362F5C7D325 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NovaTests/Pods-NovaTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -331,8 +291,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A2D3E551F5AFA2A002510BA /* R.swift in Sources */,
+				0A2D3E551F5AFA2A002510BA /* Constants.swift in Sources */,
 				0A2D3E381F5AC429002510BA /* MainViewController.swift in Sources */,
+				0AF23FA11F5BEC4200AB0D15 /* Ticker.swift in Sources */,
+				0A2D3E5A1F5B4F24002510BA /* CoinMarketCapProvider.swift in Sources */,
 				0A2D3E361F5AC429002510BA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,7 +421,7 @@
 		};
 		0A2D3E4D1F5AC429002510BA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E682A32DA9858E4E2B99FEAA /* Pods-Nova.debug.xcconfig */;
+			baseConfigurationReference = C31629810B46A92A7F784CDD /* Pods-Nova.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -474,7 +436,7 @@
 		};
 		0A2D3E4E1F5AC429002510BA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D57D9960546F68381E0CE6AC /* Pods-Nova.release.xcconfig */;
+			baseConfigurationReference = 207457C11AEF35045A801412 /* Pods-Nova.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -489,7 +451,6 @@
 		};
 		0A2D3E501F5AC429002510BA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A9F092B320C0E2817A2E2FC /* Pods-NovaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -506,7 +467,6 @@
 		};
 		0A2D3E511F5AC429002510BA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 502E88D784855DD21FED6890 /* Pods-NovaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

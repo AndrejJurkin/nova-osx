@@ -701,7 +701,7 @@
                                             </constraints>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" placeholderString="Search..." drawsBackground="YES" id="fV0-Ls-lxm">
                                                 <font key="font" size="24" name="Avenir-Book"/>
-                                                <color key="textColor" red="0.5568627451" green="0.59999999999999998" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.1215686275" green="0.20000000000000001" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </textFieldCell>
                                         </textField>

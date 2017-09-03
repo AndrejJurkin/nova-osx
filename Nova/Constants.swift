@@ -8,6 +8,12 @@
 
 import Foundation
 
+/// Project constants
+struct C {
+    
+    static let coinMarketCapBaseUrl = URL(string: "https://api.coinmarketcap.com/v1/")!
+}
+
 /// Resource constants
 struct R {
     
