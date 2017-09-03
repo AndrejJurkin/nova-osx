@@ -14,7 +14,7 @@
 //  limitations under the License.
 //
 //
-//  File.swift
+//  CoinMarketCapProvider.swift
 //  Nova
 //
 //  Created by Andrej Jurkin on 9/3/17.
@@ -26,6 +26,8 @@ import Moya
 enum CoinMarketCapProvider {
     
     case allTickers
+    
+    case topTickers(limit: Int)
     
     case ticker(currencyName: String)
 }
@@ -40,6 +42,8 @@ extension CoinMarketCapProvider: TargetType {
         switch self {
         case .allTickers:
             return "ticker"
+        case .topTickers:
+            return "ticker"
         case .ticker(let currencyName):
             return "ticker/\(currencyName)"
         }
@@ -53,7 +57,12 @@ extension CoinMarketCapProvider: TargetType {
     }
     
     var parameters: [String : Any]? {
-        return nil
+        switch self {
+        case .topTickers(let limit):
+            return ["limit": limit]
+        default:
+            return nil
+        }
     }
     
     var parameterEncoding: ParameterEncoding {

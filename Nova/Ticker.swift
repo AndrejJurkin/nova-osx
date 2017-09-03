@@ -14,7 +14,7 @@
 //  limitations under the License.
 //
 //
-//  File.swift
+//  Ticker.swift
 //  Nova
 //
 //  Created by Andrej Jurkin on 9/3/17.
@@ -35,13 +35,18 @@ class Ticker: EVObject {
     var marketCapUsd: Double = 0
     var availableSupply: Double = 0
     var totalSupply: Double = 0
-    var percentChange1h: Float = 0
-    var percentChange24h: Float = 0
-    var percentChange7d: Float = 0
-    var lastUpdate: Double = 0
+    var changeLastHour: Float = 0
+    var changeLastDay: Float = 0
+    var changeLastWeek: Float = 0
+    var lastUpdated: Double = 0
     
     override func propertyMapping() -> [(keyInObject: String?, keyInResource: String?)] {
-        return [(keyInObject: "dailyVolume", keyInResource: "24h_volume_usd")]
+        return [
+            (keyInObject: "dailyVolume", keyInResource: "24h_volume_usd"),
+            (keyInObject: "changeLastHour", keyInResource: "percent_change_1h"),
+            (keyInObject: "changeLastDay", keyInResource: "percent_change_24h"),
+            (keyInObject: "changeLastWeek", keyInResource: "percent_change_7d")
+        ]
     }
     
 }

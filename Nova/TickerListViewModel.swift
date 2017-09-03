@@ -14,29 +14,32 @@
 //  limitations under the License.
 //
 //
-//  Constants.swift
+//  TickerListViewModel.swift
 //  Nova
 //
 //  Created by Andrej Jurkin on 9/3/17.
 //
+
 import Foundation
+import RxSwift
 
-/// Project constants
-struct C {
+struct TickerListViewModel {
     
-    static let coinMarketCapBaseUrl = URL(string: "https://api.coinmarketcap.com/v1/")!
-}
-
-/// Resource constants
-struct R {
+    var data: [Ticker] = []
     
-    struct Color {
-        
-        
-    }
+    var filteredData: [Ticker] = []
     
-    struct Id {
-        
+    var searchString = Variable<String>("")
+    
+    let disposeBag = DisposeBag()
+    
+    init() {
+        self.searchString
+            .asObservable()
+            .throttle(0.3, scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .subscribe(onNext: { search in print(search) })
+            .addDisposableTo(disposeBag)
     }
     
 }

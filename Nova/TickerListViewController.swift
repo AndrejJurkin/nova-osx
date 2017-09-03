@@ -14,22 +14,29 @@
 //  limitations under the License.
 //
 //
-//  File.swift
+//  TickerListViewController.swift
 //  Nova
 //
 //  Created by Andrej Jurkin on 9/3/17.
 //
 
 import Cocoa
+import RxSwift
+import RxCocoa
 
-class MainViewController: NSViewController {
+class TickerListViewController: NSViewController {
     
     @IBOutlet weak var searchTextField: NSTextField!
-
+    
+    var viewModel = TickerListViewModel()
+    var disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+       
+        self.searchTextField.rx.text.orEmpty
+            .bindTo(viewModel.searchString)
+            .addDisposableTo(disposeBag)
     }
 
     override var representedObject: Any? {
