@@ -30,7 +30,7 @@ struct TickerListViewModel {
     var filteredData: [Ticker] = []
     
     var searchString = Variable<String>("")
-    
+
     let disposeBag = DisposeBag()
     
     init() {
@@ -38,7 +38,9 @@ struct TickerListViewModel {
             .asObservable()
             .throttle(0.3, scheduler: MainScheduler.instance)
             .distinctUntilChanged()
-            .subscribe(onNext: { search in print(search) })
+            .subscribe(onNext: { searchStr in
+                print(searchStr)
+            })
             .addDisposableTo(disposeBag)
     }
     

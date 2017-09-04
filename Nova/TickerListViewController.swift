@@ -24,24 +24,26 @@ import Cocoa
 import RxSwift
 import RxCocoa
 
-class TickerListViewController: NSViewController {
+class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
     
     @IBOutlet weak var searchTextField: NSTextField!
+    @IBOutlet weak var tickerTableView: NSScrollView!
     
     var viewModel = TickerListViewModel()
     var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         self.searchTextField.rx.text.orEmpty
             .bindTo(viewModel.searchString)
             .addDisposableTo(disposeBag)
     }
 
     override var representedObject: Any? {
+        
         didSet {
-        // Update the view, if already loaded.
+            // Update the view, if already loaded.
         }
     }
     
@@ -51,6 +53,14 @@ class TickerListViewController: NSViewController {
         self.view.window?.titleVisibility = .hidden
         self.view.window?.titlebarAppearsTransparent = true
         self.view.window?.styleMask.insert(.fullSizeContentView)
+        
+        
+        self.view.window?.isOpaque = false
+        self.view.window?.backgroundColor = NSColor.clear
+    }
+    
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        return 1
     }
 }
 
