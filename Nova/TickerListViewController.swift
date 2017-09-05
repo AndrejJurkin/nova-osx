@@ -27,7 +27,7 @@ import RxCocoa
 class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
     
     @IBOutlet weak var searchTextField: NSTextField!
-    @IBOutlet weak var tickerTableView: NSScrollView!
+    @IBOutlet weak var tickerTableView: NSTableView!
     
     var viewModel = TickerListViewModel()
     var disposeBag = DisposeBag()
@@ -53,14 +53,20 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
         self.view.window?.titleVisibility = .hidden
         self.view.window?.titlebarAppearsTransparent = true
         self.view.window?.styleMask.insert(.fullSizeContentView)
-        
-        
         self.view.window?.isOpaque = false
         self.view.window?.backgroundColor = NSColor.clear
+        
+        self.viewModel.filteredData
+            .asObservable()
+            .subscribe(onNext: { _ in
+                print("Filtered data changed...")
+                self.tickerTableView.reloadData()
+            })
+            .addDisposableTo(disposeBag)
     }
     
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return 1
+        return self.viewModel.numberOfRows
     }
 }
 

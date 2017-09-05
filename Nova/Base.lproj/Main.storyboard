@@ -838,7 +838,7 @@
                     </view>
                     <connections>
                         <outlet property="searchTextField" destination="6sw-R0-WmF" id="mrP-lZ-Yug"/>
-                        <outlet property="tickerTableView" destination="Dh9-Y8-Ng1" id="bu7-jo-nQU"/>
+                        <outlet property="tickerTableView" destination="mvs-s4-D06" id="K8T-hl-61D"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

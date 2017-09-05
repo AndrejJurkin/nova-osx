@@ -31,7 +31,7 @@ class Api {
     /// Get top N (limit) tickers, sorted by market cap
     func getTopTickers(limit: Int) -> Observable<[Ticker]> {
         
-        return self.provider.request(.topTickers(limit: 10))
+        return self.provider.request(.topTickers(limit: limit))
             .map(toArray: Ticker.self)
     }
     

@@ -23,17 +23,34 @@
 import Foundation
 import RxSwift
 
-struct TickerListViewModel {
+class TickerListViewModel {
     
-    var data: [Ticker] = []
+    //TODO: Inject
+    private let api = Api.shared
     
-    var filteredData: [Ticker] = []
+    // Raw unfiltered data
+    private var data: [Ticker] = []
     
+    // Raw data filtered with search string
+    var filteredData = Variable<[Ticker]>([])
+    
+    // User input, filter raw data
     var searchString = Variable<String>("")
+    
+    var numberOfRows: Int {
+        return filteredData.value.count
+    }
 
     let disposeBag = DisposeBag()
     
     init() {
+        api.getTopTickers(limit: 100)
+            .subscribe(onNext: { tickers in
+                // TODO: Set data, and update filtered data properly
+                self.filteredData.value = tickers
+            })
+            .addDisposableTo(disposeBag)
+        
         self.searchString
             .asObservable()
             .throttle(0.3, scheduler: MainScheduler.instance)
@@ -44,4 +61,7 @@ struct TickerListViewModel {
             .addDisposableTo(disposeBag)
     }
     
+    func getTicker(row: Int) -> Ticker {
+        return self.filteredData.value[row]
+    }
 }
