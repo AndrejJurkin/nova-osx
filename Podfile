@@ -15,5 +15,5 @@ target 'Nova' do
   pod 'RxOptional'
   pod 'EVReflection'
   pod 'EVReflection/MoyaRxSwift'
-
+  pod 'Kingfisher'
 end

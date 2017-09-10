@@ -14,6 +14,7 @@
 		0A2D3E481F5AC429002510BA /* NovaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2D3E471F5AC429002510BA /* NovaTests.swift */; };
 		0A2D3E551F5AFA2A002510BA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2D3E541F5AFA2A002510BA /* Constants.swift */; };
 		0A2D3E5A1F5B4F24002510BA /* CoinMarketCapProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2D3E591F5B4F24002510BA /* CoinMarketCapProvider.swift */; };
+		0A52028E1F65631E00F71C1E /* TickerListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A52028D1F65631E00F71C1E /* TickerListCellView.swift */; };
 		0A924C8E1F5C4BDF00A8875E /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A924C8D1F5C4BDF00A8875E /* Api.swift */; };
 		0A924C921F5C54D100A8875E /* TickerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A924C911F5C54D100A8875E /* TickerListViewModel.swift */; };
 		0AF23FA11F5BEC4200AB0D15 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF23FA01F5BEC4200AB0D15 /* Ticker.swift */; };
@@ -42,6 +43,7 @@
 		0A2D3E491F5AC429002510BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A2D3E541F5AFA2A002510BA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0A2D3E591F5B4F24002510BA /* CoinMarketCapProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinMarketCapProvider.swift; sourceTree = "<group>"; };
+		0A52028D1F65631E00F71C1E /* TickerListCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerListCellView.swift; sourceTree = "<group>"; };
 		0A924C8D1F5C4BDF00A8875E /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		0A924C911F5C54D100A8875E /* TickerListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerListViewModel.swift; sourceTree = "<group>"; };
 		0AF23FA01F5BEC4200AB0D15 /* Ticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			children = (
 				0A2D3E371F5AC429002510BA /* TickerListViewController.swift */,
 				0A924C911F5C54D100A8875E /* TickerListViewModel.swift */,
+				0A52028D1F65631E00F71C1E /* TickerListCellView.swift */,
 			);
 			name = tickerlist;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				0A2D3E381F5AC429002510BA /* TickerListViewController.swift in Sources */,
 				0A924C8E1F5C4BDF00A8875E /* Api.swift in Sources */,
 				0AF23FA11F5BEC4200AB0D15 /* Ticker.swift in Sources */,
+				0A52028E1F65631E00F71C1E /* TickerListCellView.swift in Sources */,
 				0A2D3E5A1F5B4F24002510BA /* CoinMarketCapProvider.swift in Sources */,
 				0A2D3E361F5AC429002510BA /* AppDelegate.swift in Sources */,
 				0A924C921F5C54D100A8875E /* TickerListViewModel.swift in Sources */,

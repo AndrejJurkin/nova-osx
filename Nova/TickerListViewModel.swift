@@ -43,6 +43,8 @@ class TickerListViewModel {
 
     let disposeBag = DisposeBag()
     
+    private let imageUrlFormat = "https://files.coinmarketcap.com/static/img/coins/128x128/%@.png"
+    
     init() {
         api.getTopTickers(limit: 100)
             .subscribe(onNext: { tickers in
@@ -63,5 +65,16 @@ class TickerListViewModel {
     
     func getTicker(row: Int) -> Ticker {
         return self.filteredData.value[row]
+    }
+    
+    func getCurrencyName(row: Int) -> String {
+        return self.getTicker(row: row).name
+    }
+    
+    func getCurrencyImageUrl(row: Int) -> URL? {
+        let imageName = getTicker(row: row).name.lowercased().replacingOccurrences(of: " ", with: "-")
+        let urlString = String.init(format: imageUrlFormat, imageName)
+        print ("url: \(urlString)")
+        return URL(string: urlString)
     }
 }

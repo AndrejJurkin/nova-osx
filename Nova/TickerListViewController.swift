@@ -23,6 +23,7 @@
 import Cocoa
 import RxSwift
 import RxCocoa
+import Kingfisher
 
 class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
     
@@ -63,6 +64,20 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
                 self.tickerTableView.reloadData()
             })
             .addDisposableTo(disposeBag)
+    }
+ 
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        
+        let view = tableView.make(withIdentifier: "Cell", owner: self) as! TickerListCellView
+        
+        view.currencyName.stringValue = self.viewModel.getCurrencyName(row: row)
+        view.currencyImageView.kf.setImage(with: self.viewModel.getCurrencyImageUrl(row: row))
+        
+        return view
+    }
+    
+    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+        return 32.0
     }
     
     func numberOfRows(in tableView: NSTableView) -> Int {
