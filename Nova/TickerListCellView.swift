@@ -14,4 +14,6 @@ class TickerListCellView: NSTableCellView {
     @IBOutlet weak var currencyImageView: NSImageView!
     
     @IBOutlet weak var currencyName: NSTextField!
+    
+    @IBOutlet weak var currencyPrice: NSTextField!
 }

@@ -93,6 +93,10 @@ class TickerListViewModel {
         return URL(string: urlString)
     }
     
+    func getCurrencyPriceUsd(row: Int) -> String {
+        return String(format: "$ %.2f", self.getTicker(row: row).priceUsd)
+    }
+    
     func filterData(query: String) {
         if query.isEmpty {
             // Show all values

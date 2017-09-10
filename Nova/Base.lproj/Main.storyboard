@@ -759,14 +759,14 @@
                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                 <prototypeCellViews>
                                                                     <tableCellView identifier="Cell" id="QXu-7c-eg6" customClass="TickerListCellView" customModule="Nova" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="22"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
                                                                             <view translatesAutoresizingMaskIntoConstraints="NO" id="dWT-nt-Mmi">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="320" height="22"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
                                                                                 <subviews>
                                                                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nGu-Sy-4BR">
-                                                                                        <rect key="frame" x="16" y="3" width="16" height="16"/>
+                                                                                        <rect key="frame" x="16" y="16" width="16" height="16"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="16" id="8hd-5d-7wb"/>
                                                                                             <constraint firstAttribute="width" constant="16" id="xN2-OL-Ftb"/>
@@ -774,15 +774,25 @@
                                                                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="n39-MQ-GNM"/>
                                                                                     </imageView>
                                                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OSB-nX-mMZ">
-                                                                                        <rect key="frame" x="38" y="-4" width="80" height="30"/>
+                                                                                        <rect key="frame" x="38" y="10" width="80" height="29"/>
                                                                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Ethereum" id="UvD-og-7b6">
                                                                                             <font key="font" size="17" name="AvenirNext-Regular"/>
                                                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                                         </textFieldCell>
                                                                                     </textField>
+                                                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gkK-SN-jqI">
+                                                                                        <rect key="frame" x="254" y="12" width="52" height="25"/>
+                                                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="$ 4600" id="auw-Or-LcK">
+                                                                                            <font key="font" size="15" name="AvenirNext-Regular"/>
+                                                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                                        </textFieldCell>
+                                                                                    </textField>
                                                                                 </subviews>
                                                                                 <constraints>
+                                                                                    <constraint firstItem="gkK-SN-jqI" firstAttribute="centerY" secondItem="dWT-nt-Mmi" secondAttribute="centerY" id="5ub-6i-ufX"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="gkK-SN-jqI" secondAttribute="trailing" constant="16" id="BZz-Zm-LXl"/>
                                                                                     <constraint firstItem="nGu-Sy-4BR" firstAttribute="centerY" secondItem="dWT-nt-Mmi" secondAttribute="centerY" id="FME-eq-cRQ"/>
                                                                                     <constraint firstItem="OSB-nX-mMZ" firstAttribute="leading" secondItem="nGu-Sy-4BR" secondAttribute="trailing" constant="8" id="Hgk-mt-j8c"/>
                                                                                     <constraint firstItem="nGu-Sy-4BR" firstAttribute="leading" secondItem="dWT-nt-Mmi" secondAttribute="leading" constant="16" id="boO-iI-Yhp"/>
@@ -799,6 +809,7 @@
                                                                         <connections>
                                                                             <outlet property="currencyImageView" destination="nGu-Sy-4BR" id="7I5-Du-c7Z"/>
                                                                             <outlet property="currencyName" destination="OSB-nX-mMZ" id="aCY-iO-s0F"/>
+                                                                            <outlet property="currencyPrice" destination="gkK-SN-jqI" id="k34-Pd-p4d"/>
                                                                         </connections>
                                                                     </tableCellView>
                                                                 </prototypeCellViews>

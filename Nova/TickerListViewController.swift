@@ -76,12 +76,13 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
         
         view.currencyName.stringValue = self.viewModel.getCurrencyName(row: row)
         view.currencyImageView.kf.setImage(with: self.viewModel.getCurrencyImageUrl(row: row))
+        view.currencyPrice.stringValue = self.viewModel.getCurrencyPriceUsd(row: row)
         
         return view
     }
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        return 32.0
+        return 48.0
     }
     
     func numberOfRows(in tableView: NSTableView) -> Int {
