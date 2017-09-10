@@ -39,6 +39,10 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
         self.searchTextField.rx.text.orEmpty
             .bindTo(viewModel.searchString)
             .addDisposableTo(disposeBag)
+        
+        self.viewModel.reloadDataCallback = {
+            self.tickerTableView.reloadData()
+        }
     }
 
     override var representedObject: Any? {

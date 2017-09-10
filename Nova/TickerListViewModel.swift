@@ -22,34 +22,42 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
+/// Model for TickerList view
 class TickerListViewModel {
     
-    //TODO: Inject
+    /// TODO: Inject
     private let api = Api.shared
     
-    // Raw unfiltered data
+    /// Raw unfiltered data
     private var data: [Ticker] = []
     
-    // Raw data filtered with search string
+    /// Raw data filtered with search string
     var filteredData = Variable<[Ticker]>([])
     
-    // User input, filter raw data
+    /// User input, filter raw data
     var searchString = Variable<String>("")
     
+    /// Number of rows for tableview
     var numberOfRows: Int {
         return filteredData.value.count
     }
+    
+    /// Callback to notify tableview of data changes
+    var reloadDataCallback: (()->())?
 
+    /// Rx subscriptions
     let disposeBag = DisposeBag()
     
+    /// CMC image format
     private let imageUrlFormat = "https://files.coinmarketcap.com/static/img/coins/128x128/%@.png"
     
     init() {
         api.getTopTickers(limit: 100)
             .subscribe(onNext: { tickers in
-                // TODO: Set data, and update filtered data properly
-                self.filteredData.value = tickers
+                self.data = tickers
+                self.filteredData.value = self.data
             })
             .addDisposableTo(disposeBag)
         
@@ -58,19 +66,22 @@ class TickerListViewModel {
             .throttle(0.3, scheduler: MainScheduler.instance)
             .distinctUntilChanged()
             .subscribe(onNext: { searchStr in
-                print(searchStr)
+                self.filterData(query: searchStr)
             })
             .addDisposableTo(disposeBag)
     }
     
+    /// Get single ticker for tableview row
     func getTicker(row: Int) -> Ticker {
         return self.filteredData.value[row]
     }
     
+    /// Currency name for tableview row
     func getCurrencyName(row: Int) -> String {
         return self.getTicker(row: row).name
     }
     
+    /// Image url for tableview row
     func getCurrencyImageUrl(row: Int) -> URL? {
         
         let imageName = getTicker(row: row).name
@@ -78,7 +89,24 @@ class TickerListViewModel {
             .replacingOccurrences(of: " ", with: "-")
         
         let urlString = String.init(format: imageUrlFormat, imageName)
-        print ("url: \(urlString)")
+        
         return URL(string: urlString)
+    }
+    
+    func filterData(query: String) {
+        if query.isEmpty {
+            // Show all values
+            self.filteredData.value = self.data
+            self.reloadDataCallback?()
+            
+            return
+        }
+        
+        self.filteredData.value = self.data.filter {
+            $0.name.lowercased().contains(query.lowercased())
+                || $0.symbol.lowercased().contains(query.lowercased())
+        }
+        
+        self.reloadDataCallback?()
     }
 }
