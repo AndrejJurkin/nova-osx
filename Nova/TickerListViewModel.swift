@@ -72,7 +72,11 @@ class TickerListViewModel {
     }
     
     func getCurrencyImageUrl(row: Int) -> URL? {
-        let imageName = getTicker(row: row).name.lowercased().replacingOccurrences(of: " ", with: "-")
+        
+        let imageName = getTicker(row: row).name
+            .lowercased()
+            .replacingOccurrences(of: " ", with: "-")
+        
         let urlString = String.init(format: imageUrlFormat, imageName)
         print ("url: \(urlString)")
         return URL(string: urlString)
