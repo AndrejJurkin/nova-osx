@@ -79,11 +79,11 @@
 		0A2D3E291F5AC429002510BA = {
 			isa = PBXGroup;
 			children = (
+				F2B85A38647AABC95B5FF6C8 /* Frameworks */,
 				0A2D3E341F5AC429002510BA /* Nova */,
 				0A2D3E461F5AC429002510BA /* NovaTests */,
-				0A2D3E331F5AC429002510BA /* Products */,
 				E32EDFE3368E06439B9064F1 /* Pods */,
-				F2B85A38647AABC95B5FF6C8 /* Frameworks */,
+				0A2D3E331F5AC429002510BA /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +99,13 @@
 		0A2D3E341F5AC429002510BA /* Nova */ = {
 			isa = PBXGroup;
 			children = (
-				0A2D3E351F5AC429002510BA /* AppDelegate.swift */,
-				0A2D3E541F5AFA2A002510BA /* Constants.swift */,
 				0A2D3E561F5B4EAE002510BA /* data */,
 				0A924C8F1F5C516300A8875E /* view */,
+				0A2D3E351F5AC429002510BA /* AppDelegate.swift */,
 				0A2D3E391F5AC429002510BA /* Assets.xcassets */,
-				0A2D3E3B1F5AC429002510BA /* Main.storyboard */,
+				0A2D3E541F5AFA2A002510BA /* Constants.swift */,
 				0A2D3E3E1F5AC429002510BA /* Info.plist */,
+				0A2D3E3B1F5AC429002510BA /* Main.storyboard */,
 			);
 			path = Nova;
 			sourceTree = "<group>";
@@ -113,8 +113,8 @@
 		0A2D3E461F5AC429002510BA /* NovaTests */ = {
 			isa = PBXGroup;
 			children = (
-				0A2D3E471F5AC429002510BA /* NovaTests.swift */,
 				0A2D3E491F5AC429002510BA /* Info.plist */,
+				0A2D3E471F5AC429002510BA /* NovaTests.swift */,
 			);
 			path = NovaTests;
 			sourceTree = "<group>";
@@ -122,11 +122,12 @@
 		0A2D3E561F5B4EAE002510BA /* data */ = {
 			isa = PBXGroup;
 			children = (
-				0A924C8D1F5C4BDF00A8875E /* Api.swift */,
-				7774674A1F681E7900F01AF3 /* cryptonator */,
 				777467491F681E5A00F01AF3 /* coin market cap */,
+				7774674A1F681E7900F01AF3 /* cryptonator */,
+				0A924C8D1F5C4BDF00A8875E /* Api.swift */,
 			);
 			name = data;
+			path = data;
 			sourceTree = "<group>";
 		};
 		0A924C8F1F5C516300A8875E /* view */ = {
@@ -135,16 +136,18 @@
 				0A924C901F5C54BC00A8875E /* tickerlist */,
 			);
 			name = view;
+			path = view;
 			sourceTree = "<group>";
 		};
 		0A924C901F5C54BC00A8875E /* tickerlist */ = {
 			isa = PBXGroup;
 			children = (
+				0A52028D1F65631E00F71C1E /* TickerListCellView.swift */,
 				0A2D3E371F5AC429002510BA /* TickerListViewController.swift */,
 				0A924C911F5C54D100A8875E /* TickerListViewModel.swift */,
-				0A52028D1F65631E00F71C1E /* TickerListCellView.swift */,
 			);
 			name = tickerlist;
+			path = tickerlist;
 			sourceTree = "<group>";
 		};
 		777467491F681E5A00F01AF3 /* coin market cap */ = {
@@ -154,6 +157,7 @@
 				0AF23FA01F5BEC4200AB0D15 /* Ticker.swift */,
 			);
 			name = "coin market cap";
+			path = "coin market cap";
 			sourceTree = "<group>";
 		};
 		7774674A1F681E7900F01AF3 /* cryptonator */ = {
@@ -163,6 +167,7 @@
 				777467471F681D1700F01AF3 /* CryptonatorTicker.swift */,
 			);
 			name = cryptonator;
+			path = cryptonator;
 			sourceTree = "<group>";
 		};
 		E32EDFE3368E06439B9064F1 /* Pods */ = {
@@ -376,6 +381,7 @@
 				0A2D3E3C1F5AC429002510BA /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
