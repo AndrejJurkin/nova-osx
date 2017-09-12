@@ -20,23 +20,29 @@
 //  Created by Andrej Jurkin on 9/3/17.
 //
 import Cocoa
+import RxSwift
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     let statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
     let popover = NSPopover()
+    let disposeBag = DisposeBag()
+    let titleAttributes: [String: Any] = [NSFontAttributeName: NSFont(name: "Avenir Next", size: 12.0)!]
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        
-        self.statusItem.title = "NOVA"
         self.statusItem.button?.action = #selector(togglePopover)
+        
+        
+        self.setStatusItemTitle(title: "NOVA")
         
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
         let popoverViewController = storyboard.instantiateController(
             withIdentifier: "popover") as! TickerListViewController
         
         self.popover.contentViewController = popoverViewController
+        
+        self.subscribeForUpdates(base: "OMG", refreshInterval: 30.0)
     }
     
     func togglePopover() {
@@ -55,6 +61,29 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func hidePopover() {
         self.popover.performClose(nil)
+    }
+    
+    func subscribeForUpdates(base: String, refreshInterval: Float) {
+        Observable<Int>.interval(RxTimeInterval(refreshInterval), scheduler: MainScheduler.instance)
+            .flatMap { _ -> Observable<CryptonatorTickerResponse> in
+                return Api.shared.getTicker(base: base, target: "USD")
+            }
+            .subscribe(onNext: { response in
+                guard response.success == true, let ticker = response.ticker else {
+                    // TODO: notify error
+                    return
+                }
+                
+                print("Ticker updated")
+                self.setStatusItemTitle(title: String(format: "%@ $%.2f", base, ticker.price))
+            })
+            .addDisposableTo(disposeBag)
+    }
+    
+    func setStatusItemTitle(title: String) {
+        let title = NSAttributedString(string: title, attributes: titleAttributes)
+        
+        self.statusItem.attributedTitle = title
     }
 
 }
