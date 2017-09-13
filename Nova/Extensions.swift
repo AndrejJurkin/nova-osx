@@ -1,0 +1,50 @@
+//
+//  Extensions.swift
+//  Nova
+//
+//  Created by Andrej Jurkin on 9/13/17.
+//  Copyright © 2017 Andrej Jurkin. All rights reserved.
+//
+
+import Foundation
+import Cocoa
+
+extension NSColor {
+    convenience init(red: Int, green: Int, blue: Int) {
+        assert(red >= 0 && red <= 255, "Invalid red component")
+        assert(green >= 0 && green <= 255, "Invalid green component")
+        assert(blue >= 0 && blue <= 255, "Invalid blue component")
+        
+        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
+    }
+    
+    convenience init(rgb: Int) {
+        self.init(
+            red: (rgb >> 16) & 0xFF,
+            green: (rgb >> 8) & 0xFF,
+            blue: rgb & 0xFF
+        )
+    }
+}
+
+extension NSTextField {
+    
+    var cursorColor: NSColor? {
+        
+        get {
+            if let fieldEditor = self.window?.fieldEditor(true, for: self) as? NSTextView {
+                return fieldEditor.insertionPointColor
+            }
+            
+            return nil
+        }
+        
+        set {
+            
+            if let fieldEditor = self.window?.fieldEditor(true, for: self) as? NSTextView,
+                let cursorColor = newValue {
+                fieldEditor.insertionPointColor = cursorColor
+            }
+        }
+    }
+}

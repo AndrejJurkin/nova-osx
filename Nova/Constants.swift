@@ -20,6 +20,7 @@
 //  Created by Andrej Jurkin on 9/3/17.
 //
 import Foundation
+import Cocoa
 
 /// Project constants
 struct C {
@@ -31,8 +32,8 @@ struct C {
 struct R {
     
     struct Color {
-        
-        
+        static let primary = NSColor(rgb: 0x193C56)
+        static let primaryLight = NSColor(rgb: 0xEEEEEB)
     }
     
     struct Id {

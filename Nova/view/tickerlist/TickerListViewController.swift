@@ -61,6 +61,8 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
         self.view.window?.isOpaque = false
         self.view.window?.backgroundColor = NSColor.clear
         
+        self.searchTextField.cursorColor = R.Color.primaryLight
+        
         self.viewModel.filteredData
             .asObservable()
             .subscribe(onNext: { _ in
