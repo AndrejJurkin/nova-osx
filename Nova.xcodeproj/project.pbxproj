@@ -20,6 +20,7 @@
 		0AB59B0A1F699CF400798BBB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB59B091F699CF400798BBB /* Extensions.swift */; };
 		0AB59B0C1F69A6AD00798BBB /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB59B0B1F69A6AD00798BBB /* MenuBarView.swift */; };
 		0AB59B0E1F69A6B300798BBB /* MenuBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB59B0D1F69A6B300798BBB /* MenuBarViewModel.swift */; };
+		0AB59B111F69A80900798BBB /* Prefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB59B101F69A80900798BBB /* Prefs.swift */; };
 		0AF23FA11F5BEC4200AB0D15 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF23FA01F5BEC4200AB0D15 /* Ticker.swift */; };
 		777467461F681CF400F01AF3 /* CryptonatorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777467451F681CF400F01AF3 /* CryptonatorProvider.swift */; };
 		777467481F681D1700F01AF3 /* CryptonatorTicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777467471F681D1700F01AF3 /* CryptonatorTicker.swift */; };
@@ -51,9 +52,10 @@
 		0A52028D1F65631E00F71C1E /* TickerListCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerListCellView.swift; sourceTree = "<group>"; };
 		0A924C8D1F5C4BDF00A8875E /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		0A924C911F5C54D100A8875E /* TickerListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerListViewModel.swift; sourceTree = "<group>"; };
-		0AB59B091F699CF400798BBB /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		0AB59B091F699CF400798BBB /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0AB59B0B1F69A6AD00798BBB /* MenuBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
 		0AB59B0D1F69A6B300798BBB /* MenuBarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBarViewModel.swift; sourceTree = "<group>"; };
+		0AB59B101F69A80900798BBB /* Prefs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prefs.swift; sourceTree = "<group>"; };
 		0AF23FA01F5BEC4200AB0D15 /* Ticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		207457C11AEF35045A801412 /* Pods-Nova.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nova.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nova/Pods-Nova.release.xcconfig"; sourceTree = "<group>"; };
 		4AC2ED320E03871B42E360B4 /* Pods_Nova.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nova.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +110,7 @@
 				0A2D3E561F5B4EAE002510BA /* data */,
 				0A924C8F1F5C516300A8875E /* view */,
 				0A2D3E351F5AC429002510BA /* AppDelegate.swift */,
+				0AB59B101F69A80900798BBB /* Prefs.swift */,
 				0A2D3E391F5AC429002510BA /* Assets.xcassets */,
 				0A2D3E541F5AFA2A002510BA /* Constants.swift */,
 				0AB59B091F699CF400798BBB /* Extensions.swift */,
@@ -355,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AB59B111F69A80900798BBB /* Prefs.swift in Sources */,
 				0A2D3E551F5AFA2A002510BA /* Constants.swift in Sources */,
 				0A2D3E381F5AC429002510BA /* TickerListViewController.swift in Sources */,
 				0A924C8E1F5C4BDF00A8875E /* Api.swift in Sources */,
