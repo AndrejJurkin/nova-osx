@@ -107,13 +107,13 @@
 		0A2D3E341F5AC429002510BA /* Nova */ = {
 			isa = PBXGroup;
 			children = (
-				0A2D3E561F5B4EAE002510BA /* data */,
-				0A924C8F1F5C516300A8875E /* view */,
 				0A2D3E351F5AC429002510BA /* AppDelegate.swift */,
 				0AB59B101F69A80900798BBB /* Prefs.swift */,
-				0A2D3E391F5AC429002510BA /* Assets.xcassets */,
 				0A2D3E541F5AFA2A002510BA /* Constants.swift */,
 				0AB59B091F699CF400798BBB /* Extensions.swift */,
+				0A2D3E561F5B4EAE002510BA /* data */,
+				0A924C8F1F5C516300A8875E /* view */,
+				0A2D3E391F5AC429002510BA /* Assets.xcassets */,
 				0A2D3E3E1F5AC429002510BA /* Info.plist */,
 				0A2D3E3B1F5AC429002510BA /* Main.storyboard */,
 			);
@@ -132,9 +132,9 @@
 		0A2D3E561F5B4EAE002510BA /* data */ = {
 			isa = PBXGroup;
 			children = (
+				0A924C8D1F5C4BDF00A8875E /* Api.swift */,
 				777467491F681E5A00F01AF3 /* coinmarketcap */,
 				7774674A1F681E7900F01AF3 /* cryptonator */,
-				0A924C8D1F5C4BDF00A8875E /* Api.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";

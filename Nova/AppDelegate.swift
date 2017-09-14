@@ -24,9 +24,11 @@ import RxSwift
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+    
+    var view: MenuBarView?
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        
+        self.view = MenuBarView()
     }
 }
 

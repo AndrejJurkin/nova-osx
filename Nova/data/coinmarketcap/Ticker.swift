@@ -40,6 +40,8 @@ class Ticker: EVObject {
     var changeLastWeek: Float = 0
     var lastUpdated: Double = 0
     
+    var isPinned: Bool = false
+    
     override func propertyMapping() -> [(keyInObject: String?, keyInResource: String?)] {
         return [
             (keyInObject: "dailyVolume", keyInResource: "24h_volume_usd"),
