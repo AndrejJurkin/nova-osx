@@ -66,7 +66,6 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
         self.viewModel.filteredData
             .asObservable()
             .subscribe(onNext: { _ in
-                print("Filtered data changed...")
                 self.tickerTableView.reloadData()
             })
             .addDisposableTo(disposeBag)
@@ -80,6 +79,10 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
         view.currencyImageView.kf.setImage(with: self.viewModel.getCurrencyImageUrl(row: row))
         view.currencyPrice.stringValue = self.viewModel.getCurrencyPriceUsd(row: row)
         
+        view.pinButton.tag = row
+        view.pinButton.target = self
+        view.pinButton.action = #selector(onPinButtonClick(sender:))
+        
         return view
     }
     
@@ -89,6 +92,15 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
     
     func numberOfRows(in tableView: NSTableView) -> Int {
         return self.viewModel.numberOfRows
+    }
+    
+    func refreshData() {
+        
+    }
+    
+    func onPinButtonClick(sender: NSButton) {
+        let ticker = viewModel.getTicker(row: sender.tag)
+        print ("\(ticker.name): \(sender.state == 0 ? "unselected" : "selected")")
     }
 }
 

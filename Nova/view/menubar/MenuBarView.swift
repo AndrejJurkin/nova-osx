@@ -9,6 +9,7 @@
 import Foundation
 import Cocoa
 import RxSwift
+import RxCocoa
 
 /// Menu bar view displays selected tickers in menu bar
 class MenuBarView: NSObject {
@@ -16,7 +17,10 @@ class MenuBarView: NSObject {
     /// Status item used to display coin tickers
     let statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
     
+    /// Content wrapper
     let popover = NSPopover()
+    
+    let viewModel = MenuBarViewModel()
     
     let disposeBag = DisposeBag()
     
@@ -25,8 +29,8 @@ class MenuBarView: NSObject {
         
         self.statusItem.button?.action = #selector(togglePopover)
         self.statusItem.button?.target = self
-        
-        self.setStatusItemTitle(title: "NOVA")
+    
+        self.bindUi()
         
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
         let popoverViewController = storyboard.instantiateController(
@@ -57,5 +61,12 @@ class MenuBarView: NSObject {
         let title = NSAttributedString(string: title, attributes: R.Font.menuBarTitleAttributes)
         
         self.statusItem.attributedTitle = title
+    }
+    
+    private func bindUi() {
+        self.viewModel.menuBarText.asObservable().subscribe(onNext: { text in
+            self.setStatusItemTitle(title: text)
+        })
+        .addDisposableTo(disposeBag)
     }
 }

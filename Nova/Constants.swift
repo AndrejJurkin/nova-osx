@@ -42,7 +42,7 @@ struct R {
     
     struct Font {
         
-        static let menuBarTitleAttributes = [NSFontAttributeName: NSFont(name: "Avenir Next", size: 12.0)!]
+        static let menuBarTitleAttributes = [NSFontAttributeName: NSFont(name: "Avenir", size: 12.0)!]
     }
     
 }

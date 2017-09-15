@@ -12,11 +12,31 @@ import RxSwift
 class MenuBarViewModel {
     
     let api = Api.shared
+    
     let prefs = Prefs.shared
     
-    var menuBarText = Variable("")
+    var menuBarText = Variable("N O V A")
+    
+    var pinnedSymbols: Variable<[String]> = Variable([])
+    
+    var isRefreshing = Variable<Bool>(false)
+    
+    var pinnedCurrencies = Variable<[String: Double]>([:])
     
     let disposeBag = DisposeBag()
+    
+    init() {
+        
+        self.subscribeForTickerUpdates(base: "OMG", refreshInterval: 30.0)
+        self.subscribeForTickerUpdates(base: "BTC", refreshInterval: 30.0)
+
+    }
+    
+    func refresh() {
+        
+    }
+    
+    
     
     /// Subscribe for ticker updates
     ///
@@ -30,12 +50,10 @@ class MenuBarViewModel {
             }
             .subscribe(onNext: { response in
                 guard response.success == true, let ticker = response.ticker else {
-                    // TODO: notify error
                     return
                 }
                 
-                print("Ticker updated")
-                self.menuBarText.value = String(format: "%@ $%.2f", base, ticker.price)
+                self.pinnedCurrencies.value[ticker.base] = ticker.price
             })
             .addDisposableTo(disposeBag)
     }
