@@ -29,14 +29,7 @@ class MenuBarViewModel {
         
         self.subscribeForTickerUpdates(base: "OMG", refreshInterval: 30.0)
         self.subscribeForTickerUpdates(base: "BTC", refreshInterval: 30.0)
-
     }
-    
-    func refresh() {
-        
-    }
-    
-    
     
     /// Subscribe for ticker updates
     ///

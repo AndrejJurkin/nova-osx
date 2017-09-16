@@ -41,9 +41,12 @@ class Prefs {
     }
     
     /// Ticker symbols pinned to be displayed in menu bar
+    ///
     /// - key: The currency symbol (ETH, BTC, etc.)
     /// - value: The latest price value
-    var pinedCurrencies: [String: Double]? {
+    ///
+    /// Defaults to empty dictionry
+    var pinedCurrencies: [String: Double] {
         
         get {
             if let value = self.userDefaults

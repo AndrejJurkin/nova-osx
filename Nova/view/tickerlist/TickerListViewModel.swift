@@ -33,6 +33,8 @@ class TickerListViewModel {
     /// Raw unfiltered data
     private var data: [Ticker] = []
     
+    private let prefs = Prefs.shared
+    
     /// Raw data filtered with search string
     var filteredData = Variable<[Ticker]>([])
     
@@ -46,6 +48,8 @@ class TickerListViewModel {
     
     /// Callback to notify tableview of data changes
     var reloadDataCallback: (()->())?
+    
+    var pinnedCurrencies = Variable<[String: Double]>([:])
 
     /// Rx subscriptions
     let disposeBag = DisposeBag()
@@ -54,7 +58,7 @@ class TickerListViewModel {
     private let imageUrlFormat = "https://files.coinmarketcap.com/static/img/coins/128x128/%@.png"
     
     init() {
-        api.getTopTickers(limit: 100)
+        self.api.getTopTickers(limit: 100)
             .subscribe(onNext: { tickers in
                 self.data = tickers
                 self.filteredData.value = self.data
@@ -69,6 +73,15 @@ class TickerListViewModel {
                 self.filterData(query: searchStr)
             })
             .addDisposableTo(disposeBag)
+        
+        self.pinnedCurrencies.value = self.prefs.pinedCurrencies
+        
+        self.pinnedCurrencies.asObservable().subscribe { _ in
+            print("Pinned currencies updated...")
+            
+            self.prefs.pinedCurrencies = self.pinnedCurrencies.value
+        }
+        .addDisposableTo(disposeBag)
     }
     
     /// Get single ticker for tableview row
@@ -95,6 +108,22 @@ class TickerListViewModel {
     
     func getCurrencyPriceUsd(row: Int) -> String {
         return String(format: "$ %.2f", self.getTicker(row: row).priceUsd)
+    }
+    
+    func pinStatusChanged(row: Int, pinned: Bool) {
+        let ticker = getTicker(row: row)
+        
+        if pinned {
+            self.pinnedCurrencies.value[ticker.symbol] = ticker.priceBtc
+        } else {
+            self.pinnedCurrencies.value[ticker.symbol] = nil
+        }
+    }
+    
+    func pinButtonState(row: Int) -> Int {
+        let ticker = getTicker(row: row)
+        
+        return self.pinnedCurrencies.value[ticker.symbol] == nil ? 0 : 1
     }
     
     func filterData(query: String) {

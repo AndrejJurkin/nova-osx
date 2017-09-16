@@ -29,8 +29,8 @@ class Ticker: EVObject {
     var name: String = ""
     var symbol: String = ""
     var rank: Int = 0
-    var priceUsd: Float = 0
-    var priceBtc: Float = 0
+    var priceUsd: Double = 0
+    var priceBtc: Double = 0
     var dailyVolume: Double = 0
     var marketCapUsd: Double = 0
     var availableSupply: Double = 0

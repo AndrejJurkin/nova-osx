@@ -82,6 +82,7 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
         view.pinButton.tag = row
         view.pinButton.target = self
         view.pinButton.action = #selector(onPinButtonClick(sender:))
+        view.pinButton.state = self.viewModel.pinButtonState(row: row)
         
         return view
     }
@@ -99,8 +100,7 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
     }
     
     func onPinButtonClick(sender: NSButton) {
-        let ticker = viewModel.getTicker(row: sender.tag)
-        print ("\(ticker.name): \(sender.state == 0 ? "unselected" : "selected")")
+        self.viewModel.pinStatusChanged(row: sender.tag, pinned: sender.state == 1)
     }
 }
 
