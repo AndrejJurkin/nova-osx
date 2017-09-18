@@ -16,4 +16,8 @@ target 'Nova' do
   pod 'EVReflection'
   pod 'EVReflection/MoyaRxSwift'
   pod 'Kingfisher'
+  pod 'RealmSwift'
+  pod 'RxRealm'
+  pod 'Swinject'
+  pod 'SwinjectAutoregistration'
 end
