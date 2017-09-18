@@ -22,6 +22,10 @@
 		0AB59B0E1F69A6B300798BBB /* MenuBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB59B0D1F69A6B300798BBB /* MenuBarViewModel.swift */; };
 		0AB59B111F69A80900798BBB /* Prefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB59B101F69A80900798BBB /* Prefs.swift */; };
 		0AF23FA11F5BEC4200AB0D15 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF23FA01F5BEC4200AB0D15 /* Ticker.swift */; };
+		7763D05B1F6FAA0C009EE03E /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7763D05A1F6FAA0C009EE03E /* RemoteDataSource.swift */; };
+		7763D05D1F6FAA18009EE03E /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7763D05C1F6FAA18009EE03E /* LocalDataSource.swift */; };
+		7763D0601F6FB683009EE03E /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7763D05F1F6FB683009EE03E /* Injector.swift */; };
+		7763D0641F6FCE64009EE03E /* DataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7763D0631F6FCE64009EE03E /* DataRepository.swift */; };
 		777467461F681CF400F01AF3 /* CryptonatorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777467451F681CF400F01AF3 /* CryptonatorProvider.swift */; };
 		777467481F681D1700F01AF3 /* CryptonatorTicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777467471F681D1700F01AF3 /* CryptonatorTicker.swift */; };
 		D418FF040586A9DD73E9A005 /* Pods_Nova.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AC2ED320E03871B42E360B4 /* Pods_Nova.framework */; };
@@ -59,6 +63,10 @@
 		0AF23FA01F5BEC4200AB0D15 /* Ticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		207457C11AEF35045A801412 /* Pods-Nova.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nova.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nova/Pods-Nova.release.xcconfig"; sourceTree = "<group>"; };
 		4AC2ED320E03871B42E360B4 /* Pods_Nova.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nova.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7763D05A1F6FAA0C009EE03E /* RemoteDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
+		7763D05C1F6FAA18009EE03E /* LocalDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
+		7763D05F1F6FB683009EE03E /* Injector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
+		7763D0631F6FCE64009EE03E /* DataRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataRepository.swift; path = view/tickerlist/DataRepository.swift; sourceTree = "<group>"; };
 		777467451F681CF400F01AF3 /* CryptonatorProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptonatorProvider.swift; sourceTree = "<group>"; };
 		777467471F681D1700F01AF3 /* CryptonatorTicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptonatorTicker.swift; sourceTree = "<group>"; };
 		C31629810B46A92A7F784CDD /* Pods-Nova.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nova.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nova/Pods-Nova.debug.xcconfig"; sourceTree = "<group>"; };
@@ -108,11 +116,11 @@
 			isa = PBXGroup;
 			children = (
 				0A2D3E351F5AC429002510BA /* AppDelegate.swift */,
-				0AB59B101F69A80900798BBB /* Prefs.swift */,
-				0A2D3E541F5AFA2A002510BA /* Constants.swift */,
-				0AB59B091F699CF400798BBB /* Extensions.swift */,
+				7763D05F1F6FB683009EE03E /* Injector.swift */,
 				0A2D3E561F5B4EAE002510BA /* data */,
 				0A924C8F1F5C516300A8875E /* view */,
+				7763D0561F6FA888009EE03E /* repository */,
+				7763D0651F6FD043009EE03E /* support */,
 				0A2D3E391F5AC429002510BA /* Assets.xcassets */,
 				0A2D3E3E1F5AC429002510BA /* Info.plist */,
 				0A2D3E3B1F5AC429002510BA /* Main.storyboard */,
@@ -165,6 +173,26 @@
 				0AB59B0D1F69A6B300798BBB /* MenuBarViewModel.swift */,
 			);
 			path = menubar;
+			sourceTree = "<group>";
+		};
+		7763D0561F6FA888009EE03E /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				7763D0631F6FCE64009EE03E /* DataRepository.swift */,
+				7763D05A1F6FAA0C009EE03E /* RemoteDataSource.swift */,
+				7763D05C1F6FAA18009EE03E /* LocalDataSource.swift */,
+			);
+			name = repository;
+			sourceTree = "<group>";
+		};
+		7763D0651F6FD043009EE03E /* support */ = {
+			isa = PBXGroup;
+			children = (
+				0A2D3E541F5AFA2A002510BA /* Constants.swift */,
+				0AB59B091F699CF400798BBB /* Extensions.swift */,
+				0AB59B101F69A80900798BBB /* Prefs.swift */,
+			);
+			name = support;
 			sourceTree = "<group>";
 		};
 		777467491F681E5A00F01AF3 /* coinmarketcap */ = {
@@ -366,10 +394,14 @@
 				0AB59B0E1F69A6B300798BBB /* MenuBarViewModel.swift in Sources */,
 				0AF23FA11F5BEC4200AB0D15 /* Ticker.swift in Sources */,
 				777467481F681D1700F01AF3 /* CryptonatorTicker.swift in Sources */,
+				7763D05D1F6FAA18009EE03E /* LocalDataSource.swift in Sources */,
+				7763D05B1F6FAA0C009EE03E /* RemoteDataSource.swift in Sources */,
 				0A52028E1F65631E00F71C1E /* TickerListCellView.swift in Sources */,
 				0A2D3E5A1F5B4F24002510BA /* CoinMarketCapProvider.swift in Sources */,
 				0A2D3E361F5AC429002510BA /* AppDelegate.swift in Sources */,
+				7763D0601F6FB683009EE03E /* Injector.swift in Sources */,
 				0AB59B0C1F69A6AD00798BBB /* MenuBarView.swift in Sources */,
+				7763D0641F6FCE64009EE03E /* DataRepository.swift in Sources */,
 				0AB59B0A1F699CF400798BBB /* Extensions.swift in Sources */,
 				0A924C921F5C54D100A8875E /* TickerListViewModel.swift in Sources */,
 			);

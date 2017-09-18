@@ -30,7 +30,8 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
     @IBOutlet weak var searchTextField: NSTextField!
     @IBOutlet weak var tickerTableView: NSTableView!
     
-    var viewModel = TickerListViewModel()
+    var viewModel = Injector.inject(type: TickerListViewModel.self)
+    
     var disposeBag = DisposeBag()
     
     override func viewDidLoad() {

@@ -27,13 +27,12 @@ import RxCocoa
 /// Model for TickerList view
 class TickerListViewModel {
     
-    /// TODO: Inject
-    private let api = Api.shared
+    private let repo = Injector.inject(type: DataRepository.self)
+    
+    private let prefs = Injector.inject(type: Prefs.self)
     
     /// Raw unfiltered data
     private var data: [Ticker] = []
-    
-    private let prefs = Prefs.shared
     
     /// Raw data filtered with search string
     var filteredData = Variable<[Ticker]>([])
@@ -58,7 +57,7 @@ class TickerListViewModel {
     private let imageUrlFormat = "https://files.coinmarketcap.com/static/img/coins/128x128/%@.png"
     
     init() {
-        self.api.getTopTickers(limit: 100)
+        self.repo.getTopTickers(limit: 100)
             .subscribe(onNext: { tickers in
                 self.data = tickers
                 self.filteredData.value = self.data

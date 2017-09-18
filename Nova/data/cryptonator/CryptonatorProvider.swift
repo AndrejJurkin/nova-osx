@@ -9,7 +9,6 @@
 import Foundation
 import Moya
 
-
 enum CryptonatorProvider {
     
     case ticker(base: String, target: String)
