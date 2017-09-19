@@ -40,18 +40,21 @@ class DataRepository {
     
     /// Set ticker as pinned (show in menu bar)
     func pinTicker(symbol: String) {
-        
+        self.local.pinTicker(symbol: symbol)
     }
     
     /// Unpin ticker (remove from menu bar)
     func unpinTicker(symbol: String) {
-        
+        self.local.unpinTicker(symbol: symbol)
     }
     
     /// Get all available tickers from coin market cap
+    /// Cache tickers into the Realm
     func getAllTickers() -> Observable<[Ticker]> {
         
-        return self.remote.getAllTickers()
+        return self.remote.getAllTickers().do(onNext: { tickers in
+            self.local.saveTickers(tickers: tickers)
+        })
     }
     
     /// Get top N (limit) tickers, sorted by market cap

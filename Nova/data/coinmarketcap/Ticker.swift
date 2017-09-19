@@ -23,26 +23,31 @@
 import Foundation
 import EVReflection
 
-class Ticker: EVObject {
+class Ticker: RealmObject, EVReflectable {
     
-    var id: String = ""
-    var name: String = ""
-    var symbol: String = ""
-    var rank: Int = 0
-    var priceUsd: Double = 0
-    var priceBtc: Double = 0
-    var dailyVolume: Double = 0
-    var marketCapUsd: Double = 0
-    var availableSupply: Double = 0
-    var totalSupply: Double = 0
-    var changeLastHour: Float = 0
-    var changeLastDay: Float = 0
-    var changeLastWeek: Float = 0
-    var lastUpdated: Double = 0
+    // Realm primary key
+    dynamic var symbol: String = ""
     
-    var isPinned: Bool = false
+    dynamic var id: String = ""
+    dynamic var name: String = ""
+    dynamic var rank: Int = 0
+    dynamic var priceUsd: Double = 0
+    dynamic var priceBtc: Double = 0
+    dynamic var dailyVolume: Double = 0
+    dynamic var marketCapUsd: Double = 0
+    dynamic var availableSupply: Double = 0
+    dynamic var totalSupply: Double = 0
+    dynamic var changeLastHour: Float = 0
+    dynamic var changeLastDay: Float = 0
+    dynamic var changeLastWeek: Float = 0
+    dynamic var lastUpdated: Double = 0
+    dynamic var isPinned: Bool = false
     
-    override func propertyMapping() -> [(keyInObject: String?, keyInResource: String?)] {
+    override static func primaryKey() -> String? {
+        return "symbol"
+    }
+    
+    func propertyMapping() -> [(keyInObject: String?, keyInResource: String?)] {
         return [
             (keyInObject: "dailyVolume", keyInResource: "24h_volume_usd"),
             (keyInObject: "changeLastHour", keyInResource: "percent_change_1h"),

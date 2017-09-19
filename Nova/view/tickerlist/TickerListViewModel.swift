@@ -57,7 +57,7 @@ class TickerListViewModel {
     private let imageUrlFormat = "https://files.coinmarketcap.com/static/img/coins/128x128/%@.png"
     
     init() {
-        self.repo.getTopTickers(limit: 100)
+        self.repo.getAllTickers()
             .subscribe(onNext: { tickers in
                 self.data = tickers
                 self.filteredData.value = self.data
@@ -113,9 +113,9 @@ class TickerListViewModel {
         let ticker = getTicker(row: row)
         
         if pinned {
-            self.pinnedCurrencies.value[ticker.symbol] = ticker.priceBtc
+            self.repo.pinTicker(symbol: ticker.symbol)
         } else {
-            self.pinnedCurrencies.value[ticker.symbol] = nil
+            self.repo.unpinTicker(symbol: ticker.symbol)
         }
     }
     

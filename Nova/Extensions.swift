@@ -20,6 +20,9 @@
 //  Created by Andrej Jurkin on 9/3/17.
 import Foundation
 import Cocoa
+import RealmSwift
+
+typealias RealmObject = Object
 
 extension NSColor {
     
