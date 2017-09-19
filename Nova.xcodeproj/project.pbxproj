@@ -66,7 +66,7 @@
 		7763D05A1F6FAA0C009EE03E /* RemoteDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
 		7763D05C1F6FAA18009EE03E /* LocalDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
 		7763D05F1F6FB683009EE03E /* Injector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
-		7763D0631F6FCE64009EE03E /* DataRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataRepository.swift; path = view/tickerlist/DataRepository.swift; sourceTree = "<group>"; };
+		7763D0631F6FCE64009EE03E /* DataRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRepository.swift; sourceTree = "<group>"; };
 		777467451F681CF400F01AF3 /* CryptonatorProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptonatorProvider.swift; sourceTree = "<group>"; };
 		777467471F681D1700F01AF3 /* CryptonatorTicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptonatorTicker.swift; sourceTree = "<group>"; };
 		C31629810B46A92A7F784CDD /* Pods-Nova.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nova.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nova/Pods-Nova.debug.xcconfig"; sourceTree = "<group>"; };
@@ -118,9 +118,9 @@
 				0A2D3E351F5AC429002510BA /* AppDelegate.swift */,
 				7763D05F1F6FB683009EE03E /* Injector.swift */,
 				0A2D3E561F5B4EAE002510BA /* data */,
-				0A924C8F1F5C516300A8875E /* view */,
 				7763D0561F6FA888009EE03E /* repository */,
 				7763D0651F6FD043009EE03E /* support */,
+				0A924C8F1F5C516300A8875E /* view */,
 				0A2D3E391F5AC429002510BA /* Assets.xcassets */,
 				0A2D3E3E1F5AC429002510BA /* Info.plist */,
 				0A2D3E3B1F5AC429002510BA /* Main.storyboard */,
@@ -179,10 +179,10 @@
 			isa = PBXGroup;
 			children = (
 				7763D0631F6FCE64009EE03E /* DataRepository.swift */,
-				7763D05A1F6FAA0C009EE03E /* RemoteDataSource.swift */,
 				7763D05C1F6FAA18009EE03E /* LocalDataSource.swift */,
+				7763D05A1F6FAA0C009EE03E /* RemoteDataSource.swift */,
 			);
-			name = repository;
+			path = repository;
 			sourceTree = "<group>";
 		};
 		7763D0651F6FD043009EE03E /* support */ = {
@@ -192,7 +192,7 @@
 				0AB59B091F699CF400798BBB /* Extensions.swift */,
 				0AB59B101F69A80900798BBB /* Prefs.swift */,
 			);
-			name = support;
+			path = support;
 			sourceTree = "<group>";
 		};
 		777467491F681E5A00F01AF3 /* coinmarketcap */ = {
