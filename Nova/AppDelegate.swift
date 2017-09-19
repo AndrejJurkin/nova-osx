@@ -21,6 +21,7 @@
 //
 import Cocoa
 import RxSwift
+import RealmSwift
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -28,7 +29,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var menuBarView: MenuBarView?
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        self.initRealm()
         self.menuBarView = MenuBarView()
+        
+    }
+    
+    func initRealm() {
+        let realmConfig = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
+        Realm.Configuration.defaultConfiguration = realmConfig
     }
 }
 

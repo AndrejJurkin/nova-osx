@@ -21,6 +21,7 @@
 
 import Foundation
 import RxSwift
+import RealmSwift
 
 /// Central data source that abstracts fetching and caching of app data
 class DataRepository {
@@ -34,8 +35,8 @@ class DataRepository {
     }
     
     /// Get pinned tickers sorted by orderIndex
-    func getPinnedTickers() {
-        
+    func getPinnedTickers() -> Observable<Results<Ticker>> {
+        return self.local.getPinnedTickers()
     }
     
     /// Set ticker as pinned (show in menu bar)

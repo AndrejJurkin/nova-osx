@@ -81,6 +81,13 @@ class TickerListViewModel {
             self.prefs.pinedCurrencies = self.pinnedCurrencies.value
         }
         .addDisposableTo(disposeBag)
+        
+        self.repo.getPinnedTickers().subscribe(onNext: { results in
+            for ticker in results {
+                print(ticker.symbol)
+            }
+        })
+        .addDisposableTo(disposeBag)
     }
     
     /// Get single ticker for tableview row

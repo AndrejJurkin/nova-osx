@@ -22,6 +22,7 @@
 
 import Foundation
 import EVReflection
+import RealmSwift
 
 class Ticker: RealmObject, EVReflectable {
     
@@ -41,7 +42,8 @@ class Ticker: RealmObject, EVReflectable {
     dynamic var changeLastDay: Float = 0
     dynamic var changeLastWeek: Float = 0
     dynamic var lastUpdated: Double = 0
-    dynamic var isPinned: Bool = false
+    
+    let isPinned = RealmOptional<Bool>()
     
     override static func primaryKey() -> String? {
         return "symbol"

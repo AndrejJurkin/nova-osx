@@ -21,18 +21,25 @@
 
 import Foundation
 import RealmSwift
-import RxSwift
 import RxRealm
+import RxSwift
 
 class LocalDataSource {
     
     /// Asynchroniously cache tickers into Realm
     func saveTickers(tickers: [Ticker]) {
-        // TODO: Save async
+        
         let realm = try! Realm()
         
         try! realm.write {
-            realm.add(tickers, update: true)
+            for ticker in tickers {
+                
+                if let currentTicker = realm.object(ofType: Ticker.self, forPrimaryKey: ticker.symbol) {
+                    ticker.isPinned.value = currentTicker.isPinned.value
+                }
+                
+                realm.add(ticker, update: true)
+            }
         }
     }
     
@@ -43,12 +50,14 @@ class LocalDataSource {
     }
     
     /// Get pinned tickers sorted by orderIndex
-    func getPinnedTickers() {
+    func getPinnedTickers() -> Observable<Results<Ticker>> {
         let realm = try! Realm()
         
-        let pinnedTickers = realm.objects(Ticker.self).filter("isPinned = true")
+        let pinnedTickers = realm
+            .objects(Ticker.self)
+            .filter("isPinned = true")
         
-        print(pinnedTickers)
+        return Observable.collection(from: pinnedTickers)
     }
     
     /// Set ticker as pinned (show in menu bar)
@@ -58,8 +67,6 @@ class LocalDataSource {
         try! realm.write {
             realm.create(Ticker.self, value: ["symbol": symbol, "isPinned": true], update: true)
         }
-        
-        getPinnedTickers()
     }
     
     /// Unpin ticker (remove from menu bar)
