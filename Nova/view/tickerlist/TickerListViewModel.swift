@@ -48,7 +48,9 @@ class TickerListViewModel {
     /// Callback to notify tableview of data changes
     var reloadDataCallback: (()->())?
     
-    var pinnedCurrencies = Variable<[String: Double]>([:])
+    /// True while repository processing data in background
+    /// Bind to UI to show indicator
+    var isRefreshing = Variable<Bool>(false)
 
     /// Rx subscriptions
     let disposeBag = DisposeBag()
@@ -61,6 +63,7 @@ class TickerListViewModel {
             .subscribe(onNext: { tickers in
                 self.data = tickers
                 self.filteredData.value = self.data
+                self.filterData(query: self.searchString.value)
             })
             .addDisposableTo(disposeBag)
         
@@ -72,22 +75,6 @@ class TickerListViewModel {
                 self.filterData(query: searchStr)
             })
             .addDisposableTo(disposeBag)
-        
-        self.pinnedCurrencies.value = self.prefs.pinedCurrencies
-        
-        self.pinnedCurrencies.asObservable().subscribe { _ in
-            print("Pinned currencies updated...")
-            
-            self.prefs.pinedCurrencies = self.pinnedCurrencies.value
-        }
-        .addDisposableTo(disposeBag)
-        
-        self.repo.getPinnedTickers().subscribe(onNext: { results in
-            for ticker in results {
-                print(ticker.symbol)
-            }
-        })
-        .addDisposableTo(disposeBag)
     }
     
     /// Get single ticker for tableview row
@@ -112,8 +99,12 @@ class TickerListViewModel {
         return URL(string: urlString)
     }
     
+    /// TODO: replace with dynamic currency symbol
     func getCurrencyPriceUsd(row: Int) -> String {
-        return String(format: "$ %.2f", self.getTicker(row: row).priceUsd)
+        let ticker = self.getTicker(row: row)
+        let format = ticker.priceUsd < 1 ? "$ %.6f" : "$ %.2f"
+        
+        return String(format: format, ticker.priceUsd)
     }
     
     func pinStatusChanged(row: Int, pinned: Bool) {
@@ -129,7 +120,7 @@ class TickerListViewModel {
     func pinButtonState(row: Int) -> Int {
         let ticker = getTicker(row: row)
         
-        return self.pinnedCurrencies.value[ticker.symbol] == nil ? 0 : 1
+        return ticker.isPinned ? 1 : 0
     }
     
     func filterData(query: String) {
@@ -147,5 +138,16 @@ class TickerListViewModel {
         }
         
         self.reloadDataCallback?()
+    }
+    
+    func refresh() {
+        self.isRefreshing.value = true
+        
+        self.repo.refreshAllTickers().subscribe(onNext: { _ in
+            self.isRefreshing.value = false
+        }, onError: { _ in
+            self.isRefreshing.value = false
+        })
+        .addDisposableTo(disposeBag)
     }
 }

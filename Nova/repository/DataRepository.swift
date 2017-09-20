@@ -27,15 +27,19 @@ import RealmSwift
 class DataRepository {
     
     private var local: LocalDataSource
+
     private var remote: RemoteDataSource
+    
+    private var disposeBag = DisposeBag()
    
     init(local: LocalDataSource, remote: RemoteDataSource) {
         self.local = local
+        
         self.remote = remote
     }
     
     /// Get pinned tickers sorted by orderIndex
-    func getPinnedTickers() -> Observable<Results<Ticker>> {
+    func getPinnedTickers() -> Observable<[Ticker]> {
         return self.local.getPinnedTickers()
     }
     
@@ -49,13 +53,33 @@ class DataRepository {
         self.local.unpinTicker(symbol: symbol)
     }
     
-    /// Get all available tickers from coin market cap
-    /// Cache tickers into the Realm
+    /// Get all cached tickers from Realm
+    /// - Query remote repository for update and cache into Realm
+    /// - Changes in Realm will automatically trigger update of UI
+    /// - Sorted by market cap
     func getAllTickers() -> Observable<[Ticker]> {
+        self.remote.getAllTickers()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { tickers in
+                self.local.saveTickers(tickers: tickers)
+            })
+            .addDisposableTo(disposeBag)
         
-        return self.remote.getAllTickers().do(onNext: { tickers in
-            self.local.saveTickers(tickers: tickers)
-        })
+        return self.local.getAllTickers()
+    }
+    
+    /// Get all tickers from remote repository
+    func refreshAllTickers() -> Observable<Void> {
+        return self.remote.getAllTickers()
+            // Cache into Realm
+            .do(onNext: { response in
+                self.local.saveTickers(tickers: response)
+            })
+            // Flat map to empty observable since we don't need the result
+            .observeOn(MainScheduler.instance)
+            .flatMap { _ in
+                return Observable.just()
+            }
     }
     
     /// Get top N (limit) tickers, sorted by market cap

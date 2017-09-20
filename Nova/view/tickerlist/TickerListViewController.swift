@@ -28,7 +28,10 @@ import Kingfisher
 class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
     
     @IBOutlet weak var searchTextField: NSTextField!
+    
     @IBOutlet weak var tickerTableView: NSTableView!
+    
+    @IBOutlet weak var refreshButton: NSButton!
     
     var viewModel = Injector.inject(type: TickerListViewModel.self)
     
@@ -44,6 +47,21 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
         self.viewModel.reloadDataCallback = {
             self.tickerTableView.reloadData()
         }
+        
+        self.viewModel.isRefreshing.asObservable().subscribe { refreshingState in
+            guard let isRefreshing = refreshingState.element else {
+                return
+            }
+            
+            if isRefreshing {
+                // TODO: show activity indicator
+                self.refreshButton.isEnabled = false
+            } else {
+                // TODO: hide activity indicator
+                self.refreshButton.isEnabled = true
+            }
+        }
+        .addDisposableTo(disposeBag)
     }
 
     override var representedObject: Any? {
@@ -96,12 +114,12 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
         return self.viewModel.numberOfRows
     }
     
-    func refreshData() {
-        
-    }
-    
     func onPinButtonClick(sender: NSButton) {
         self.viewModel.pinStatusChanged(row: sender.tag, pinned: sender.state == 1)
+    }
+    
+    @IBAction func onRefreshButtonClick(_ sender: Any) {
+        self.viewModel.refresh()
     }
 }
 
