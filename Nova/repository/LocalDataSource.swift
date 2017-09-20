@@ -26,38 +26,50 @@ import RxSwift
 
 class LocalDataSource {
     
-    /// Asynchroniously cache tickers into Realm
+    let defaultSortOrder = [SortDescriptor(keyPath: "isPinned", ascending: false), SortDescriptor(keyPath: "marketCapUsd", ascending: false)]
+    
+    /// Asyncroniously cache tickers into Realm
+    func saveTickersAsync(tickers: [Ticker]) {
+        DispatchQueue(label: "realm").async {
+            autoreleasepool {
+                self.saveTickers(tickers: tickers)
+            }
+        }
+    }
+    
+    /// Synchroniously cache tickers into Realm
     func saveTickers(tickers: [Ticker]) {
-        
         let realm = try! Realm()
-        
+
         try! realm.write {
             for ticker in tickers {
-                
-                if let currentTicker = realm.object(ofType: Ticker.self, forPrimaryKey: ticker.symbol) {
-                    ticker.isPinned.value = currentTicker.isPinned.value
-                }
-                
-                realm.add(ticker, update: true)
+                realm.create(Ticker.self, value: ticker.toDictionary(), update: true)
             }
         }
     }
     
     /// Return all tickers cached in Realm
+    /// - Ordered by market cap, pinned tickers first
     func getAllTickers() -> Observable<[Ticker]> {
-        // TODO: STUB
-        return Observable.just([])
+        let realm = try! Realm()
+        
+        let tickers = realm
+            .objects(Ticker.self)
+            .sorted(by: defaultSortOrder)
+        
+        return Observable.array(from: tickers)
     }
     
     /// Get pinned tickers sorted by orderIndex
-    func getPinnedTickers() -> Observable<Results<Ticker>> {
+    func getPinnedTickers() -> Observable<[Ticker]> {
         let realm = try! Realm()
         
         let pinnedTickers = realm
             .objects(Ticker.self)
             .filter("isPinned = true")
+            .sorted(by: defaultSortOrder)
         
-        return Observable.collection(from: pinnedTickers)
+        return Observable.array(from: pinnedTickers)
     }
     
     /// Set ticker as pinned (show in menu bar)

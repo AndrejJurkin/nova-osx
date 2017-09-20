@@ -38,5 +38,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let realmConfig = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
         Realm.Configuration.defaultConfiguration = realmConfig
     }
+    
+    func clearRealm() {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.deleteAll()
+        }
+    }
 }
 

@@ -43,7 +43,7 @@ class Ticker: RealmObject, EVReflectable {
     dynamic var changeLastWeek: Float = 0
     dynamic var lastUpdated: Double = 0
     
-    let isPinned = RealmOptional<Bool>()
+    dynamic var isPinned = false
     
     override static func primaryKey() -> String? {
         return "symbol"
@@ -54,8 +54,30 @@ class Ticker: RealmObject, EVReflectable {
             (keyInObject: "dailyVolume", keyInResource: "24h_volume_usd"),
             (keyInObject: "changeLastHour", keyInResource: "percent_change_1h"),
             (keyInObject: "changeLastDay", keyInResource: "percent_change_24h"),
-            (keyInObject: "changeLastWeek", keyInResource: "percent_change_7d")
+            (keyInObject: "changeLastWeek", keyInResource: "percent_change_7d"),
+            
+            // Ignored
+            (keyInObject: "isPinned", keyInResource: nil)
         ]
     }
     
+    /// Update Realm with dictionary to prevent from overwriting ignored properties
+    func toDictionary() -> [String: Any] {
+        return [
+            "id": id,
+            "symbol": symbol,
+            "name": name,
+            "rank": rank,
+            "priceUsd": priceUsd,
+            "priceBtc": priceBtc,
+            "dailyVolume": dailyVolume,
+            "marketCapUsd": marketCapUsd,
+            "availableSupply": availableSupply,
+            "totalSupply": totalSupply,
+            "changeLastHour": changeLastHour,
+            "changeLastDay": changeLastDay,
+            "changeLastWeek": changeLastWeek,
+            "lastUpdated": lastUpdated,
+        ]
+    }
 }
