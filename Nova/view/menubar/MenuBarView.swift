@@ -46,6 +46,7 @@ class MenuBarView: NSObject {
         self.bindUi()
         
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
+        
         let popoverViewController = storyboard.instantiateController(
             withIdentifier: "popover") as! TickerListViewController
         

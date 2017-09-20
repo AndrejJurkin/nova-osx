@@ -38,8 +38,8 @@ class RemoteDataSource {
     
     /// Get all available tickers from CoinMarketCap
     func getAllTickers() -> Observable<[Ticker]> {
-        
         return self.coinMarketCapProvider.request(.allTickers)
+            .observeOn(Schedulers.backgroundInteractive)
             .map(toArray: Ticker.self)
     }
     

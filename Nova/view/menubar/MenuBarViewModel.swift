@@ -30,16 +30,22 @@ class MenuBarViewModel {
     
     var menuBarText = Variable("N O V A")
     
-    var pinnedSymbols: Variable<[String]> = Variable([])
-    
-    var isRefreshing = Variable<Bool>(false)
-    
-    var pinnedCurrencies = Variable<[String: Double]>([:])
-    
     let disposeBag = DisposeBag()
     
     init() {
-        
+        self.repo.getPinnedTickers()
+            .subscribe(onNext: { tickers in
+                var menuBarText = ""
+                
+                for ticker in tickers {
+                    let priceFormat = ticker.priceUsd < 1 ? "%.4f" : "%.2f"
+                    let priceFormatted = String(format: priceFormat, ticker.priceUsd)
+                    menuBarText.append("\(ticker.symbol) \(priceFormatted)   ")
+                }
+                
+                self.menuBarText.value = menuBarText.trim()
+            })
+            .addDisposableTo(disposeBag)
     }
     
     /// Subscribe for ticker updates
@@ -56,8 +62,7 @@ class MenuBarViewModel {
                 guard response.success == true, let ticker = response.ticker else {
                     return
                 }
-                
-                self.pinnedCurrencies.value[ticker.base] = ticker.price
+                // TODO: Update Realm
             })
             .addDisposableTo(disposeBag)
     }
