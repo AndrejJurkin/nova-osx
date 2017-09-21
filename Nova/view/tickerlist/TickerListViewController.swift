@@ -33,6 +33,8 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
     
     @IBOutlet weak var refreshButton: NSButton!
     
+    @IBOutlet var settingsMenu: NSMenu!
+    
     var viewModel = Injector.inject(type: TickerListViewModel.self)
     
     var disposeBag = DisposeBag()
@@ -54,11 +56,11 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
             }
             
             if isRefreshing {
-                // TODO: show activity indicator
                 self.refreshButton.isEnabled = false
+                self.startRefreshAnimation()
             } else {
-                // TODO: hide activity indicator
                 self.refreshButton.isEnabled = true
+                self.stopRefreshAnimation()
             }
         }
         .addDisposableTo(disposeBag)
@@ -120,6 +122,30 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
     
     @IBAction func onRefreshButtonClick(_ sender: Any) {
         self.viewModel.refresh()
+    }
+
+    @IBAction func onSettingsButtonClick(_ sender: Any) {
+        self.settingsMenu.popUp(positioning: self.settingsMenu.item(at: 0),
+                                at: NSEvent.mouseLocation(), in: nil)
+    }
+    
+    func startRefreshAnimation() {
+        let anim = CABasicAnimation(keyPath: "transform.rotation.z")
+        anim.fromValue = 0
+        anim.toValue = -M_PI * 2
+        anim.duration = 0.75
+        anim.repeatCount = HUGE
+        
+        if let frame = self.refreshButton.layer?.frame {
+            let center = CGPoint(x: frame.midX, y: frame.midY)
+            self.refreshButton.layer?.position = center
+            self.refreshButton.layer?.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+            self.refreshButton.layer?.add(anim, forKey: nil)
+        }
+    }
+    
+    func stopRefreshAnimation() {
+         self.refreshButton.layer?.removeAllAnimations()
     }
 }
 
