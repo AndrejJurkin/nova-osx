@@ -60,13 +60,11 @@ class Injector {
     private func registerProviders() {
         
         self.mainContainer.register(RxMoyaProvider<CoinMarketCapProvider>.self) { _ in
-            let plugins = [NetworkLoggerPlugin()]
-            return RxMoyaProvider<CoinMarketCapProvider>(plugins: plugins)
+            return RxMoyaProvider<CoinMarketCapProvider>()
         }
         
         self.mainContainer.register(RxMoyaProvider<CryptonatorProvider>.self) { _ in
-            let plugins = [NetworkLoggerPlugin()]
-            return RxMoyaProvider<CryptonatorProvider>(plugins: plugins)
+            return RxMoyaProvider<CryptonatorProvider>()
         }
     }
     

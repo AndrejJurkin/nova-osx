@@ -59,6 +59,7 @@ class TickerListViewModel {
     private let imageUrlFormat = "https://files.coinmarketcap.com/static/img/coins/128x128/%@.png"
     
     init() {
+        
         self.repo.getAllTickers()
             .subscribe(onNext: { tickers in
                 self.data = tickers
@@ -74,7 +75,9 @@ class TickerListViewModel {
             .subscribe(onNext: { searchStr in
                 self.filterData(query: searchStr)
             })
-            .addDisposableTo(disposeBag)
+            .addDisposableTo(disposeBag)       
+        
+        self.repo.subscribeForTickerUpdates(base: "BTC")
     }
     
     /// Get single ticker for tableview row

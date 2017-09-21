@@ -47,24 +47,4 @@ class MenuBarViewModel {
             })
             .addDisposableTo(disposeBag)
     }
-    
-    /// Subscribe for ticker updates
-    ///
-    /// - parameters:
-    ///    - base: The base currency symbol (1 base unit is priced at x target units)
-    ///    - refreshInterval: The ticker refresh interval in seconds
-    func subscribeForTickerUpdates(base: String, refreshInterval: Float) {
-        Observable<Int>.interval(RxTimeInterval(refreshInterval), scheduler: MainScheduler.instance)
-            .flatMap { _ -> Observable<CryptonatorTickerResponse> in
-                return Api.shared.getTicker(base: base, target: self.prefs.targetCurrency)
-            }
-            .subscribe(onNext: { response in
-                guard response.success == true, let ticker = response.ticker else {
-                    return
-                }
-                // TODO: Update Realm
-            })
-            .addDisposableTo(disposeBag)
-    }
-
 }

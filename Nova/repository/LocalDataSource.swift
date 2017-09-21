@@ -48,6 +48,23 @@ class LocalDataSource {
         }
     }
     
+    /// Cache a single ticker into Realm
+    func saveTicker(ticker: Ticker) {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.create(Ticker.self, value: ticker.toDictionary(), update: true)
+        }
+    }
+    
+    func updatePrice(symbol: String, newPrice: Double) {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.create(Ticker.self, value: ["symbol": symbol, "priceUsd": newPrice], update: true)
+        }
+    }
+    
     /// Return all tickers cached in Realm
     /// - Ordered by market cap, pinned tickers first
     func getAllTickers() -> Observable<[Ticker]> {
@@ -68,8 +85,19 @@ class LocalDataSource {
             .objects(Ticker.self)
             .filter("isPinned = true")
             .sorted(by: defaultSortOrder)
-        
+
         return Observable.array(from: pinnedTickers)
+    }
+    
+    func isTickerPinned(symbol: String) -> Bool {
+        let realm = try! Realm()
+        
+        guard let ticker =
+            realm.object(ofType: Ticker.self, forPrimaryKey: symbol) else {
+                return false
+        }
+        
+        return ticker.isPinned
     }
     
     /// Set ticker as pinned (show in menu bar)
