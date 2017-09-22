@@ -21,6 +21,7 @@
 		0AB59B0C1F69A6AD00798BBB /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB59B0B1F69A6AD00798BBB /* MenuBarView.swift */; };
 		0AB59B0E1F69A6B300798BBB /* MenuBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB59B0D1F69A6B300798BBB /* MenuBarViewModel.swift */; };
 		0AB59B111F69A80900798BBB /* Prefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB59B101F69A80900798BBB /* Prefs.swift */; };
+		0ACB1FA11F74F430009C3D2D /* CryptoCompareProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACB1FA01F74F430009C3D2D /* CryptoCompareProvider.swift */; };
 		0AF23FA11F5BEC4200AB0D15 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF23FA01F5BEC4200AB0D15 /* Ticker.swift */; };
 		771EBD911F72BE6F00F756ED /* Schedulers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771EBD901F72BE6F00F756ED /* Schedulers.swift */; };
 		7763D05B1F6FAA0C009EE03E /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7763D05A1F6FAA0C009EE03E /* RemoteDataSource.swift */; };
@@ -61,6 +62,7 @@
 		0AB59B0B1F69A6AD00798BBB /* MenuBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
 		0AB59B0D1F69A6B300798BBB /* MenuBarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBarViewModel.swift; sourceTree = "<group>"; };
 		0AB59B101F69A80900798BBB /* Prefs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prefs.swift; sourceTree = "<group>"; };
+		0ACB1FA01F74F430009C3D2D /* CryptoCompareProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoCompareProvider.swift; sourceTree = "<group>"; };
 		0AF23FA01F5BEC4200AB0D15 /* Ticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		207457C11AEF35045A801412 /* Pods-Nova.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nova.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nova/Pods-Nova.release.xcconfig"; sourceTree = "<group>"; };
 		4AC2ED320E03871B42E360B4 /* Pods_Nova.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nova.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,8 +123,8 @@
 				7763D05F1F6FB683009EE03E /* Injector.swift */,
 				0A2D3E561F5B4EAE002510BA /* data */,
 				7763D0561F6FA888009EE03E /* repository */,
-				7763D0651F6FD043009EE03E /* support */,
 				0A924C8F1F5C516300A8875E /* view */,
+				7763D0651F6FD043009EE03E /* support */,
 				0A2D3E391F5AC429002510BA /* Assets.xcassets */,
 				0A2D3E3E1F5AC429002510BA /* Info.plist */,
 				0A2D3E3B1F5AC429002510BA /* Main.storyboard */,
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				0A924C8D1F5C4BDF00A8875E /* Api.swift */,
+				0ACB1F9E1F74F296009C3D2D /* cryptocompare */,
 				777467491F681E5A00F01AF3 /* coinmarketcap */,
 				7774674A1F681E7900F01AF3 /* cryptonator */,
 			);
@@ -175,6 +178,14 @@
 				0AB59B0D1F69A6B300798BBB /* MenuBarViewModel.swift */,
 			);
 			path = menubar;
+			sourceTree = "<group>";
+		};
+		0ACB1F9E1F74F296009C3D2D /* cryptocompare */ = {
+			isa = PBXGroup;
+			children = (
+				0ACB1FA01F74F430009C3D2D /* CryptoCompareProvider.swift */,
+			);
+			name = cryptocompare;
 			sourceTree = "<group>";
 		};
 		7763D0561F6FA888009EE03E /* repository */ = {
@@ -394,6 +405,7 @@
 				0A2D3E551F5AFA2A002510BA /* Constants.swift in Sources */,
 				0A2D3E381F5AC429002510BA /* TickerListViewController.swift in Sources */,
 				0A924C8E1F5C4BDF00A8875E /* Api.swift in Sources */,
+				0ACB1FA11F74F430009C3D2D /* CryptoCompareProvider.swift in Sources */,
 				777467461F681CF400F01AF3 /* CryptonatorProvider.swift in Sources */,
 				0AB59B0E1F69A6B300798BBB /* MenuBarViewModel.swift in Sources */,
 				0AF23FA11F5BEC4200AB0D15 /* Ticker.swift in Sources */,
