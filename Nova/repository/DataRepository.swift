@@ -105,30 +105,23 @@ class DataRepository {
         return self.remote.getTicker(base: base, target: target)
     }
     
-    /// Subscribe for ticker updates
-    ///
-    /// - parameters:
-    ///    - base: The base currency symbol (BTC, ETH, XRP...)
-    ///            one base unit is priced at x target units,
-    ///    - refreshInterval: The ticker refresh interval in seconds (min. and default 30.0)
-    func subscribeForTickerUpdates(base: String, refreshInterval: Float = 5.0) {
+    
+    func subscribeForTickerUpdates(baseSymbols: [String], refreshInterval: Float = 15.0) {
+        self.disposeRefreshSubscriptions()
+        
         Observable<Int>.interval(RxTimeInterval(refreshInterval), scheduler: Schedulers.background)
             // Query Cryptonator api for an update
-            .flatMap { _ -> Observable<CryptonatorTickerResponse> in
+            .flatMap { _ -> Observable<[String: [String: Double]]> in
                 
-                return self.remote.getTicker(base: base, target: self.prefs.targetCurrency)
+                return self.remote.getTickers(base: baseSymbols)
             }
-            // Unsubscribe on error response or if ticker is no longed pinned
-            .takeWhile { response in
-                response.success == true && self.local.isTickerPinned(symbol: base)
-            }
-            // Update local db on response
-            .subscribe(onNext: { response in
-                guard response.success == true, let ticker = response.ticker else {
-                    return
+            .subscribe(onNext: { tickers in
+                for (key, prices) in tickers {
+                    if let updatedPrice = prices["USD"] {
+                        self.local.updateTickerPrice(symbol: key, newPrice: updatedPrice)
+                    }
                 }
-                self.local.updatePrice(symbol: ticker.base, newPrice: ticker.price)
-            }, onCompleted: { _ in print("ON COMPLETED")})
+            })
             .addDisposableTo(refreshSubscriptions)
     }
     

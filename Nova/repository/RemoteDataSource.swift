@@ -27,13 +27,16 @@ class RemoteDataSource {
     
     private var coinMarketCapProvider: RxMoyaProvider<CoinMarketCapProvider>
     private var cryptonatorProvider: RxMoyaProvider<CryptonatorProvider>
+    private var cryptoCompareProvider: RxMoyaProvider<CryptoCompareProvider>
     private let providerPlugins = [NetworkLoggerPlugin()]
     
     init(coinMarketCapProvider: RxMoyaProvider<CoinMarketCapProvider>,
-         cryptonatorProvider: RxMoyaProvider<CryptonatorProvider>) {
+         cryptonatorProvider: RxMoyaProvider<CryptonatorProvider>,
+         cryptoCompareProvider: RxMoyaProvider<CryptoCompareProvider>) {
         
         self.coinMarketCapProvider = coinMarketCapProvider
         self.cryptonatorProvider = cryptonatorProvider
+        self.cryptoCompareProvider = cryptoCompareProvider
     }
     
     /// Get all available tickers from CoinMarketCap
@@ -61,12 +64,28 @@ class RemoteDataSource {
     ///
     /// Endpoint updates every 30s
     ///
-    /// - Parameters:
+    /// - parameters:
     ///    - base: The base currency symbol (1 base unit is priced at x target units)
     ///    - target: The target currency symbol
     func getTicker(base: String, target: String) -> Observable<CryptonatorTickerResponse> {
         
         return self.cryptonatorProvider.request(.ticker(base: base, target: target))
             .map(to: CryptonatorTickerResponse.self)
+    }
+    
+    /// Get tickers from CryptoCompare api
+    /// 
+    /// - parameters:
+    ///    - base: The array of ticker symbols (BTC, ETH, XRP...)
+    ///    - target: The optional array of fiat target symbols we are converting into (USD, EUR...)
+    ///              Defaults to [\"USD\"]
+    func getTickers(base: [String], target: [String] = ["USD"]) -> Observable<[String: [String: Double]]> {
+        
+        return self.cryptoCompareProvider
+            .request(.priceMulti(fromSymbols: base, toSymbols: target))
+            .map { response in
+                return try! JSONSerialization.jsonObject(
+                    with: response.data, options: []) as! [String: [String: Double]]
+            }
     }
 }

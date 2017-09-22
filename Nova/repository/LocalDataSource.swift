@@ -57,7 +57,7 @@ class LocalDataSource {
         }
     }
     
-    func updatePrice(symbol: String, newPrice: Double) {
+    func updateTickerPrice(symbol: String, newPrice: Double) {
         let realm = try! Realm()
         
         try! realm.write {

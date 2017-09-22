@@ -36,13 +36,17 @@ class MenuBarViewModel {
         self.repo.getPinnedTickers()
             .subscribe(onNext: { tickers in
                 var menuBarText = ""
+                var tickerSymbols: [String] = []
                 
                 for ticker in tickers {
                     let priceFormat = ticker.priceUsd < 1 ? "%.4f" : "%.2f"
                     let priceFormatted = String(format: priceFormat, ticker.priceUsd)
                     menuBarText.append("\(ticker.symbol) \(priceFormatted)   ")
+                    
+                    tickerSymbols.append(ticker.symbol)
                 }
                 
+                self.repo.subscribeForTickerUpdates(baseSymbols: tickerSymbols)
                 self.menuBarText.value = menuBarText.trim()
             })
             .addDisposableTo(disposeBag)

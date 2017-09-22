@@ -76,8 +76,6 @@ class TickerListViewModel {
                 self.filterData(query: searchStr)
             })
             .addDisposableTo(disposeBag)       
-        
-        self.repo.subscribeForTickerUpdates(base: "BTC")
     }
     
     /// Get single ticker for tableview row
