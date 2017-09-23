@@ -47,7 +47,7 @@ class Injector {
     
     // MARK: Global dependencies
     private func registerGlobalDependencies() {
-        
+
         self.mainContainer.register(AppDelegate.self, factory: { _ in
             return NSApp.delegate as! AppDelegate
         })
@@ -68,7 +68,7 @@ class Injector {
         }
         
         self.mainContainer.register(RxMoyaProvider<CryptoCompareProvider>.self) { _ in
-            return RxMoyaProvider<CryptoCompareProvider>(plugins: [NetworkLoggerPlugin()])
+            return RxMoyaProvider<CryptoCompareProvider>()
         }
     }
     
