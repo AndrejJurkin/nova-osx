@@ -28,6 +28,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     var menuBarView: MenuBarView?
     
+    static func shared() -> AppDelegate {
+        return NSApp.delegate as! AppDelegate
+    }
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         self.initRealm()
         self.menuBarView = MenuBarView()

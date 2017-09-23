@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1611" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
         <capability name="box content view" minToolsVersion="7.0"/>
-        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <scenes>
@@ -734,6 +733,14 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ic_search" id="xgd-8h-VAT"/>
                                         </imageView>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cew-eD-heY">
+                                            <rect key="frame" x="14" y="53" width="53" height="23"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="N O V A" id="2ZQ-XW-NBY">
+                                                <font key="font" size="13" name="Avenir-Book"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="Nr9-VT-OSO" secondAttribute="trailing" constant="16" id="756-9m-3vH"/>
@@ -741,6 +748,8 @@
                                         <constraint firstAttribute="bottom" secondItem="IQT-Iw-9za" secondAttribute="bottom" id="Jai-Ne-sox"/>
                                         <constraint firstItem="Nr9-VT-OSO" firstAttribute="top" secondItem="wWS-93-A7b" secondAttribute="top" constant="16" id="MdB-jg-9dZ"/>
                                         <constraint firstItem="IQT-Iw-9za" firstAttribute="leading" secondItem="wWS-93-A7b" secondAttribute="leading" id="PCn-wg-QJP"/>
+                                        <constraint firstItem="cew-eD-heY" firstAttribute="top" secondItem="wWS-93-A7b" secondAttribute="top" constant="12" id="hX6-o3-jQb"/>
+                                        <constraint firstItem="cew-eD-heY" firstAttribute="leading" secondItem="wWS-93-A7b" secondAttribute="leading" constant="16" id="jFw-54-LzA"/>
                                     </constraints>
                                 </view>
                                 <constraints>
@@ -937,9 +946,15 @@
                                 <items>
                                     <menuItem title="License Agreement" id="1nU-P6-o6F">
                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="onLicenseClick:" target="XfG-lQ-9wD" id="WB3-R9-JFJ"/>
+                                        </connections>
                                     </menuItem>
                                     <menuItem title="Acknowledgements" id="hrG-yk-3xP">
                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="onAcknowledgementsClick:" target="XfG-lQ-9wD" id="MTO-pU-a9U"/>
+                                        </connections>
                                     </menuItem>
                                 </items>
                             </menu>

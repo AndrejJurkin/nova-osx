@@ -147,5 +147,25 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
     func stopRefreshAnimation() {
          self.refreshButton.layer?.removeAllAnimations()
     }
+    
+    @IBAction func onLicenseClick(_ sender: AnyObject) {
+       
+        openPdf(resourceName: "license")
+    }
+    
+    @IBAction func onAcknowledgementsClick(_ sender: AnyObject) {
+        
+        openPdf(resourceName: "acknowledgements")
+    }
+    
+    func openPdf(resourceName: String) {
+        AppDelegate.shared().menuBarView?.hidePopover()
+        
+        if let pdfURL = Bundle.main.url(forResource: resourceName, withExtension: "pdf"){
+            if NSWorkspace.shared().open(pdfURL) {
+                print("pdf successfully opened")
+            }
+        }
+    }
 }
 

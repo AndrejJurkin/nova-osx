@@ -22,6 +22,8 @@
 		0AB59B0E1F69A6B300798BBB /* MenuBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB59B0D1F69A6B300798BBB /* MenuBarViewModel.swift */; };
 		0AB59B111F69A80900798BBB /* Prefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB59B101F69A80900798BBB /* Prefs.swift */; };
 		0ACB1FA11F74F430009C3D2D /* CryptoCompareProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACB1FA01F74F430009C3D2D /* CryptoCompareProvider.swift */; };
+		0ACE435E1F769A41008059A7 /* license.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0ACE435D1F769A41008059A7 /* license.pdf */; };
+		0ACE43601F769A5D008059A7 /* acknowledgements.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0ACE435F1F769A5D008059A7 /* acknowledgements.pdf */; };
 		0AF23FA11F5BEC4200AB0D15 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF23FA01F5BEC4200AB0D15 /* Ticker.swift */; };
 		771EBD911F72BE6F00F756ED /* Schedulers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771EBD901F72BE6F00F756ED /* Schedulers.swift */; };
 		7763D05B1F6FAA0C009EE03E /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7763D05A1F6FAA0C009EE03E /* RemoteDataSource.swift */; };
@@ -63,6 +65,8 @@
 		0AB59B0D1F69A6B300798BBB /* MenuBarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBarViewModel.swift; sourceTree = "<group>"; };
 		0AB59B101F69A80900798BBB /* Prefs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prefs.swift; sourceTree = "<group>"; };
 		0ACB1FA01F74F430009C3D2D /* CryptoCompareProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoCompareProvider.swift; sourceTree = "<group>"; };
+		0ACE435D1F769A41008059A7 /* license.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = license.pdf; sourceTree = "<group>"; };
+		0ACE435F1F769A5D008059A7 /* acknowledgements.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = acknowledgements.pdf; sourceTree = "<group>"; };
 		0AF23FA01F5BEC4200AB0D15 /* Ticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		207457C11AEF35045A801412 /* Pods-Nova.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nova.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nova/Pods-Nova.release.xcconfig"; sourceTree = "<group>"; };
 		4AC2ED320E03871B42E360B4 /* Pods_Nova.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nova.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,6 +191,15 @@
 			path = cryptocompare;
 			sourceTree = "<group>";
 		};
+		0AF9200E1F76935B00C62EBA /* pdf */ = {
+			isa = PBXGroup;
+			children = (
+				0ACE435F1F769A5D008059A7 /* acknowledgements.pdf */,
+				0ACE435D1F769A41008059A7 /* license.pdf */,
+			);
+			name = pdf;
+			sourceTree = "<group>";
+		};
 		7763D0561F6FA888009EE03E /* repository */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +213,7 @@
 		7763D0651F6FD043009EE03E /* support */ = {
 			isa = PBXGroup;
 			children = (
+				0AF9200E1F76935B00C62EBA /* pdf */,
 				0A2D3E541F5AFA2A002510BA /* Constants.swift */,
 				0AB59B091F699CF400798BBB /* Extensions.swift */,
 				0AB59B101F69A80900798BBB /* Prefs.swift */,
@@ -334,7 +348,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A2D3E3A1F5AC429002510BA /* Assets.xcassets in Resources */,
+				0ACE435E1F769A41008059A7 /* license.pdf in Resources */,
 				0A2D3E3D1F5AC429002510BA /* Main.storyboard in Resources */,
+				0ACE43601F769A5D008059A7 /* acknowledgements.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
