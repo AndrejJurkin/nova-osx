@@ -37,6 +37,8 @@ class MenuBarView: NSObject {
     
     let disposeBag = DisposeBag()
     
+    private var eventMonitor: EventMonitor?
+    
     override init() {
         super.init()
         
@@ -51,6 +53,13 @@ class MenuBarView: NSObject {
             withIdentifier: "popover") as! TickerListViewController
         
         self.popover.contentViewController = popoverViewController
+        
+        // Close popover on any click outside of the app
+        self.eventMonitor = EventMonitor(
+            mask: [.leftMouseDown, .rightMouseDown],
+            handler: { [weak self] event in
+                self?.hidePopover()
+            })
     }
     
     func togglePopover() {
@@ -64,11 +73,13 @@ class MenuBarView: NSObject {
     func showPopover() {
         if let button = statusItem.button {
             self.popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
+            self.eventMonitor?.start()
         }
     }
     
     func hidePopover() {
         self.popover.performClose(nil)
+        self.eventMonitor?.stop()
     }
     
     func setStatusItemTitle(title: String) {

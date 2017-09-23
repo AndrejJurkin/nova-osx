@@ -15,6 +15,7 @@
 		0A2D3E551F5AFA2A002510BA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2D3E541F5AFA2A002510BA /* Constants.swift */; };
 		0A2D3E5A1F5B4F24002510BA /* CoinMarketCapProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2D3E591F5B4F24002510BA /* CoinMarketCapProvider.swift */; };
 		0A52028E1F65631E00F71C1E /* TickerListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A52028D1F65631E00F71C1E /* TickerListCellView.swift */; };
+		0A8F66381F766B2F00723F8F /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8F66371F766B2F00723F8F /* EventMonitor.swift */; };
 		0A924C921F5C54D100A8875E /* TickerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A924C911F5C54D100A8875E /* TickerListViewModel.swift */; };
 		0AB59B0A1F699CF400798BBB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB59B091F699CF400798BBB /* Extensions.swift */; };
 		0AB59B0C1F69A6AD00798BBB /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB59B0B1F69A6AD00798BBB /* MenuBarView.swift */; };
@@ -55,6 +56,7 @@
 		0A2D3E541F5AFA2A002510BA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0A2D3E591F5B4F24002510BA /* CoinMarketCapProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinMarketCapProvider.swift; sourceTree = "<group>"; };
 		0A52028D1F65631E00F71C1E /* TickerListCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerListCellView.swift; sourceTree = "<group>"; };
+		0A8F66371F766B2F00723F8F /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		0A924C911F5C54D100A8875E /* TickerListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerListViewModel.swift; sourceTree = "<group>"; };
 		0AB59B091F699CF400798BBB /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0AB59B0B1F69A6AD00798BBB /* MenuBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				0AB59B091F699CF400798BBB /* Extensions.swift */,
 				0AB59B101F69A80900798BBB /* Prefs.swift */,
 				771EBD901F72BE6F00F756ED /* Schedulers.swift */,
+				0A8F66371F766B2F00723F8F /* EventMonitor.swift */,
 			);
 			path = support;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				777467481F681D1700F01AF3 /* CryptonatorTicker.swift in Sources */,
 				7763D05D1F6FAA18009EE03E /* LocalDataSource.swift in Sources */,
 				7763D05B1F6FAA0C009EE03E /* RemoteDataSource.swift in Sources */,
+				0A8F66381F766B2F00723F8F /* EventMonitor.swift in Sources */,
 				0A52028E1F65631E00F71C1E /* TickerListCellView.swift in Sources */,
 				0A2D3E5A1F5B4F24002510BA /* CoinMarketCapProvider.swift in Sources */,
 				0A2D3E361F5AC429002510BA /* AppDelegate.swift in Sources */,

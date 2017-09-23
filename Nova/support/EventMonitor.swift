@@ -14,36 +14,40 @@
 //  limitations under the License.
 //
 //
-//  AppDelegate.swift
+//  EventMonitor.swift
 //  Nova
 //
-//  Created by Andrej Jurkin on 9/3/17.
+//  Created by Andrej Jurkin on 9/23/17.
 //
-import Cocoa
-import RxSwift
-import RealmSwift
 
-@NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+import Foundation
+import Cocoa
+
+public class EventMonitor {
     
-    var menuBarView: MenuBarView?
+    private var monitor: Any?
     
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-        self.initRealm()
-        self.menuBarView = MenuBarView()
+    private let mask: NSEventMask
+    
+    private let handler: (NSEvent) -> ()
+    
+    public init(mask: NSEventMask, handler: @escaping (NSEvent) -> ()) {
+        self.mask = mask
+        self.handler = handler
     }
     
-    func initRealm() {
-        let realmConfig = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
-        Realm.Configuration.defaultConfiguration = realmConfig
+    deinit {
+        self.stop()
     }
     
-    func clearRealm() {
-        let realm = try! Realm()
-        
-        try! realm.write {
-            realm.deleteAll()
+    func start() {
+        self.monitor = NSEvent.addGlobalMonitorForEvents(matching: mask, handler: handler)
+    }
+    
+    func stop() {
+        if let monitor = self.monitor {
+            NSEvent.removeMonitor(monitor)
+            self.monitor = nil
         }
     }
 }
-
