@@ -31,6 +31,10 @@ struct C {
 /// Resource constants
 struct R {
     
+    struct String {
+        static let appName = "N O V A"
+    }
+    
     struct Color {
         static let primary = NSColor(rgb: 0x193C56)
         static let primaryLight = NSColor(rgb: 0xEEEEEB)

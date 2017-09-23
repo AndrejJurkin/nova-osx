@@ -29,10 +29,10 @@ class DataRepository {
     private var local: LocalDataSource
 
     private var remote: RemoteDataSource
-    
-    private var disposeBag = DisposeBag()
 
     private var prefs: Prefs
+    
+    private var disposeBag = DisposeBag()
     
     private var refreshSubscriptions = DisposeBag()
    
@@ -62,6 +62,9 @@ class DataRepository {
     /// - Query remote repository for update and cache into Realm
     /// - Changes in Realm will automatically trigger update of UI
     /// - Sorted by market cap
+    ///
+    /// - returns:
+    /// An observable of type `Ticker`
     func getAllTickers() -> Observable<[Ticker]> {
         self.remote.getAllTickers()
             .observeOn(MainScheduler.instance)
@@ -74,6 +77,9 @@ class DataRepository {
     }
     
     /// Get all tickers from remote repository
+    ///
+    /// - returns:
+    /// An empty observable to notify the UI when finished
     func refreshAllTickers() -> Observable<Void> {
         return self.remote.getAllTickers()
             // Cache into Realm
@@ -100,12 +106,22 @@ class DataRepository {
     /// - parameters:
     ///    - base: The base currency symbol (1 base unit is priced at x target units)
     ///    - target: The target currency symbol
+    ///
+    /// - returns:
+    /// An Observable of type `CryptonatorTickerResponse`
     func getTicker(base: String, target: String) -> Observable<CryptonatorTickerResponse> {
 
         return self.remote.getTicker(base: base, target: target)
     }
     
     
+    /// Request fresh prices from CryptoCompare api
+    /// Update local repository on response
+    ///
+    /// - parameters: 
+    ///    - baseSymbols: The array of crypto currency symbols (BTC, ETH, XRP...)
+    ///    - refreshInterval: The refresh interval in seconds
+    ///                       Default value is 15 seconds
     func subscribeForTickerUpdates(baseSymbols: [String], refreshInterval: Float = 15.0) {
         self.disposeRefreshSubscriptions()
         
@@ -125,7 +141,8 @@ class DataRepository {
             .addDisposableTo(refreshSubscriptions)
     }
     
-    private func disposeRefreshSubscriptions() {
+    /// Terminate all running refresh subscriptions
+    func disposeRefreshSubscriptions() {
         self.refreshSubscriptions = DisposeBag()
     }
 }

@@ -28,13 +28,19 @@ class MenuBarViewModel {
     
     let prefs = Injector.inject(type: Prefs.self)
     
-    var menuBarText = Variable("N O V A")
+    var menuBarText = Variable(R.String.appName)
     
     let disposeBag = DisposeBag()
     
     init() {
         self.repo.getPinnedTickers()
             .subscribe(onNext: { tickers in
+                guard tickers.count > 0 else {
+                    self.repo.disposeRefreshSubscriptions()
+                    self.menuBarText.value = R.String.appName
+                    return
+                }
+                
                 var menuBarText = ""
                 var tickerSymbols: [String] = []
                 
