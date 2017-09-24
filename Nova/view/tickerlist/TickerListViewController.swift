@@ -91,7 +91,24 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
             })
             .addDisposableTo(disposeBag)
     }
- 
+    
+    @IBAction func onRefreshButtonClick(_ sender: Any) {
+        self.viewModel.refresh()
+    }
+    
+    @IBAction func onSettingsButtonClick(_ sender: Any) {
+        self.settingsMenu.popUp(positioning: self.settingsMenu.item(at: 0),
+                                at: NSEvent.mouseLocation(), in: nil)
+    }
+    
+    @IBAction func onLicenseClick(_ sender: AnyObject) {
+        self.openPdf(resourceName: "license")
+    }
+    
+    @IBAction func onAcknowledgementsClick(_ sender: AnyObject) {
+        self.openPdf(resourceName: "acknowledgements")
+    }
+
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
         let view = tableView.make(withIdentifier: "Cell", owner: self) as! TickerListCellView
@@ -120,15 +137,6 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
         self.viewModel.pinStatusChanged(row: sender.tag, pinned: sender.state == 1)
     }
     
-    @IBAction func onRefreshButtonClick(_ sender: Any) {
-        self.viewModel.refresh()
-    }
-
-    @IBAction func onSettingsButtonClick(_ sender: Any) {
-        self.settingsMenu.popUp(positioning: self.settingsMenu.item(at: 0),
-                                at: NSEvent.mouseLocation(), in: nil)
-    }
-    
     func startRefreshAnimation() {
         let anim = CABasicAnimation(keyPath: "transform.rotation.z")
         anim.fromValue = 0
@@ -147,24 +155,13 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
     func stopRefreshAnimation() {
          self.refreshButton.layer?.removeAllAnimations()
     }
-    
-    @IBAction func onLicenseClick(_ sender: AnyObject) {
-       
-        openPdf(resourceName: "license")
-    }
-    
-    @IBAction func onAcknowledgementsClick(_ sender: AnyObject) {
-        
-        openPdf(resourceName: "acknowledgements")
-    }
+
     
     func openPdf(resourceName: String) {
         AppDelegate.shared().menuBarView?.hidePopover()
         
         if let pdfURL = Bundle.main.url(forResource: resourceName, withExtension: "pdf"){
-            if NSWorkspace.shared().open(pdfURL) {
-                print("pdf successfully opened")
-            }
+            NSWorkspace.shared().open(pdfURL)
         }
     }
 }

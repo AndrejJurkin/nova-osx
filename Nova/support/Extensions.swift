@@ -65,6 +65,7 @@ extension NSTextField {
             }
         }
     }
+    
 }
 
 extension String {

@@ -32,6 +32,10 @@ class DataRepository {
 
     private var prefs: Prefs
     
+    private var tickerUpdateSubscription: Disposable?
+    
+    private var globalRefreshSubscription: Disposable?
+    
     private var disposeBag = DisposeBag()
     
     private var refreshSubscriptions = DisposeBag()
@@ -59,6 +63,7 @@ class DataRepository {
     }
     
     /// Get all cached tickers from Realm
+    ///
     /// - Query remote repository for update and cache into Realm
     /// - Changes in Realm will automatically trigger update of UI
     /// - Sorted by market cap
@@ -120,12 +125,13 @@ class DataRepository {
     ///
     /// - parameters: 
     ///    - baseSymbols: The array of crypto currency symbols (BTC, ETH, XRP...)
-    ///    - refreshInterval: The refresh interval in seconds
-    ///                       Default value is 15 seconds
+    ///    - refreshInterval: 
+    ///      The refresh interval in seconds. Default value is 15 seconds.
     func subscribeForTickerUpdates(baseSymbols: [String], refreshInterval: Float = 15.0) {
-        self.disposeRefreshSubscriptions()
+        self.tickerUpdateSubscription?.dispose()
         
-        Observable<Int>.interval(RxTimeInterval(refreshInterval), scheduler: Schedulers.background)
+        self.tickerUpdateSubscription =
+            Observable<Int>.interval(RxTimeInterval(refreshInterval), scheduler: Schedulers.background)
             // Query Cryptonator api for an update
             .flatMap { _ -> Observable<[String: [String: Double]]> in
                 
@@ -138,7 +144,37 @@ class DataRepository {
                     }
                 }
             })
-            .addDisposableTo(refreshSubscriptions)
+        
+        self.tickerUpdateSubscription?.addDisposableTo(refreshSubscriptions)
+    }
+    
+    /// Request fresh prices from CoinMarketCap
+    /// Update local repository on response
+    /// 
+    /// - parameters:
+    ///    - refreshIntervalMinutes: The refresh interval in minutes.
+    ///    Min. value is 5 minutes, since CMC endpoint refreshes every 5 minutes.
+    func subscribeForGlobalUpdates(refreshIntervalMinutes: Int = 5) {
+        
+        guard refreshIntervalMinutes < 5 else {
+            fatalError("Do not use refrsh interval of less than 5 minutes." +
+                "CoinMarketCap endpoint refreshes every 5 minutes")
+        }
+        
+        self.globalRefreshSubscription?.dispose()
+        
+        self.globalRefreshSubscription =
+            Observable<Int>.interval(RxTimeInterval(refreshIntervalMinutes * 60), scheduler: Schedulers.background)
+            // Query Cryptonator api for an update
+            .flatMap { _ -> Observable<[Ticker]> in
+                
+                return self.remote.getAllTickers()
+            }
+            .subscribe(onNext: { tickers in
+                self.local.saveTickersAsync(tickers: tickers)
+            })
+        
+        self.globalRefreshSubscription?.addDisposableTo(refreshSubscriptions)
     }
     
     /// Terminate all running refresh subscriptions
