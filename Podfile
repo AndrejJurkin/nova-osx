@@ -20,4 +20,5 @@ target 'Nova' do
   pod 'RxRealm'
   pod 'Swinject'
   pod 'SwinjectAutoregistration'
+
 end

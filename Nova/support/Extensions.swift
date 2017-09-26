@@ -26,6 +26,17 @@ import RealmSwift
 
 typealias RealmObject = Object
 
+extension NSViewController {
+    
+    func setTransparentTitle() {
+        self.view.window?.titleVisibility = .hidden
+        self.view.window?.titlebarAppearsTransparent = true
+        self.view.window?.styleMask.insert(.fullSizeContentView)
+        self.view.window?.isOpaque = false
+        self.view.window?.backgroundColor = NSColor.clear
+    }
+}
+
 extension NSColor {
     
     convenience init(red: Int, green: Int, blue: Int) {

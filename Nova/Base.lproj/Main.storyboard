@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1611" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
         <capability name="box content view" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <scenes>
@@ -661,6 +662,115 @@
             </objects>
             <point key="canvasLocation" x="147" y="173"/>
         </scene>
+        <!--Contact View Controller-->
+        <scene sceneID="XS8-bF-QmX">
+            <objects>
+                <viewController id="2ie-Jd-8Tt" customClass="ContactViewController" customModule="Nova" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="dmF-b2-41t">
+                        <rect key="frame" x="0.0" y="0.0" width="313" height="283"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <box boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="PNL-Ce-hE2">
+                                <rect key="frame" x="0.0" y="0.0" width="313" height="283"/>
+                                <view key="contentView" id="rTL-fH-nxY">
+                                    <rect key="frame" x="0.0" y="0.0" width="313" height="283"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kTF-ff-6WI">
+                                            <rect key="frame" x="22" y="226" width="293" height="25"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="C O N T A C T" id="KpN-bL-9xg">
+                                                <font key="font" size="15" name="Avenir-Book"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <imageView translatesAutoresizingMaskIntoConstraints="NO" id="rx6-Sy-hq0">
+                                            <rect key="frame" x="24" y="158" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="JJY-aJ-L4R"/>
+                                                <constraint firstAttribute="height" constant="20" id="f8t-oS-Ky6"/>
+                                            </constraints>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="ic_mail" id="0pa-ey-Zuq"/>
+                                        </imageView>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="szD-E4-Sg2">
+                                            <rect key="frame" x="58" y="161" width="225" height="17"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" title="andrej.jurkin@gmail.com" id="IZS-Qr-yCm">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <imageView translatesAutoresizingMaskIntoConstraints="NO" id="DmL-hg-F3M">
+                                            <rect key="frame" x="24" y="122" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="7dQ-7O-unx"/>
+                                                <constraint firstAttribute="height" constant="20" id="eLO-Z0-USz"/>
+                                            </constraints>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="ic_phone" id="8md-XR-PC5"/>
+                                        </imageView>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2d4-3n-lyB">
+                                            <rect key="frame" x="58" y="125" width="120" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="Xo5-VW-7aH"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" title="(+41) 79 593 02 31" id="XZ3-Qm-rb0">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <imageView translatesAutoresizingMaskIntoConstraints="NO" id="PXk-Wf-Zug">
+                                            <rect key="frame" x="24" y="66" width="24" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="24" id="2bS-Pv-nQA"/>
+                                                <constraint firstAttribute="height" constant="24" id="Ccg-ch-KlB"/>
+                                            </constraints>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="ic_linkedin" id="JYQ-r3-k22"/>
+                                        </imageView>
+                                        <imageView translatesAutoresizingMaskIntoConstraints="NO" id="NTV-2E-brv">
+                                            <rect key="frame" x="64" y="66" width="24" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="24" id="ehG-sU-JKa"/>
+                                                <constraint firstAttribute="height" constant="24" id="ywf-Ns-SJn"/>
+                                            </constraints>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="ic_github" id="EaU-uV-utF"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="kTF-ff-6WI" secondAttribute="trailing" id="3DY-rX-4CU"/>
+                                        <constraint firstItem="rx6-Sy-hq0" firstAttribute="leading" secondItem="rTL-fH-nxY" secondAttribute="leading" constant="24" id="6QH-qV-yh0"/>
+                                        <constraint firstItem="kTF-ff-6WI" firstAttribute="leading" secondItem="rTL-fH-nxY" secondAttribute="leading" constant="24" id="6h0-AR-Hss"/>
+                                        <constraint firstItem="2d4-3n-lyB" firstAttribute="top" secondItem="szD-E4-Sg2" secondAttribute="bottom" constant="16" id="7bL-DP-CkB"/>
+                                        <constraint firstItem="2d4-3n-lyB" firstAttribute="leading" secondItem="DmL-hg-F3M" secondAttribute="trailing" constant="16" id="M2W-l0-QCs"/>
+                                        <constraint firstItem="PXk-Wf-Zug" firstAttribute="top" secondItem="DmL-hg-F3M" secondAttribute="bottom" constant="32" id="Ndz-sx-JLJ"/>
+                                        <constraint firstItem="DmL-hg-F3M" firstAttribute="top" secondItem="rx6-Sy-hq0" secondAttribute="bottom" constant="16" id="Oq5-3t-VFT"/>
+                                        <constraint firstItem="rx6-Sy-hq0" firstAttribute="top" secondItem="kTF-ff-6WI" secondAttribute="bottom" constant="48" id="QWg-i0-HGZ"/>
+                                        <constraint firstItem="NTV-2E-brv" firstAttribute="top" secondItem="2d4-3n-lyB" secondAttribute="bottom" constant="35" id="UFi-0V-Iyo"/>
+                                        <constraint firstItem="PXk-Wf-Zug" firstAttribute="leading" secondItem="rTL-fH-nxY" secondAttribute="leading" constant="24" id="Vdn-80-D6r"/>
+                                        <constraint firstItem="NTV-2E-brv" firstAttribute="leading" secondItem="PXk-Wf-Zug" secondAttribute="trailing" constant="16" id="cvd-5g-hW4"/>
+                                        <constraint firstItem="szD-E4-Sg2" firstAttribute="top" secondItem="kTF-ff-6WI" secondAttribute="bottom" constant="48" id="jtL-Sx-055"/>
+                                        <constraint firstAttribute="trailing" secondItem="szD-E4-Sg2" secondAttribute="trailing" constant="32" id="knk-iH-a0b"/>
+                                        <constraint firstItem="DmL-hg-F3M" firstAttribute="leading" secondItem="rTL-fH-nxY" secondAttribute="leading" constant="24" id="rWr-TV-y27"/>
+                                        <constraint firstItem="szD-E4-Sg2" firstAttribute="leading" secondItem="rx6-Sy-hq0" secondAttribute="trailing" constant="16" id="ujr-iG-Zkk"/>
+                                        <constraint firstItem="kTF-ff-6WI" firstAttribute="top" secondItem="rTL-fH-nxY" secondAttribute="top" constant="32" id="x5e-S0-v3G"/>
+                                    </constraints>
+                                </view>
+                                <color key="borderColor" red="0.098039217293262482" green="0.23529411852359772" blue="0.33725491166114807" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="fillColor" red="0.094117647058823528" green="0.23529411764705882" blue="0.33725490196078434" alpha="1" colorSpace="calibratedRGB"/>
+                            </box>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="PNL-Ce-hE2" firstAttribute="leading" secondItem="dmF-b2-41t" secondAttribute="leading" id="Lsn-bK-Ykp"/>
+                            <constraint firstAttribute="bottom" secondItem="PNL-Ce-hE2" secondAttribute="bottom" id="Pca-o6-MGn"/>
+                            <constraint firstAttribute="trailing" secondItem="PNL-Ce-hE2" secondAttribute="trailing" id="XDX-LH-Clf"/>
+                            <constraint firstItem="PNL-Ce-hE2" firstAttribute="top" secondItem="dmF-b2-41t" secondAttribute="top" id="YAk-yI-Sns"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="RKq-ed-0QE" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-733" y="1611"/>
+        </scene>
         <!--Ticker List View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
@@ -933,6 +1043,9 @@
                         <menuItem isSeparatorItem="YES" id="Ft9-N9-3JY"/>
                         <menuItem title="Contact" id="E57-kB-BFV">
                             <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <segue destination="2ie-Jd-8Tt" kind="show" id="SNS-4L-YnO"/>
+                            </connections>
                         </menuItem>
                         <menuItem title="Donate" id="fNd-yM-j3X">
                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -968,24 +1081,108 @@
                     </items>
                 </menu>
             </objects>
-            <point key="canvasLocation" x="146" y="1054"/>
+            <point key="canvasLocation" x="153" y="661"/>
         </scene>
-        <!--View Controller-->
+        <!--Donate View Controller-->
         <scene sceneID="tNm-XZ-XeH">
             <objects>
-                <viewController id="uIA-g3-v3O" sceneMemberID="viewController">
+                <viewController id="uIA-g3-v3O" customClass="DonateViewController" customModule="Nova" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="HZj-AG-Voq">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="313" height="416"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <box boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="3jY-uh-sTR">
+                                <rect key="frame" x="0.0" y="328" width="313" height="88"/>
+                                <view key="contentView" id="Xzj-tR-UAl">
+                                    <rect key="frame" x="0.0" y="0.0" width="313" height="88"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kxx-Zm-o7T">
+                                            <rect key="frame" x="14" y="16" width="285" height="25"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="D O N A T E" id="aRc-ec-Nua">
+                                                <font key="font" size="15" name="Avenir-Book"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="kxx-Zm-o7T" secondAttribute="trailing" constant="16" id="MBj-Dd-Jma"/>
+                                        <constraint firstAttribute="bottom" secondItem="kxx-Zm-o7T" secondAttribute="bottom" constant="16" id="YCM-c2-Plx"/>
+                                        <constraint firstItem="kxx-Zm-o7T" firstAttribute="leading" secondItem="Xzj-tR-UAl" secondAttribute="leading" constant="16" id="qna-W1-RLC"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="Ko1-Am-EWo"/>
+                                </constraints>
+                                <color key="fillColor" red="0.098039217293262482" green="0.23529411852359772" blue="0.33725491166114807" alpha="1" colorSpace="calibratedRGB"/>
+                            </box>
+                            <box boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="ebK-zz-TCF">
+                                <rect key="frame" x="0.0" y="0.0" width="313" height="328"/>
+                                <view key="contentView" id="oXo-3w-RWc">
+                                    <rect key="frame" x="0.0" y="0.0" width="313" height="328"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="uM8-Yk-vtH">
+                                            <rect key="frame" x="14" y="287" width="285" height="25"/>
+                                            <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Nova is - and always be free." id="8v4-fd-8DE">
+                                                <font key="font" size="15" name="Avenir-Book"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87645477056503296" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AXi-ut-iPR">
+                                            <rect key="frame" x="14" y="254" width="285" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" id="I9C-Ac-yU2">
+                                                <font key="font" size="15" name="Avenir-Book"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87645477059999999" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="agK-IR-Mno">
+                                            <rect key="frame" x="14" y="221" width="285" height="50"/>
+                                            <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Your donation directly supports the development of other great tools!" id="A6V-tp-sUl">
+                                                <font key="font" size="15" name="Avenir-Book"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87645477059999999" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="uM8-Yk-vtH" firstAttribute="leading" secondItem="oXo-3w-RWc" secondAttribute="leading" constant="16" id="9tX-Ot-Obd"/>
+                                        <constraint firstItem="agK-IR-Mno" firstAttribute="top" secondItem="uM8-Yk-vtH" secondAttribute="bottom" constant="16" id="Da2-XP-o6N"/>
+                                        <constraint firstAttribute="trailing" secondItem="agK-IR-Mno" secondAttribute="trailing" constant="16" id="Inr-dR-ftx"/>
+                                        <constraint firstAttribute="trailing" secondItem="uM8-Yk-vtH" secondAttribute="trailing" constant="16" id="fbb-nz-PzO"/>
+                                        <constraint firstItem="agK-IR-Mno" firstAttribute="leading" secondItem="oXo-3w-RWc" secondAttribute="leading" constant="16" id="pax-AA-occ"/>
+                                        <constraint firstItem="uM8-Yk-vtH" firstAttribute="top" secondItem="oXo-3w-RWc" secondAttribute="top" constant="16" id="r96-4e-bWC"/>
+                                    </constraints>
+                                </view>
+                                <color key="fillColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </box>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="3jY-uh-sTR" secondAttribute="trailing" id="N4B-ZA-H9J"/>
+                            <constraint firstItem="3jY-uh-sTR" firstAttribute="leading" secondItem="HZj-AG-Voq" secondAttribute="leading" id="QHg-3X-pDT"/>
+                            <constraint firstItem="3jY-uh-sTR" firstAttribute="top" secondItem="HZj-AG-Voq" secondAttribute="top" id="Wsc-pa-WuA"/>
+                            <constraint firstAttribute="trailing" secondItem="ebK-zz-TCF" secondAttribute="trailing" id="X3j-HC-Ija"/>
+                            <constraint firstAttribute="bottom" secondItem="ebK-zz-TCF" secondAttribute="bottom" id="hbZ-Kz-78M"/>
+                            <constraint firstItem="ebK-zz-TCF" firstAttribute="leading" secondItem="HZj-AG-Voq" secondAttribute="leading" id="oH8-Wt-6qx"/>
+                            <constraint firstItem="ebK-zz-TCF" firstAttribute="top" secondItem="3jY-uh-sTR" secondAttribute="bottom" id="rbO-az-wLv"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <customObject id="fCl-WQ-AUC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="664" y="1054"/>
+            <point key="canvasLocation" x="251.5" y="1692"/>
         </scene>
     </scenes>
     <resources>
+        <image name="ic_github" width="50" height="50"/>
+        <image name="ic_linkedin" width="50" height="50"/>
+        <image name="ic_mail" width="50" height="50"/>
         <image name="ic_menu" width="50" height="50"/>
+        <image name="ic_phone" width="50" height="50"/>
         <image name="ic_pin" width="50" height="50"/>
         <image name="ic_pin_filled" width="50" height="50"/>
         <image name="ic_restart" width="50" height="50"/>
