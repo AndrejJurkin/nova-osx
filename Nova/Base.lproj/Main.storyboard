@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1611" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
         <capability name="box content view" minToolsVersion="7.0"/>
-        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <scenes>
@@ -769,7 +768,7 @@
                 </viewController>
                 <customObject id="RKq-ed-0QE" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-733" y="1611"/>
+            <point key="canvasLocation" x="-341" y="1209"/>
         </scene>
         <!--Ticker List View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -1086,19 +1085,19 @@
         <!--Donate View Controller-->
         <scene sceneID="tNm-XZ-XeH">
             <objects>
-                <viewController id="uIA-g3-v3O" customClass="DonateViewController" customModule="Nova" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="HZj-AG-Voq">
-                        <rect key="frame" x="0.0" y="0.0" width="313" height="416"/>
+                <viewController showSeguePresentationStyle="single" id="uIA-g3-v3O" customClass="DonateViewController" customModule="Nova" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" misplaced="YES" id="HZj-AG-Voq">
+                        <rect key="frame" x="0.0" y="0.0" width="396" height="618"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <box boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="3jY-uh-sTR">
-                                <rect key="frame" x="0.0" y="328" width="313" height="88"/>
+                                <rect key="frame" x="0.0" y="406" width="396" height="88"/>
                                 <view key="contentView" id="Xzj-tR-UAl">
-                                    <rect key="frame" x="0.0" y="0.0" width="313" height="88"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="396" height="88"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kxx-Zm-o7T">
-                                            <rect key="frame" x="14" y="16" width="285" height="25"/>
+                                            <rect key="frame" x="14" y="16" width="368" height="25"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="D O N A T E" id="aRc-ec-Nua">
                                                 <font key="font" size="15" name="Avenir-Book"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1118,21 +1117,21 @@
                                 <color key="fillColor" red="0.098039217293262482" green="0.23529411852359772" blue="0.33725491166114807" alpha="1" colorSpace="calibratedRGB"/>
                             </box>
                             <box boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="ebK-zz-TCF">
-                                <rect key="frame" x="0.0" y="0.0" width="313" height="328"/>
+                                <rect key="frame" x="0.0" y="0.0" width="396" height="406"/>
                                 <view key="contentView" id="oXo-3w-RWc">
-                                    <rect key="frame" x="0.0" y="0.0" width="313" height="328"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="396" height="406"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="uM8-Yk-vtH">
-                                            <rect key="frame" x="14" y="287" width="285" height="25"/>
-                                            <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Nova is - and always be free." id="8v4-fd-8DE">
+                                            <rect key="frame" x="14" y="365" width="368" height="25"/>
+                                            <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Nova is - and will always be free." id="8v4-fd-8DE">
                                                 <font key="font" size="15" name="Avenir-Book"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87645477056503296" colorSpace="calibratedRGB"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AXi-ut-iPR">
-                                            <rect key="frame" x="14" y="254" width="285" height="25"/>
+                                            <rect key="frame" x="14" y="332" width="285" height="25"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" id="I9C-Ac-yU2">
                                                 <font key="font" size="15" name="Avenir-Book"/>
@@ -1141,21 +1140,114 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="agK-IR-Mno">
-                                            <rect key="frame" x="14" y="221" width="285" height="50"/>
-                                            <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Your donation directly supports the development of other great tools!" id="A6V-tp-sUl">
+                                            <rect key="frame" x="14" y="299" width="368" height="50"/>
+                                            <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Your donation directly supports the development of this and other free tools!" id="A6V-tp-sUl">
                                                 <font key="font" size="15" name="Avenir-Book"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87645477059999999" colorSpace="calibratedRGB"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
+                                        <imageView translatesAutoresizingMaskIntoConstraints="NO" id="V38-FM-OSB">
+                                            <rect key="frame" x="16" y="243" width="24" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="24" id="lXh-fM-9Yy"/>
+                                                <constraint firstAttribute="height" constant="24" id="rLa-ib-9ZK"/>
+                                            </constraints>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="ic_bitcoin" id="7Lw-NB-Q0j"/>
+                                        </imageView>
+                                        <imageView translatesAutoresizingMaskIntoConstraints="NO" id="hfu-2B-XOh">
+                                            <rect key="frame" x="16" y="154" width="24" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="24" id="Oh0-2L-n56"/>
+                                                <constraint firstAttribute="width" constant="24" id="tf9-J2-2jw"/>
+                                            </constraints>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="ic_eth" id="AbH-F2-SVa"/>
+                                        </imageView>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="F1l-jf-mMP">
+                                            <rect key="frame" x="14" y="210" width="368" height="25"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" title="1CSQ1eCGNsK493dSVudzWHeXenKH468nx7" id="phW-8X-6Fr">
+                                                <font key="font" size="15" name="Avenir-Book"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LbN-YH-h21">
+                                            <rect key="frame" x="14" y="121" width="368" height="25"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" title="0xdEE253C38c983145da4B192dD1dea2468033355a" id="LKG-aY-XVo">
+                                                <font key="font" size="15" name="Avenir-Book"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Nuj-nB-nkN">
+                                            <rect key="frame" x="46" y="153" width="33" height="25"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="ETH" id="XjX-IC-ZcX">
+                                                <font key="font" size="15" name="Avenir-Book"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Isy-hw-Bl3">
+                                            <rect key="frame" x="46" y="243" width="97" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="BTC" id="Ohj-rk-C8K">
+                                                <font key="font" size="15" name="Avenir-Book"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <imageView translatesAutoresizingMaskIntoConstraints="NO" id="cy3-2N-dQN">
+                                            <rect key="frame" x="16" y="65" width="24" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="24" id="WAy-qC-ohr"/>
+                                                <constraint firstAttribute="height" constant="24" id="dB8-fG-6V9"/>
+                                            </constraints>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="ic_neo" id="Y33-mi-Cfz"/>
+                                        </imageView>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0Xl-Yw-37x">
+                                            <rect key="frame" x="14" y="32" width="368" height="25"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" title="53C38c983145da4B192dD1dea2468033355a" id="MP6-sB-NfA">
+                                                <font key="font" size="15" name="Avenir-Book"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lku-hD-aFS">
+                                            <rect key="frame" x="46" y="64" width="38" height="25"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="NEO" id="JmC-Lg-vPy">
+                                                <font key="font" size="15" name="Avenir-Book"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="hfu-2B-XOh" firstAttribute="top" secondItem="F1l-jf-mMP" secondAttribute="bottom" constant="32" id="2Ns-AW-P7V"/>
+                                        <constraint firstAttribute="trailing" secondItem="LbN-YH-h21" secondAttribute="trailing" constant="16" id="3Fi-Wb-S06"/>
+                                        <constraint firstItem="cy3-2N-dQN" firstAttribute="top" secondItem="LbN-YH-h21" secondAttribute="bottom" constant="32" id="4sS-T5-d4c"/>
+                                        <constraint firstItem="LbN-YH-h21" firstAttribute="top" secondItem="hfu-2B-XOh" secondAttribute="bottom" constant="8" id="5H0-c3-Zuu"/>
+                                        <constraint firstItem="Lku-hD-aFS" firstAttribute="top" secondItem="cy3-2N-dQN" secondAttribute="top" id="6rj-FD-boc"/>
+                                        <constraint firstItem="0Xl-Yw-37x" firstAttribute="top" secondItem="cy3-2N-dQN" secondAttribute="bottom" constant="8" id="8qh-1B-46j"/>
                                         <constraint firstItem="uM8-Yk-vtH" firstAttribute="leading" secondItem="oXo-3w-RWc" secondAttribute="leading" constant="16" id="9tX-Ot-Obd"/>
+                                        <constraint firstItem="hfu-2B-XOh" firstAttribute="leading" secondItem="oXo-3w-RWc" secondAttribute="leading" constant="16" id="DOB-Ry-kti"/>
                                         <constraint firstItem="agK-IR-Mno" firstAttribute="top" secondItem="uM8-Yk-vtH" secondAttribute="bottom" constant="16" id="Da2-XP-o6N"/>
+                                        <constraint firstItem="V38-FM-OSB" firstAttribute="leading" secondItem="oXo-3w-RWc" secondAttribute="leading" constant="16" id="Gdi-IT-fRM"/>
+                                        <constraint firstAttribute="trailing" secondItem="F1l-jf-mMP" secondAttribute="trailing" constant="16" id="GfX-Nj-fHI"/>
                                         <constraint firstAttribute="trailing" secondItem="agK-IR-Mno" secondAttribute="trailing" constant="16" id="Inr-dR-ftx"/>
+                                        <constraint firstItem="0Xl-Yw-37x" firstAttribute="leading" secondItem="oXo-3w-RWc" secondAttribute="leading" constant="16" id="J41-QB-AIC"/>
+                                        <constraint firstItem="V38-FM-OSB" firstAttribute="top" secondItem="agK-IR-Mno" secondAttribute="bottom" constant="32" id="RYI-jr-o67"/>
+                                        <constraint firstItem="Lku-hD-aFS" firstAttribute="leading" secondItem="cy3-2N-dQN" secondAttribute="trailing" constant="8" id="WQd-yE-RBj"/>
+                                        <constraint firstAttribute="trailing" secondItem="0Xl-Yw-37x" secondAttribute="trailing" constant="16" id="cci-aQ-BuF"/>
+                                        <constraint firstItem="LbN-YH-h21" firstAttribute="leading" secondItem="oXo-3w-RWc" secondAttribute="leading" constant="16" id="cgg-sb-A6f"/>
+                                        <constraint firstItem="Nuj-nB-nkN" firstAttribute="leading" secondItem="hfu-2B-XOh" secondAttribute="trailing" constant="8" id="f7A-8g-iSJ"/>
                                         <constraint firstAttribute="trailing" secondItem="uM8-Yk-vtH" secondAttribute="trailing" constant="16" id="fbb-nz-PzO"/>
+                                        <constraint firstItem="cy3-2N-dQN" firstAttribute="leading" secondItem="oXo-3w-RWc" secondAttribute="leading" constant="16" id="iZc-Yr-pOo"/>
+                                        <constraint firstAttribute="bottom" secondItem="0Xl-Yw-37x" secondAttribute="bottom" constant="32" id="nks-bX-tYE"/>
                                         <constraint firstItem="agK-IR-Mno" firstAttribute="leading" secondItem="oXo-3w-RWc" secondAttribute="leading" constant="16" id="pax-AA-occ"/>
                                         <constraint firstItem="uM8-Yk-vtH" firstAttribute="top" secondItem="oXo-3w-RWc" secondAttribute="top" constant="16" id="r96-4e-bWC"/>
+                                        <constraint firstItem="F1l-jf-mMP" firstAttribute="leading" secondItem="oXo-3w-RWc" secondAttribute="leading" constant="16" id="sg4-tY-0AS"/>
+                                        <constraint firstItem="F1l-jf-mMP" firstAttribute="top" secondItem="V38-FM-OSB" secondAttribute="bottom" constant="8" id="woO-pL-9TA"/>
+                                        <constraint firstItem="Nuj-nB-nkN" firstAttribute="top" secondItem="hfu-2B-XOh" secondAttribute="top" id="wye-mB-l8c"/>
                                     </constraints>
                                 </view>
                                 <color key="fillColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1174,14 +1266,17 @@
                 </viewController>
                 <customObject id="fCl-WQ-AUC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="251.5" y="1692"/>
+            <point key="canvasLocation" x="223" y="1350"/>
         </scene>
     </scenes>
     <resources>
+        <image name="ic_bitcoin" width="64" height="64"/>
+        <image name="ic_eth" width="1200" height="1200"/>
         <image name="ic_github" width="50" height="50"/>
         <image name="ic_linkedin" width="50" height="50"/>
         <image name="ic_mail" width="50" height="50"/>
         <image name="ic_menu" width="50" height="50"/>
+        <image name="ic_neo" width="64" height="64"/>
         <image name="ic_phone" width="50" height="50"/>
         <image name="ic_pin" width="50" height="50"/>
         <image name="ic_pin_filled" width="50" height="50"/>
