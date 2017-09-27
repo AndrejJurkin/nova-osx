@@ -33,7 +33,7 @@ class MenuBarView: NSObject {
     /// Content wrapper
     let popover = NSPopover()
     
-    let viewModel = MenuBarViewModel()
+    let viewModel = Injector.inject(type: MenuBarViewModel.self)
     
     let disposeBag = DisposeBag()
     

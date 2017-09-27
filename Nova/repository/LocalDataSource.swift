@@ -26,7 +26,10 @@ import RxSwift
 
 class LocalDataSource {
     
-    let defaultSortOrder = [SortDescriptor(keyPath: "isPinned", ascending: false), SortDescriptor(keyPath: "marketCapUsd", ascending: false)]
+    let defaultSortOrder = [
+        SortDescriptor(keyPath: "isPinned", ascending: false),
+        SortDescriptor(keyPath: "marketCapUsd", ascending: false)
+    ]
     
     /// Asyncroniously cache tickers into Realm
     func saveTickersAsync(tickers: [Ticker]) {
@@ -54,6 +57,18 @@ class LocalDataSource {
         
         try! realm.write {
             realm.create(Ticker.self, value: ticker.toDictionary(), update: true)
+        }
+    }
+    
+    func updateTickerPrices(tickers: [String: [String: Double]]) {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            for (key, prices) in tickers {
+                if let updatedPrice = prices["USD"] {
+                    realm.create(Ticker.self, value: ["symbol": key, "priceUsd": updatedPrice], update: true)
+                }
+            }
         }
     }
     

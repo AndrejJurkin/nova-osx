@@ -39,6 +39,8 @@ class DataRepository {
     private var disposeBag = DisposeBag()
     
     private var refreshSubscriptions = DisposeBag()
+    
+    private var tickerUpdateTimestamp: Date?
    
     init(local: LocalDataSource, remote: RemoteDataSource, prefs: Prefs) {
         self.local = local
@@ -128,21 +130,20 @@ class DataRepository {
     ///    - refreshInterval: 
     ///      The refresh interval in seconds. Default value is 15 seconds.
     func subscribeForTickerUpdates(baseSymbols: [String], refreshInterval: Float = 15.0) {
+        print("Subscribe for ticker updates")
         self.tickerUpdateSubscription?.dispose()
         
         self.tickerUpdateSubscription =
             Observable<Int>.interval(RxTimeInterval(refreshInterval), scheduler: Schedulers.background)
             // Query Cryptonator api for an update
             .flatMap { _ -> Observable<[String: [String: Double]]> in
-                
+                print("Pinned tickers updated")
                 return self.remote.getTickers(base: baseSymbols)
             }
             .subscribe(onNext: { tickers in
-                for (key, prices) in tickers {
-                    if let updatedPrice = prices["USD"] {
-                        self.local.updateTickerPrice(symbol: key, newPrice: updatedPrice)
-                    }
-                }
+                self.local.updateTickerPrices(tickers: tickers)
+            }, onError: { error in
+                print(error)
             })
         
         self.tickerUpdateSubscription?.addDisposableTo(refreshSubscriptions)
@@ -155,8 +156,8 @@ class DataRepository {
     ///    - refreshIntervalMinutes: The refresh interval in minutes.
     ///    Min. value is 5 minutes, since CMC endpoint refreshes every 5 minutes.
     func subscribeForGlobalUpdates(refreshIntervalMinutes: Int = 5) {
-        
-        guard refreshIntervalMinutes < 5 else {
+        print("Subscribe for global updates")
+        guard refreshIntervalMinutes >= 5 else {
             fatalError("Do not use refrsh interval of less than 5 minutes." +
                 "CoinMarketCap endpoint refreshes every 5 minutes")
         }
@@ -171,10 +172,17 @@ class DataRepository {
                 return self.remote.getAllTickers()
             }
             .subscribe(onNext: { tickers in
+                print("All tickers updated.")
                 self.local.saveTickersAsync(tickers: tickers)
+            }, onError: { error in
+                print(error)
             })
         
         self.globalRefreshSubscription?.addDisposableTo(refreshSubscriptions)
+    }
+    
+    func disposeTickerSubscription() {
+        self.tickerUpdateSubscription?.dispose()
     }
     
     /// Terminate all running refresh subscriptions

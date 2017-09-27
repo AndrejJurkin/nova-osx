@@ -24,26 +24,33 @@ import RxSwift
 
 class MenuBarViewModel {
     
-    let repo = Injector.inject(type: DataRepository.self)
+    let repo: DataRepository
     
-    let prefs = Injector.inject(type: Prefs.self)
+    let prefs: Prefs
     
     var menuBarText = Variable(R.String.appName)
     
     let disposeBag = DisposeBag()
     
-    init() {
+    init(repo: DataRepository, prefs: Prefs) {
+        self.repo = repo
+        self.prefs = prefs
+        
+        // Watch when list with pinned tickers changes
         self.repo.getPinnedTickers()
-            .subscribe(onNext: { tickers in
+            .flatMap({ tickers -> Observable<[String]> in
+                
+                // If we don't have any pinned tickers, show app name
                 guard tickers.count > 0 else {
-                    self.repo.disposeRefreshSubscriptions()
+                    self.repo.disposeTickerSubscription()
                     self.menuBarText.value = R.String.appName
-                    return
+                    return Observable.just([])
                 }
                 
                 var menuBarText = ""
                 var tickerSymbols: [String] = []
                 
+                // Create menu bar string representation
                 for ticker in tickers {
                     let priceFormat = ticker.priceUsd < 1 ? "%.4f" : "%.2f"
                     let priceFormatted = String(format: priceFormat, ticker.priceUsd)
@@ -52,9 +59,24 @@ class MenuBarViewModel {
                     tickerSymbols.append(ticker.symbol)
                 }
                 
-                self.repo.subscribeForTickerUpdates(baseSymbols: tickerSymbols)
                 self.menuBarText.value = menuBarText.trim()
+                return Observable.just(tickerSymbols)
+            })
+            
+            // Distinct if pinned tickers array has the same size
+            // This is to avoid re-subscribing after values update
+            .distinctUntilChanged({ (old, new) -> Bool in
+                
+                return old.count == new.count
+            })
+            .filter { $0.count != 0 }
+            .subscribe(onNext: { tickerSymbols in
+               
+                // Subscribe for updates for given ticker symbols
+                self.repo.subscribeForTickerUpdates(baseSymbols: tickerSymbols)
             })
             .addDisposableTo(disposeBag)
+        
+        self.repo.subscribeForGlobalUpdates()
     }
 }
