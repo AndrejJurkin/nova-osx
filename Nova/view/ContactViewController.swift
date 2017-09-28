@@ -21,4 +21,17 @@ class ContactViewController: NSViewController {
         self.setTransparentTitle()
         AppDelegate.shared().menuBarView?.hidePopover()
     }
+   
+    @IBAction func onLinkedinClick(_ sender: Any) {
+        if let url = URL(string: "https://www.linkedin.com/in/andrej-jurkin-9691379a/") {
+            NSWorkspace.shared().open(url)
+        }
+    }
+
+    @IBAction func onGithubClick(_ sender: Any) {
+        if let url = URL(string: "https://github.com/andrejjurkin") {
+            NSWorkspace.shared().open(url)
+        }
+    }
+
 }
