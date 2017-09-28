@@ -33,5 +33,4 @@ class ContactViewController: NSViewController {
             NSWorkspace.shared().open(url)
         }
     }
-
 }
