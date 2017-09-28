@@ -88,7 +88,20 @@ class MenuBarView: NSObject {
         self.statusItem.attributedTitle = title
     }
     
+    func refresh() {
+        self.viewModel.subscribe()
+    }
+    
+    func pause() {
+        self.viewModel.unsubscribe()
+    }
+    
+    func resume() {
+        self.viewModel.subscribe()
+    }
+    
     private func bindUi() {
+        self.viewModel.subscribe()
         self.viewModel.menuBarText.asObservable().subscribe(onNext: { text in
             self.setStatusItemTitle(title: text)
         })

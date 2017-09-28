@@ -35,6 +35,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         self.initRealm()
         self.menuBarView = MenuBarView()
+        self.fileNotifications()
     }
     
     func initRealm() {
@@ -48,6 +49,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         try! realm.write {
             realm.deleteAll()
         }
+    }
+    
+    func onWakeNote(note: NSNotification) {
+        self.menuBarView?.resume()
+    }
+    
+    func onSleepNote(note: NSNotification) {
+        self.menuBarView?.pause()
+    }
+    
+    func fileNotifications() {
+        NSWorkspace.shared().notificationCenter.addObserver(
+            self, selector: #selector(onWakeNote(note:)),
+            name: Notification.Name.NSWorkspaceDidWake, object: nil)
+        
+        NSWorkspace.shared().notificationCenter.addObserver(
+            self, selector: #selector(onSleepNote(note:)),
+            name: Notification.Name.NSWorkspaceWillSleep, object: nil)
     }
 }
 

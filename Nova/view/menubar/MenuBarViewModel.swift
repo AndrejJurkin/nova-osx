@@ -35,9 +35,12 @@ class MenuBarViewModel {
     init(repo: DataRepository, prefs: Prefs) {
         self.repo = repo
         self.prefs = prefs
-        
+    }
+    
+    func subscribe() {
         // Watch when list with pinned tickers changes
         self.repo.getPinnedTickers()
+            .retry(5)
             .flatMap({ tickers -> Observable<[String]> in
                 
                 // If we don't have any pinned tickers, show app name
@@ -71,12 +74,16 @@ class MenuBarViewModel {
             })
             .filter { $0.count != 0 }
             .subscribe(onNext: { tickerSymbols in
-               
+                
                 // Subscribe for updates for given ticker symbols
                 self.repo.subscribeForTickerUpdates(baseSymbols: tickerSymbols)
             })
             .addDisposableTo(disposeBag)
         
         self.repo.subscribeForGlobalUpdates()
+    }
+    
+    func unsubscribe() {
+        self.repo.disposeRefreshSubscriptions()
     }
 }
