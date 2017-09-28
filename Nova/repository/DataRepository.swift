@@ -84,6 +84,7 @@ class DataRepository {
     }
     
     /// Get all tickers from remote repository
+    /// Cache response into Realm
     ///
     /// - returns:
     /// An empty observable to notify the UI when finished
@@ -134,7 +135,7 @@ class DataRepository {
         self.tickerUpdateSubscription?.dispose()
         
         self.tickerUpdateSubscription =
-            Observable<Int>.interval(RxTimeInterval(refreshInterval), scheduler: Schedulers.background)
+            Observable<Int>.timer(0, period: RxTimeInterval(refreshInterval), scheduler: Schedulers.background)
             // Query Cryptonator api for an update
             .flatMap { _ -> Observable<[String: [String: Double]]> in
                 print("Pinned tickers updated")
@@ -165,7 +166,7 @@ class DataRepository {
         self.globalRefreshSubscription?.dispose()
         
         self.globalRefreshSubscription =
-            Observable<Int>.interval(RxTimeInterval(refreshIntervalMinutes * 60), scheduler: Schedulers.background)
+            Observable<Int>.timer(0, period: RxTimeInterval(refreshIntervalMinutes * 60), scheduler: Schedulers.background)
             // Query Cryptonator api for an update
             .flatMap { _ -> Observable<[Ticker]> in
                 
