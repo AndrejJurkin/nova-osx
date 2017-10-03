@@ -1099,11 +1099,11 @@
             <objects>
                 <viewController id="uIA-g3-v3O" customClass="DonateViewController" customModule="Nova" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="HZj-AG-Voq">
-                        <rect key="frame" x="0.0" y="0.0" width="424" height="494"/>
+                        <rect key="frame" x="0.0" y="0.0" width="424" height="394"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <box boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="3jY-uh-sTR">
-                                <rect key="frame" x="0.0" y="406" width="424" height="88"/>
+                                <rect key="frame" x="0.0" y="306" width="424" height="88"/>
                                 <view key="contentView" id="Xzj-tR-UAl">
                                     <rect key="frame" x="0.0" y="0.0" width="424" height="88"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1129,38 +1129,21 @@
                                 <color key="fillColor" red="0.098039217293262482" green="0.23529411852359772" blue="0.33725491166114807" alpha="1" colorSpace="calibratedRGB"/>
                             </box>
                             <box boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="ebK-zz-TCF">
-                                <rect key="frame" x="0.0" y="0.0" width="424" height="406"/>
+                                <rect key="frame" x="0.0" y="0.0" width="424" height="306"/>
                                 <view key="contentView" id="oXo-3w-RWc">
-                                    <rect key="frame" x="0.0" y="0.0" width="424" height="406"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="424" height="306"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="uM8-Yk-vtH">
-                                            <rect key="frame" x="14" y="365" width="396" height="25"/>
-                                            <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Nova is - and always be free." id="8v4-fd-8DE">
+                                            <rect key="frame" x="14" y="265" width="396" height="25"/>
+                                            <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Your support is highly appreciated!" id="8v4-fd-8DE">
                                                 <font key="font" size="15" name="Avenir-Book"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87645477056503296" colorSpace="calibratedRGB"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AXi-ut-iPR">
-                                            <rect key="frame" x="14" y="332" width="285" height="25"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" id="I9C-Ac-yU2">
-                                                <font key="font" size="15" name="Avenir-Book"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87645477059999999" colorSpace="calibratedRGB"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="agK-IR-Mno">
-                                            <rect key="frame" x="14" y="299" width="396" height="50"/>
-                                            <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Your donation directly supports the development of this and other great tools!" id="A6V-tp-sUl">
-                                                <font key="font" size="15" name="Avenir-Book"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87645477059999999" colorSpace="calibratedRGB"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xZ2-l8-ASG">
-                                            <rect key="frame" x="16" y="213" width="300" height="32"/>
+                                            <rect key="frame" x="16" y="187" width="300" height="32"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="300" id="8FT-7S-By7"/>
                                                 <constraint firstAttribute="height" constant="32" id="uIs-iU-uIR"/>
@@ -1172,7 +1155,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YeA-yA-8Uh">
-                                            <rect key="frame" x="42" y="253" width="33" height="25"/>
+                                            <rect key="frame" x="42" y="227" width="33" height="25"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="BTC" id="hkn-rX-wBP">
                                                 <font key="font" size="15" name="Avenir-Book"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1180,7 +1163,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <imageView translatesAutoresizingMaskIntoConstraints="NO" id="zB4-sH-pQU">
-                                            <rect key="frame" x="16" y="255" width="20" height="20"/>
+                                            <rect key="frame" x="16" y="229" width="20" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="mRI-Mj-W4T"/>
                                                 <constraint firstAttribute="width" constant="20" id="xuh-wG-eT3"/>
@@ -1188,7 +1171,7 @@
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="ic_bitcoin" id="E48-hT-xWz"/>
                                         </imageView>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="toR-eI-LcV">
-                                            <rect key="frame" x="16" y="135" width="364" height="32"/>
+                                            <rect key="frame" x="16" y="109" width="364" height="32"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="364" id="0YW-Sd-vJ5"/>
                                                 <constraint firstAttribute="height" constant="32" id="lfU-bB-3DL"/>
@@ -1200,7 +1183,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DzP-Yf-L8n">
-                                            <rect key="frame" x="42" y="175" width="86" height="25"/>
+                                            <rect key="frame" x="42" y="149" width="86" height="25"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="ETH, ERC20" id="SPR-xw-qYW">
                                                 <font key="font" size="15" name="Avenir-Book"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1208,7 +1191,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <imageView translatesAutoresizingMaskIntoConstraints="NO" id="NnN-Ov-fNO">
-                                            <rect key="frame" x="16" y="177" width="20" height="20"/>
+                                            <rect key="frame" x="16" y="151" width="20" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="20" id="57N-8e-t2j"/>
                                                 <constraint firstAttribute="height" constant="20" id="f6m-9H-HQ6"/>
@@ -1216,7 +1199,7 @@
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="ic_ethereum" id="v7c-QP-8yJ"/>
                                         </imageView>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="l9Q-y3-UM9">
-                                            <rect key="frame" x="16" y="57" width="315" height="32"/>
+                                            <rect key="frame" x="16" y="31" width="315" height="32"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="32" id="xFo-Vl-2CY"/>
                                             </constraints>
@@ -1227,15 +1210,15 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VHj-SZ-hB8">
-                                            <rect key="frame" x="42" y="97" width="38" height="25"/>
+                                            <rect key="frame" x="42" y="71" width="38" height="25"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="NEO" id="HAa-vB-tGv">
                                                 <font key="font" size="15" name="Avenir-Book"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <imageView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zNK-jJ-t8M">
-                                            <rect key="frame" x="16" y="98" width="20" height="20"/>
+                                        <imageView translatesAutoresizingMaskIntoConstraints="NO" id="zNK-jJ-t8M">
+                                            <rect key="frame" x="16" y="73" width="20" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="CWc-3e-k0A"/>
                                                 <constraint firstAttribute="width" constant="20" id="XfO-dd-z0Q"/>
@@ -1249,8 +1232,6 @@
                                         <constraint firstItem="toR-eI-LcV" firstAttribute="top" secondItem="DzP-Yf-L8n" secondAttribute="bottom" constant="8" id="7Ax-XT-pbQ"/>
                                         <constraint firstItem="uM8-Yk-vtH" firstAttribute="leading" secondItem="oXo-3w-RWc" secondAttribute="leading" constant="16" id="9tX-Ot-Obd"/>
                                         <constraint firstItem="VHj-SZ-hB8" firstAttribute="centerY" secondItem="zNK-jJ-t8M" secondAttribute="centerY" id="C4N-8i-Jgn"/>
-                                        <constraint firstItem="agK-IR-Mno" firstAttribute="top" secondItem="uM8-Yk-vtH" secondAttribute="bottom" constant="16" id="Da2-XP-o6N"/>
-                                        <constraint firstAttribute="trailing" secondItem="agK-IR-Mno" secondAttribute="trailing" constant="16" id="Inr-dR-ftx"/>
                                         <constraint firstItem="YeA-yA-8Uh" firstAttribute="leading" secondItem="zB4-sH-pQU" secondAttribute="trailing" constant="8" id="IrW-oa-QQb"/>
                                         <constraint firstItem="l9Q-y3-UM9" firstAttribute="top" secondItem="zNK-jJ-t8M" secondAttribute="bottom" constant="10" id="TR5-xf-2jP"/>
                                         <constraint firstItem="xZ2-l8-ASG" firstAttribute="top" secondItem="YeA-yA-8Uh" secondAttribute="bottom" constant="8" id="Tqa-Bt-1zL"/>
@@ -1260,11 +1241,10 @@
                                         <constraint firstItem="DzP-Yf-L8n" firstAttribute="centerY" secondItem="NnN-Ov-fNO" secondAttribute="centerY" id="X8h-OP-GY7"/>
                                         <constraint firstItem="zNK-jJ-t8M" firstAttribute="leading" secondItem="oXo-3w-RWc" secondAttribute="leading" constant="16" id="XWo-Jb-QkN"/>
                                         <constraint firstAttribute="trailing" secondItem="uM8-Yk-vtH" secondAttribute="trailing" constant="16" id="fbb-nz-PzO"/>
+                                        <constraint firstItem="zB4-sH-pQU" firstAttribute="top" secondItem="uM8-Yk-vtH" secondAttribute="bottom" constant="16" id="iSL-u2-rhk"/>
                                         <constraint firstItem="YeA-yA-8Uh" firstAttribute="centerY" secondItem="zB4-sH-pQU" secondAttribute="centerY" id="o2Q-2i-N2I"/>
                                         <constraint firstItem="zNK-jJ-t8M" firstAttribute="top" secondItem="toR-eI-LcV" secondAttribute="bottom" constant="16" id="pXn-JP-d03"/>
-                                        <constraint firstItem="agK-IR-Mno" firstAttribute="leading" secondItem="oXo-3w-RWc" secondAttribute="leading" constant="16" id="pax-AA-occ"/>
                                         <constraint firstItem="uM8-Yk-vtH" firstAttribute="top" secondItem="oXo-3w-RWc" secondAttribute="top" constant="16" id="r96-4e-bWC"/>
-                                        <constraint firstItem="zB4-sH-pQU" firstAttribute="top" secondItem="agK-IR-Mno" secondAttribute="bottom" constant="24" id="uZN-x6-HfQ"/>
                                         <constraint firstItem="VHj-SZ-hB8" firstAttribute="leading" secondItem="zNK-jJ-t8M" secondAttribute="trailing" constant="8" id="v6f-oi-o8v"/>
                                         <constraint firstItem="l9Q-y3-UM9" firstAttribute="leading" secondItem="oXo-3w-RWc" secondAttribute="leading" constant="16" id="whH-G5-SXl"/>
                                         <constraint firstItem="DzP-Yf-L8n" firstAttribute="leading" secondItem="NnN-Ov-fNO" secondAttribute="trailing" constant="8" id="y40-bA-uAj"/>
@@ -1272,7 +1252,7 @@
                                 </view>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="424" id="d43-dW-Ife"/>
-                                    <constraint firstAttribute="height" constant="406" id="k1e-dB-qOI"/>
+                                    <constraint firstAttribute="height" constant="306" id="k1e-dB-qOI"/>
                                 </constraints>
                                 <color key="fillColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </box>
