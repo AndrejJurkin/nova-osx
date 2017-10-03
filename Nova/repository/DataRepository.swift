@@ -83,8 +83,7 @@ class DataRepository {
         return self.local.getAllTickers()
     }
     
-    /// Get all tickers from remote repository
-    /// Cache response into Realm
+    /// Get all tickers from remote repository and cache response into Realm
     ///
     /// - returns:
     /// An empty observable to notify the UI when finished

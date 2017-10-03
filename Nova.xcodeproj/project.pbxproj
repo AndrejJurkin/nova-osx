@@ -72,6 +72,7 @@
 		0AF23FA01F5BEC4200AB0D15 /* Ticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		207457C11AEF35045A801412 /* Pods-Nova.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nova.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nova/Pods-Nova.release.xcconfig"; sourceTree = "<group>"; };
 		4AC2ED320E03871B42E360B4 /* Pods_Nova.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nova.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		770C67611F8373A700D3D104 /* Nova.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nova.entitlements; sourceTree = "<group>"; };
 		771EBD901F72BE6F00F756ED /* Schedulers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedulers.swift; sourceTree = "<group>"; };
 		7763D05A1F6FAA0C009EE03E /* RemoteDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
 		7763D05C1F6FAA18009EE03E /* LocalDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
@@ -127,6 +128,7 @@
 		0A2D3E341F5AC429002510BA /* Nova */ = {
 			isa = PBXGroup;
 			children = (
+				770C67611F8373A700D3D104 /* Nova.entitlements */,
 				0A2D3E561F5B4EAE002510BA /* data */,
 				7763D0561F6FA888009EE03E /* repository */,
 				7763D0651F6FD043009EE03E /* support */,
@@ -320,6 +322,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = XJF3S8KP2L;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					0A2D3E421F5AC429002510BA = {
 						CreatedOnToolsVersion = 8.0;
@@ -575,6 +582,7 @@
 			baseConfigurationReference = C31629810B46A92A7F784CDD /* Pods-Nova.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Nova/Nova.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = XJF3S8KP2L;
@@ -591,6 +599,7 @@
 			baseConfigurationReference = 207457C11AEF35045A801412 /* Pods-Nova.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Nova/Nova.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = XJF3S8KP2L;

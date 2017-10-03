@@ -95,6 +95,7 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
     @IBAction func onRefreshButtonClick(_ sender: Any) {
         self.viewModel.refresh()
         
+        // TODO: Inject view
         AppDelegate.shared().menuBarView?.refresh()
     }
     
