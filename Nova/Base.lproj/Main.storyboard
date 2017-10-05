@@ -946,16 +946,19 @@
                                                                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="n39-MQ-GNM"/>
                                                                                     </imageView>
                                                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OSB-nX-mMZ">
-                                                                                        <rect key="frame" x="40" y="10" width="38" height="29"/>
-                                                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Title" drawsBackground="YES" id="UvD-og-7b6">
+                                                                                        <rect key="frame" x="40" y="10" width="151" height="29"/>
+                                                                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Title" drawsBackground="YES" id="UvD-og-7b6">
                                                                                             <font key="font" size="17" name="AvenirNext-Regular"/>
                                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87645474140000001" colorSpace="calibratedRGB"/>
                                                                                             <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
                                                                                         </textFieldCell>
                                                                                     </textField>
                                                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gkK-SN-jqI">
-                                                                                        <rect key="frame" x="230" y="12" width="38" height="25"/>
-                                                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Price" drawsBackground="YES" id="auw-Or-LcK">
+                                                                                        <rect key="frame" x="199" y="12" width="69" height="25"/>
+                                                                                        <constraints>
+                                                                                            <constraint firstAttribute="width" constant="69" id="ZrN-zC-oIv"/>
+                                                                                        </constraints>
+                                                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="0.132139" drawsBackground="YES" id="auw-Or-LcK">
                                                                                             <font key="font" size="15" name="AvenirNext-Regular"/>
                                                                                             <color key="textColor" red="0.082352941176470587" green="0.082352941176470587" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                                                                             <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
@@ -979,6 +982,7 @@
                                                                                     <constraint firstItem="OSB-nX-mMZ" firstAttribute="leading" secondItem="nGu-Sy-4BR" secondAttribute="trailing" constant="8" id="Hgk-mt-j8c"/>
                                                                                     <constraint firstItem="nGu-Sy-4BR" firstAttribute="leading" secondItem="dWT-nt-Mmi" secondAttribute="leading" constant="16" id="boO-iI-Yhp"/>
                                                                                     <constraint firstAttribute="trailing" secondItem="ZCv-4h-tUP" secondAttribute="trailing" constant="16" id="kn4-eC-mMC"/>
+                                                                                    <constraint firstItem="gkK-SN-jqI" firstAttribute="leading" secondItem="OSB-nX-mMZ" secondAttribute="trailing" constant="8" id="sy7-0Y-n21"/>
                                                                                     <constraint firstItem="ZCv-4h-tUP" firstAttribute="centerY" secondItem="dWT-nt-Mmi" secondAttribute="centerY" id="t0j-XL-Qzc"/>
                                                                                     <constraint firstItem="gkK-SN-jqI" firstAttribute="centerY" secondItem="dWT-nt-Mmi" secondAttribute="centerY" id="wG3-ln-h05"/>
                                                                                     <constraint firstItem="OSB-nX-mMZ" firstAttribute="centerY" secondItem="dWT-nt-Mmi" secondAttribute="centerY" id="y2y-1o-KAR"/>
