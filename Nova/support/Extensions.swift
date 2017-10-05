@@ -23,6 +23,7 @@
 import Foundation
 import Cocoa
 import RealmSwift
+import RxSwift
 
 typealias RealmObject = Object
 
@@ -81,5 +82,19 @@ extension NSTextField {
 extension String {
     func trim() -> String {
         return self.trimmingCharacters(in: NSCharacterSet.whitespaces)
+    }
+}
+
+extension ObservableType {
+    public func retryWithDelay(timeInterval: Int) -> Observable<E> {
+        return retryWhen { (attempts: Observable<Error>) -> Observable<Int> in
+            return Observable
+                .zip(attempts, Observable.just(timeInterval), resultSelector: { (o1, o2) in
+                    return o2
+                })
+                .flatMap { i -> Observable<Int> in
+                    return Observable.timer(RxTimeInterval(i), period: RxTimeInterval(i), scheduler: MainScheduler.instance)
+                }
+            }
     }
 }

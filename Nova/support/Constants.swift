@@ -38,6 +38,7 @@ struct R {
     struct Color {
         static let primary = NSColor(rgb: 0x193C56)
         static let primaryLight = NSColor(rgb: 0xEEEEEB)
+        static let placeholderLight = NSColor(rgb: 0xCCCCCC)
     }
     
     struct Id {

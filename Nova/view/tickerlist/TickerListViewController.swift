@@ -64,6 +64,13 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
             }
         }
         .addDisposableTo(disposeBag)
+
+        if let font = NSFont(name: "Avenir-Book", size: 17) {
+            let attributes = [NSForegroundColorAttributeName: R.Color.placeholderLight, NSFontAttributeName: font]
+            
+            let searchPlaceholder = NSAttributedString(string: "Search...", attributes: attributes)
+            self.searchTextField.placeholderAttributedString = searchPlaceholder
+        }
     }
 
     override var representedObject: Any? {
@@ -165,6 +172,12 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
         
         if let pdfURL = Bundle.main.url(forResource: resourceName, withExtension: "pdf"){
             NSWorkspace.shared().open(pdfURL)
+        }
+    }
+    
+    @IBAction func openSupportWebsite(_ sender: Any) {
+        if let url = URL(string: "https://github.com/AndrejJurkin/nova-osx") {
+            NSWorkspace.shared().open(url)
         }
     }
 }

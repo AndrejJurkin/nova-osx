@@ -134,17 +134,22 @@ class DataRepository {
         self.tickerUpdateSubscription?.dispose()
         
         self.tickerUpdateSubscription =
-            Observable<Int>.timer(0, period: RxTimeInterval(refreshInterval), scheduler: Schedulers.background)
-            // Query Cryptonator api for an update
-            .flatMap { _ -> Observable<[String: [String: Double]]> in
-                print("Pinned tickers updated")
-                return self.remote.getTickers(base: baseSymbols)
-            }
-            .subscribe(onNext: { tickers in
-                self.local.updateTickerPrices(tickers: tickers)
-            }, onError: { error in
-                print(error)
-            })
+            Observable<Int>
+                .timer(0, period: RxTimeInterval(refreshInterval), scheduler: Schedulers.background)
+                // Query CryptoCompare api for an update
+                .flatMap({ _ -> Observable<[String: [String: Double]]> in
+                    return self.remote.getTickers(base: baseSymbols)
+                })
+                .retryWithDelay(timeInterval: Int(refreshInterval))
+                .subscribe(onNext: { tickers in
+                    let timestamp = DateFormatter.localizedString(
+                        from: NSDate() as Date, dateStyle: .none, timeStyle: .medium)
+
+                    print("Pinned tickers updated at: \(timestamp)")
+                    self.local.updateTickerPrices(tickers: tickers)
+                }, onError: { error in
+                    print(error)
+                })
         
         self.tickerUpdateSubscription?.addDisposableTo(refreshSubscriptions)
     }
