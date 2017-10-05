@@ -46,6 +46,12 @@ class LocalDataSource {
 
         try! realm.write {
             for ticker in tickers {
+                
+                // Workaround for BAT collision
+                if ticker.symbol == "BAT" && ticker.id != "basic-attention-token" {
+                    continue
+                }
+                
                 realm.create(Ticker.self, value: ticker.toDictionary(), update: true)
             }
         }
