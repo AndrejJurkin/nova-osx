@@ -32,6 +32,8 @@
 		7763D0641F6FCE64009EE03E /* DataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7763D0631F6FCE64009EE03E /* DataRepository.swift */; };
 		7764E6621F7A5F3200FC67F0 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7764E6611F7A5F3200FC67F0 /* ContactViewController.swift */; };
 		7764E6651F7A962900FC67F0 /* DonateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7764E6631F7A962900FC67F0 /* DonateViewController.swift */; };
+		777467461F681CF400F01AF3 /* CryptonatorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777467451F681CF400F01AF3 /* CryptonatorProvider.swift */; };
+		777467481F681D1700F01AF3 /* CryptonatorTicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777467471F681D1700F01AF3 /* CryptonatorTicker.swift */; };
 		D418FF040586A9DD73E9A005 /* Pods_Nova.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AC2ED320E03871B42E360B4 /* Pods_Nova.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +80,8 @@
 		7763D0631F6FCE64009EE03E /* DataRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRepository.swift; sourceTree = "<group>"; };
 		7764E6611F7A5F3200FC67F0 /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		7764E6631F7A962900FC67F0 /* DonateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonateViewController.swift; sourceTree = "<group>"; };
+		777467451F681CF400F01AF3 /* CryptonatorProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptonatorProvider.swift; sourceTree = "<group>"; };
+		777467471F681D1700F01AF3 /* CryptonatorTicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptonatorTicker.swift; sourceTree = "<group>"; };
 		C31629810B46A92A7F784CDD /* Pods-Nova.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nova.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nova/Pods-Nova.debug.xcconfig"; sourceTree = "<group>"; };
 		DB43C4AF6E52B7B34E2E6C3C /* Pods_NovaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NovaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -152,6 +156,7 @@
 			children = (
 				777467491F681E5A00F01AF3 /* coinmarketcap */,
 				0ACB1F9E1F74F296009C3D2D /* cryptocompare */,
+				7774674A1F681E7900F01AF3 /* cryptonator */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -233,6 +238,15 @@
 				0AF23FA01F5BEC4200AB0D15 /* Ticker.swift */,
 			);
 			path = coinmarketcap;
+			sourceTree = "<group>";
+		};
+		7774674A1F681E7900F01AF3 /* cryptonator */ = {
+			isa = PBXGroup;
+			children = (
+				777467451F681CF400F01AF3 /* CryptonatorProvider.swift */,
+				777467471F681D1700F01AF3 /* CryptonatorTicker.swift */,
+			);
+			path = cryptonator;
 			sourceTree = "<group>";
 		};
 		E32EDFE3368E06439B9064F1 /* Pods */ = {
@@ -420,9 +434,11 @@
 				0A2D3E551F5AFA2A002510BA /* Constants.swift in Sources */,
 				0A2D3E381F5AC429002510BA /* TickerListViewController.swift in Sources */,
 				0ACB1FA11F74F430009C3D2D /* CryptoCompareProvider.swift in Sources */,
+				777467461F681CF400F01AF3 /* CryptonatorProvider.swift in Sources */,
 				0AB59B0E1F69A6B300798BBB /* MenuBarViewModel.swift in Sources */,
 				0AF23FA11F5BEC4200AB0D15 /* Ticker.swift in Sources */,
 				7764E6621F7A5F3200FC67F0 /* ContactViewController.swift in Sources */,
+				777467481F681D1700F01AF3 /* CryptonatorTicker.swift in Sources */,
 				7763D05D1F6FAA18009EE03E /* LocalDataSource.swift in Sources */,
 				7763D05B1F6FAA0C009EE03E /* RemoteDataSource.swift in Sources */,
 				0A8F66381F766B2F00723F8F /* EventMonitor.swift in Sources */,
