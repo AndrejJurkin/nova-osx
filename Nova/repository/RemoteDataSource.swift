@@ -27,16 +27,14 @@ import Moya
 class RemoteDataSource {
     
     private var coinMarketCapProvider: RxMoyaProvider<CoinMarketCapProvider>
-    private var cryptonatorProvider: RxMoyaProvider<CryptonatorProvider>
+
     private var cryptoCompareProvider: RxMoyaProvider<CryptoCompareProvider>
     private let providerPlugins = [NetworkLoggerPlugin()]
     
     init(coinMarketCapProvider: RxMoyaProvider<CoinMarketCapProvider>,
-         cryptonatorProvider: RxMoyaProvider<CryptonatorProvider>,
          cryptoCompareProvider: RxMoyaProvider<CryptoCompareProvider>) {
         
         self.coinMarketCapProvider = coinMarketCapProvider
-        self.cryptonatorProvider = cryptonatorProvider
         self.cryptoCompareProvider = cryptoCompareProvider
     }
     

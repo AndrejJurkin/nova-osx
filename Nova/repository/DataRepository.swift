@@ -105,22 +105,7 @@ class DataRepository {
         
         return self.remote.getTopTickers(limit: limit)
     }
-    
-    /// Get ticker from Cryptonator api
-    ///
-    /// Endpoint updates every 30s
-    ///
-    /// - parameters:
-    ///    - base: The base currency symbol (1 base unit is priced at x target units)
-    ///    - target: The target currency symbol
-    ///
-    /// - returns:
-    /// An Observable of type `CryptonatorTickerResponse`
-    func getTicker(base: String, target: String) -> Observable<CryptonatorTickerResponse> {
 
-        return self.remote.getTicker(base: base, target: target)
-    }
-    
     
     /// Request fresh prices from CryptoCompare api
     /// Update local repository on response

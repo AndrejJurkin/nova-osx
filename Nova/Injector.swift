@@ -62,11 +62,7 @@ class Injector {
         self.mainContainer.register(RxMoyaProvider<CoinMarketCapProvider>.self) { _ in
             return RxMoyaProvider<CoinMarketCapProvider>()
         }
-        
-        self.mainContainer.register(RxMoyaProvider<CryptonatorProvider>.self) { _ in
-            return RxMoyaProvider<CryptonatorProvider>()
-        }
-        
+
         self.mainContainer.register(RxMoyaProvider<CryptoCompareProvider>.self) { _ in
             return RxMoyaProvider<CryptoCompareProvider>()
         }
