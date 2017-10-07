@@ -55,6 +55,16 @@ class TickerListViewModel {
     /// Rx subscriptions
     let disposeBag = DisposeBag()
     
+    var targetCurrency: String {
+        set {
+            prefs.targetCurrency = newValue
+        }
+        
+        get {
+            return prefs.targetCurrency
+        }
+    }
+    
     /// CMC image format
     private let imageUrlFormat = "https://files.coinmarketcap.com/static/img/coins/128x128/%@.png"
     
@@ -100,8 +110,7 @@ class TickerListViewModel {
         return URL(string: urlString)
     }
     
-    /// TODO: replace with dynamic currency symbol
-    func getCurrencyPriceUsd(row: Int) -> String {
+    func getTargetPrice(row: Int) -> String {
         let ticker = self.getTicker(row: row)
         let format = ticker.price < 1 ? "$ %.6f" : "$ %.2f"
         

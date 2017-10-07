@@ -38,6 +38,8 @@ class Prefs {
         static let pinnedSymbols = "pinned_symbols"
         
         static let targetCurrency = "target_currency"
+        
+        static let showCurrencySymbol = "show_currency_symbol"
     }
     
     let userDefaults = UserDefaults.standard
@@ -90,6 +92,17 @@ class Prefs {
         
         set {
             self.userDefaults.set(newValue, forKey: Key.targetCurrency)
+        }
+    }
+    
+    var showCurrencySymbol: Bool {
+        
+        get {
+           return self.userDefaults.bool(forKey: Key.showCurrencySymbol)
+        }
+        
+        set {
+            self.userDefaults.set(newValue, forKey: Key.showCurrencySymbol)
         }
     }
     

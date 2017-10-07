@@ -28,28 +28,26 @@ import Kingfisher
 class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
     
     @IBOutlet weak var searchTextField: NSTextField!
-    
     @IBOutlet weak var tickerTableView: NSTableView!
-    
     @IBOutlet weak var refreshButton: NSButton!
-    
     @IBOutlet var settingsMenu: NSMenu!
+    @IBOutlet weak var targetCurrencies: NSMenu!
     
     var viewModel = Injector.inject(type: TickerListViewModel.self)
-    
     var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.searchTextField.rx.text.orEmpty
-            .bindTo(viewModel.searchString)
+            .bind(to: viewModel.searchString)
             .addDisposableTo(disposeBag)
         
         self.viewModel.reloadDataCallback = {
             self.tickerTableView.reloadData()
         }
         
+        // Bind refresh button
         self.viewModel.isRefreshing.asObservable().subscribe { refreshingState in
             guard let isRefreshing = refreshingState.element else {
                 return
@@ -65,11 +63,23 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
         }
         .addDisposableTo(disposeBag)
 
+        // Set placeholder color
         if let font = NSFont(name: "Avenir-Book", size: 17) {
             let attributes = [NSForegroundColorAttributeName: R.Color.placeholderLight, NSFontAttributeName: font]
             
             let searchPlaceholder = NSAttributedString(string: "Search...", attributes: attributes)
             self.searchTextField.placeholderAttributedString = searchPlaceholder
+        }
+        
+        let targetCurrency = self.viewModel.targetCurrency
+        // Bind menu item actions
+        for menu in targetCurrencies.items {
+            menu.target = self
+            menu.action = #selector(onTargetCurrencyClick(sender:))
+            
+            if targetCurrency == menu.title {
+                menu.state = NSOnState
+            }
         }
     }
 
@@ -100,10 +110,7 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
     }
     
     @IBAction func onRefreshButtonClick(_ sender: Any) {
-        self.viewModel.refresh()
-        
-        // TODO: Inject view
-        AppDelegate.shared().menuBarView?.refresh()
+        self.refreshData()
     }
     
     @IBAction func onSettingsButtonClick(_ sender: Any) {
@@ -118,6 +125,32 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
     @IBAction func onAcknowledgementsClick(_ sender: AnyObject) {
         self.openPdf(resourceName: "acknowledgements")
     }
+    
+    @IBAction func openSupportWebsite(_ sender: Any) {
+        if let url = URL(string: "https://github.com/AndrejJurkin/nova-osx") {
+            NSWorkspace.shared().open(url)
+        }
+    }
+    
+    func refreshData() {
+        self.viewModel.refresh()
+        AppDelegate.shared().menuBarView?.refresh()
+    }
+    
+    func onTargetCurrencyClick(sender: NSMenuItem) {
+        sender.state = NSOnState
+        
+        for menuItem in targetCurrencies.items {
+            if sender.title == menuItem.title {
+                continue
+            }
+            
+            menuItem.state = NSOffState
+        }
+
+        self.viewModel.targetCurrency = sender.title
+        self.refreshData()
+    }
 
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
@@ -125,7 +158,7 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
         
         view.currencyName.stringValue = self.viewModel.getCurrencyName(row: row)
         view.currencyImageView.kf.setImage(with: self.viewModel.getCurrencyImageUrl(row: row))
-        view.currencyPrice.stringValue = self.viewModel.getCurrencyPriceUsd(row: row)
+        view.currencyPrice.stringValue = self.viewModel.getTargetPrice(row: row)
         
         view.pinButton.tag = row
         view.pinButton.target = self
@@ -165,19 +198,12 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
     func stopRefreshAnimation() {
          self.refreshButton.layer?.removeAllAnimations()
     }
-
     
     func openPdf(resourceName: String) {
         AppDelegate.shared().menuBarView?.hidePopover()
         
         if let pdfURL = Bundle.main.url(forResource: resourceName, withExtension: "pdf"){
             NSWorkspace.shared().open(pdfURL)
-        }
-    }
-    
-    @IBAction func openSupportWebsite(_ sender: Any) {
-        if let url = URL(string: "https://github.com/AndrejJurkin/nova-osx") {
-            NSWorkspace.shared().open(url)
         }
     }
 }

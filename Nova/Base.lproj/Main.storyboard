@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
         <capability name="box content view" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
@@ -676,7 +676,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="313" height="88"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="k5n-sx-iYP">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k5n-sx-iYP">
                                             <rect key="frame" x="14" y="16" width="285" height="25"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="C O N T A C T" id="BNv-7R-VNo">
                                                 <font key="font" size="15" name="Avenir-Book"/>
@@ -711,7 +711,7 @@
                                             </constraints>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="ic_mail" id="0pa-ey-Zuq"/>
                                         </imageView>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="szD-E4-Sg2">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="szD-E4-Sg2">
                                             <rect key="frame" x="50" y="126" width="233" height="17"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" title="andrej.jurkin@gmail.com" id="IZS-Qr-yCm">
                                                 <font key="font" metaFont="system"/>
@@ -727,8 +727,8 @@
                                             </constraints>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="ic_phone" id="8md-XR-PC5"/>
                                         </imageView>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2d4-3n-lyB">
-                                            <rect key="frame" x="50" y="88" width="120" height="20"/>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2d4-3n-lyB">
+                                            <rect key="frame" x="50" y="88" width="121" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="Xo5-VW-7aH"/>
                                             </constraints>
@@ -818,7 +818,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6sw-R0-WmF">
+                                        <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6sw-R0-WmF">
                                             <rect key="frame" x="40" y="8" width="264" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" placeholderString="Search..." drawsBackground="YES" id="fV0-Ls-lxm">
@@ -876,7 +876,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ic_search" id="xgd-8h-VAT"/>
                                         </imageView>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cew-eD-heY">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cew-eD-heY">
                                             <rect key="frame" x="14" y="51" width="61" height="25"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="N O V A" id="2ZQ-XW-NBY">
                                                 <font key="font" size="15" name="Avenir-Book"/>
@@ -946,7 +946,7 @@
                                                                                         </constraints>
                                                                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="n39-MQ-GNM"/>
                                                                                     </imageView>
-                                                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OSB-nX-mMZ">
+                                                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OSB-nX-mMZ">
                                                                                         <rect key="frame" x="40" y="10" width="151" height="29"/>
                                                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Title" drawsBackground="YES" id="UvD-og-7b6">
                                                                                             <font key="font" size="17" name="AvenirNext-Regular"/>
@@ -954,7 +954,7 @@
                                                                                             <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
                                                                                         </textFieldCell>
                                                                                     </textField>
-                                                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gkK-SN-jqI">
+                                                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gkK-SN-jqI">
                                                                                         <rect key="frame" x="199" y="12" width="69" height="25"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="width" constant="69" id="ZrN-zC-oIv"/>
@@ -1051,12 +1051,47 @@
                         <outlet property="refreshButton" destination="KEh-r0-qsg" id="ghE-ld-ps4"/>
                         <outlet property="searchTextField" destination="6sw-R0-WmF" id="mrP-lZ-Yug"/>
                         <outlet property="settingsMenu" destination="kVh-AQ-w00" id="YY0-IY-upg"/>
+                        <outlet property="targetCurrencies" destination="Nfb-ap-sSV" id="53I-o8-LGB"/>
                         <outlet property="tickerTableView" destination="mvs-s4-D06" id="K8T-hl-61D"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <menu id="kVh-AQ-w00">
                     <items>
+                        <menuItem title="Target Currency" id="lap-wO-hF6">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <menu key="submenu" title="Target Currency" id="Nfb-ap-sSV" userLabel="Target Currencies">
+                                <items>
+                                    <menuItem title="USD" tag="1" id="UHV-VT-N61">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="EUR" tag="3" id="OzS-4Q-qTI">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="GBP" tag="4" id="UU9-Yz-nva">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="CAD" tag="5" id="h8U-Sk-G39">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="AUD" tag="7" id="2q0-sL-GoK">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="JPY" tag="8" id="fdJ-Is-52q">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="CNY" tag="8" id="1tJ-vE-sm1">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="CHF" tag="8" id="hso-oH-3BG">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="SGD" tag="8" id="8zx-Va-YMy">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                </items>
+                            </menu>
+                        </menuItem>
                         <menuItem title="Contact" id="E57-kB-BFV">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
@@ -1113,7 +1148,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="424" height="88"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kxx-Zm-o7T">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kxx-Zm-o7T">
                                             <rect key="frame" x="14" y="16" width="396" height="25"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="D O N A T E" id="aRc-ec-Nua">
                                                 <font key="font" size="15" name="Avenir-Book"/>
@@ -1139,7 +1174,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="424" height="306"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="uM8-Yk-vtH">
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uM8-Yk-vtH">
                                             <rect key="frame" x="14" y="265" width="396" height="25"/>
                                             <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Your support is highly appreciated!" id="8v4-fd-8DE">
                                                 <font key="font" size="15" name="Avenir-Book"/>
@@ -1147,7 +1182,7 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xZ2-l8-ASG">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xZ2-l8-ASG">
                                             <rect key="frame" x="16" y="187" width="300" height="32"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="300" id="8FT-7S-By7"/>
@@ -1159,7 +1194,7 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YeA-yA-8Uh">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YeA-yA-8Uh">
                                             <rect key="frame" x="42" y="227" width="33" height="25"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="BTC" id="hkn-rX-wBP">
                                                 <font key="font" size="15" name="Avenir-Book"/>
@@ -1175,7 +1210,7 @@
                                             </constraints>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="ic_bitcoin" id="E48-hT-xWz"/>
                                         </imageView>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="toR-eI-LcV">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="toR-eI-LcV">
                                             <rect key="frame" x="16" y="109" width="364" height="32"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="364" id="0YW-Sd-vJ5"/>
@@ -1187,7 +1222,7 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DzP-Yf-L8n">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DzP-Yf-L8n">
                                             <rect key="frame" x="42" y="149" width="86" height="25"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="ETH, ERC20" id="SPR-xw-qYW">
                                                 <font key="font" size="15" name="Avenir-Book"/>
@@ -1203,7 +1238,7 @@
                                             </constraints>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="ic_ethereum" id="v7c-QP-8yJ"/>
                                         </imageView>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="l9Q-y3-UM9">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l9Q-y3-UM9">
                                             <rect key="frame" x="16" y="31" width="315" height="32"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="32" id="xFo-Vl-2CY"/>
@@ -1214,7 +1249,7 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VHj-SZ-hB8">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VHj-SZ-hB8">
                                             <rect key="frame" x="42" y="71" width="38" height="25"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="NEO" id="HAa-vB-tGv">
                                                 <font key="font" size="15" name="Avenir-Book"/>
