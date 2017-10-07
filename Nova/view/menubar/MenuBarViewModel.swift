@@ -55,8 +55,8 @@ class MenuBarViewModel {
                 
                 // Create menu bar string representation
                 for ticker in tickers {
-                    let priceFormat = ticker.priceUsd < 1 ? "%.4f" : "%.2f"
-                    let priceFormatted = String(format: priceFormat, ticker.priceUsd)
+                    let priceFormat = ticker.price < 1 ? "%.4f" : "%.2f"
+                    let priceFormatted = String(format: priceFormat, ticker.price)
                     menuBarText.append("\(ticker.symbol) \(priceFormatted)   ")
                     
                     tickerSymbols.append(ticker.symbol)

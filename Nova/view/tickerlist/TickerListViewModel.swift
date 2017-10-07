@@ -103,9 +103,9 @@ class TickerListViewModel {
     /// TODO: replace with dynamic currency symbol
     func getCurrencyPriceUsd(row: Int) -> String {
         let ticker = self.getTicker(row: row)
-        let format = ticker.priceUsd < 1 ? "$ %.6f" : "$ %.2f"
+        let format = ticker.price < 1 ? "$ %.6f" : "$ %.2f"
         
-        return String(format: format, ticker.priceUsd)
+        return String(format: format, ticker.price)
     }
     
     func pinStatusChanged(row: Int, pinned: Bool) {

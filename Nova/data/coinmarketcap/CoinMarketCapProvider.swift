@@ -58,6 +58,9 @@ extension CoinMarketCapProvider: TargetType {
     
     var parameters: [String : Any]? {
         switch self {
+        case .allTickers:
+            //TODO: pass target currency as a parameter
+            return ["convert": Prefs.shared.targetCurrency]
         case .topTickers(let limit):
             return ["limit": limit]
         default:

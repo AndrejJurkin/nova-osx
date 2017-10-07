@@ -30,10 +30,8 @@ class Ticker: RealmObject, Mappable {
     dynamic var symbol: String = ""
     dynamic var id: String = ""
     dynamic var name: String = ""
-    
     dynamic var isPinned = false
-    
-    dynamic var priceUsd: Double = 0
+    dynamic var price: Double = 0
     dynamic var priceBtc: Double = 0
     dynamic var rank: Int = 0
 
@@ -42,7 +40,6 @@ class Ticker: RealmObject, Mappable {
     }
     
     func mapping(map: Map) {
-        
         self.symbol <- map["symbol"]
         self.id <- map["id"]
         self.name <- map["name"]
@@ -51,11 +48,13 @@ class Ticker: RealmObject, Mappable {
         var priceBtcStr: String = ""
         var rankStr: String = ""
         
-        priceUsdStr <- map["price_usd"]
+        let targetCurrency = Prefs.shared.targetCurrency.lowercased()
+        
+        priceUsdStr <- map["price_\(targetCurrency)"]
         priceBtcStr <- map["price_btc"]
         rankStr <- map["rank"]
         
-        self.priceUsd = Double(priceUsdStr) ?? 0
+        self.price = Double(priceUsdStr) ?? 0
         self.priceBtc = Double(priceBtcStr) ?? 0
         self.rank = Int(rankStr) ?? 0
     }
@@ -70,7 +69,7 @@ class Ticker: RealmObject, Mappable {
             "id": id,
             "symbol": symbol,
             "name": name,
-            "priceUsd": priceUsd,
+            "price": price,
             "priceBtc": priceBtc,
             "rank": rank,
         ]
