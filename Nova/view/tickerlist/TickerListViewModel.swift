@@ -65,6 +65,12 @@ class TickerListViewModel {
         }
     }
     
+    var currencySymbol: String {
+        let locale = NSLocale(localeIdentifier: self.targetCurrency)
+        return locale.displayName(
+            forKey: NSLocale.Key.currencySymbol, value: self.targetCurrency) ?? self.targetCurrency
+    }
+    
     /// CMC image format
     private let imageUrlFormat = "https://files.coinmarketcap.com/static/img/coins/128x128/%@.png"
     
@@ -112,7 +118,7 @@ class TickerListViewModel {
     
     func getTargetPrice(row: Int) -> String {
         let ticker = self.getTicker(row: row)
-        let format = ticker.price < 1 ? "$ %.6f" : "$ %.2f"
+        let format = ticker.price < 1 ? "\(self.currencySymbol) %.6f" : "\(self.currencySymbol) %.2f"
         
         return String(format: format, ticker.price)
     }
