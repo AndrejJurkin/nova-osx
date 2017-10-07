@@ -31,6 +31,12 @@ class LocalDataSource {
         SortDescriptor(keyPath: "rank", ascending: true)
     ]
     
+    var prefs: Prefs
+    
+    init(prefs: Prefs) {
+        self.prefs = prefs
+    }
+    
     /// Asyncroniously cache tickers into Realm
     func saveTickersAsync(tickers: [Ticker]) {
         DispatchQueue(label: "realm").async {
@@ -71,8 +77,9 @@ class LocalDataSource {
         
         try! realm.write {
             for (key, prices) in tickers {
-                if let updatedPrice = prices["USD"] {
-                    realm.create(Ticker.self, value: ["symbol": key, "priceUsd": updatedPrice], update: true)
+                
+                if let updatedPrice = prices[prefs.targetCurrency] {
+                    realm.create(Ticker.self, value: ["symbol": key, "price": updatedPrice], update: true)
                 }
             }
         }

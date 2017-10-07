@@ -123,7 +123,7 @@ class DataRepository {
                 .timer(0, period: RxTimeInterval(refreshInterval), scheduler: Schedulers.background)
                 // Query CryptoCompare api for an update
                 .flatMap({ _ -> Observable<[String: [String: Double]]> in
-                    return self.remote.getTickers(base: baseSymbols)
+                    return self.remote.getTickers(base: baseSymbols, target: [self.prefs.targetCurrency])
                 })
                 .retryWithDelay(timeInterval: Int(refreshInterval))
                 .subscribe(onNext: { tickers in
