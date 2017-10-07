@@ -23,6 +23,8 @@
 import Foundation
 import RxSwift
 import Moya
+import ObjectMapper
+import Moya_ObjectMapper
 
 class RemoteDataSource {
     
@@ -42,34 +44,22 @@ class RemoteDataSource {
     func getAllTickers() -> Observable<[Ticker]> {
         return self.coinMarketCapProvider.request(.allTickers)
             .observeOn(Schedulers.backgroundInteractive)
-            .map(toArray: Ticker.self)
+            .mapArray(Ticker.self)
+
     }
     
     /// Get top N (limit) tickers, sorted by market cap
     func getTopTickers(limit: Int) -> Observable<[Ticker]> {
         
         return self.coinMarketCapProvider.request(.topTickers(limit: limit))
-            .map(toArray: Ticker.self)
+            .mapArray(Ticker.self)
     }
     
     /// Get ticker for a single crypto currency
     func getTicker(currencyName: String) -> Observable<Ticker> {
         
         return self.coinMarketCapProvider.request(.ticker(currencyName: currencyName))
-            .map(to: Ticker.self)
-    }
-    
-    /// Get ticker from Cryptonator api
-    ///
-    /// Endpoint updates every 30s
-    ///
-    /// - parameters:
-    ///    - base: The base currency symbol (1 base unit is priced at x target units)
-    ///    - target: The target currency symbol
-    func getTicker(base: String, target: String) -> Observable<CryptonatorTickerResponse> {
-        
-        return self.cryptonatorProvider.request(.ticker(base: base, target: target))
-            .map(to: CryptonatorTickerResponse.self)
+            .mapObject(Ticker.self)
     }
     
     /// Get tickers from CryptoCompare api

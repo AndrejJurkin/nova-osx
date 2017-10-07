@@ -28,7 +28,7 @@ class LocalDataSource {
     
     let defaultSortOrder = [
         SortDescriptor(keyPath: "isPinned", ascending: false),
-        SortDescriptor(keyPath: "marketCapUsd", ascending: false)
+        SortDescriptor(keyPath: "rank", ascending: true)
     ]
     
     /// Asyncroniously cache tickers into Realm

@@ -11,14 +11,13 @@ target 'Nova' do
   pod 'Kingfisher'
   pod 'RxAlamofire'
   pod 'Moya/RxSwift'
-  pod 'Moya-ModelMapper/RxSwift'
   pod 'RxOptional'
-  pod 'EVReflection'
-  pod 'EVReflection/MoyaRxSwift'
-  pod 'Kingfisher'
+  pod 'Kingfisher', '~> 3.13.1'
   pod 'RealmSwift'
   pod 'RxRealm'
   pod 'Swinject'
   pod 'SwinjectAutoregistration'
-
+  pod 'ObjectMapper'
+  pod 'Moya-ObjectMapper', '~> 2.3.2'
+  pod 'Moya-ObjectMapper/RxSwift', '~> 2.3.2'
 end
