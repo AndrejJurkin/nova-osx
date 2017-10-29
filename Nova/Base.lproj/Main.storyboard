@@ -1065,6 +1065,10 @@
                                     <menuItem title="BTC" tag="1" id="wZR-em-mym" userLabel="BTC">
                                         <modifierMask key="keyEquivalentModifierMask"/>
                                     </menuItem>
+                                    <menuItem title="SAT" tag="1" id="4kS-7A-91O">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem isSeparatorItem="YES" id="0Ft-dY-q6G"/>
                                     <menuItem title="USD" tag="1" id="nla-ZW-Ddv">
                                         <modifierMask key="keyEquivalentModifierMask"/>
                                     </menuItem>

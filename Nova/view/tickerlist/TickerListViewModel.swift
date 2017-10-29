@@ -51,36 +51,36 @@ class TickerListViewModel {
     /// True while repository processing data in background
     /// Bind to UI to show indicator
     var isRefreshing = Variable<Bool>(false)
+    
+    var priceFormatter: PriceFormatter
 
     /// Rx subscriptions
     let disposeBag = DisposeBag()
     
-    var targetCurrency: String {
+    var displayCurrency: String {
         set {
+            self.priceFormatter = PriceFormatter(displayCurrency: newValue)
+            
             if newValue == "SAT" {
                 self.prefs.targetCurrency = "BTC"
-                self.prefs.displayCurrency = newValue
             } else {
                 self.prefs.targetCurrency = newValue
-                self.prefs.displayCurrency = newValue
             }
+            
+            self.prefs.displayCurrency = newValue
         }
         
         get {
-            return prefs.targetCurrency
+            return prefs.displayCurrency
         }
-    }
-    
-    var currencySymbol: String {
-        let locale = NSLocale(localeIdentifier: self.targetCurrency)
-        return locale.displayName(
-            forKey: NSLocale.Key.currencySymbol, value: self.targetCurrency) ?? self.targetCurrency
     }
     
     /// CMC image format
     private let imageUrlFormat = "https://files.coinmarketcap.com/static/img/coins/128x128/%@.png"
     
     init() {
+        self.priceFormatter = PriceFormatter(displayCurrency: self.prefs.displayCurrency)
+        
         self.repo.getAllTickers()
             .subscribe(onNext: { tickers in
                 self.data = tickers
@@ -123,9 +123,8 @@ class TickerListViewModel {
     
     func getTargetPrice(row: Int) -> String {
         let ticker = self.getTicker(row: row)
-        let format = ticker.price < 1 ? "\(self.currencySymbol) %.6f" : "\(self.currencySymbol) %.2f"
         
-        return String(format: format, ticker.price)
+        return self.priceFormatter.formatWithTargetSymbol(ticker: ticker)
     }
     
     func pinStatusChanged(row: Int, pinned: Bool) {

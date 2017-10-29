@@ -71,7 +71,7 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
             self.searchTextField.placeholderAttributedString = searchPlaceholder
         }
         
-        let targetCurrency = self.viewModel.targetCurrency
+        let targetCurrency = self.viewModel.displayCurrency
         // Bind menu item actions
         for menu in targetCurrencies.items {
             menu.target = self
@@ -148,7 +148,7 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
             menuItem.state = NSOffState
         }
 
-        self.viewModel.targetCurrency = sender.title
+        self.viewModel.displayCurrency = sender.title
         self.refreshData()
     }
 

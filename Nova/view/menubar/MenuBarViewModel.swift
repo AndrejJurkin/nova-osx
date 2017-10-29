@@ -53,18 +53,11 @@ class MenuBarViewModel {
                 var menuBarText = ""
                 var tickerSymbols: [String] = []
                 
+                let priceFormatter = PriceFormatter(displayCurrency: self.prefs.displayCurrency)
+                
                 // Create menu bar string representation
                 for ticker in tickers {
-                    let priceFormat = self.getPriceFormat(ticker: ticker)
-                    var priceFormatted = ""
-                    
-                    if self.prefs.targetCurrency == "SAT" {
-                        priceFormatted = String(format: priceFormat, ticker.price / 100000000)
-                    } else {
-                        priceFormatted = String(format: priceFormat, ticker.price)
-                    }
-                    
-                    menuBarText.append("\(ticker.symbol) \(priceFormatted)  ")
+                    menuBarText.append(priceFormatter.formatWithTickerSymbol(ticker: ticker))
                     tickerSymbols.append(ticker.symbol)
                 }
                 
