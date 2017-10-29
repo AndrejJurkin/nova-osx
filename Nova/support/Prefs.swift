@@ -39,6 +39,8 @@ class Prefs {
         
         static let targetCurrency = "target_currency"
         
+        static let displayCurrency = "display_currency"
+        
         static let showCurrencySymbol = "show_currency_symbol"
     }
     
@@ -87,6 +89,22 @@ class Prefs {
         
         set {
             self.userDefaults.set(newValue, forKey: Key.targetCurrency)
+        }
+    }
+    
+    /// The currency we use to display prices
+    /// For example BTC and SAT should both use BTC as a target currency,
+    /// but we also need to be able to display them differently
+    var displayCurrency: String {
+        get {
+            if let displayCurrency = self.userDefaults.string(forKey: Key.displayCurrency) {
+                return displayCurrency
+            }
+            return "USD"
+        }
+        
+        set {
+            self.userDefaults.set(newValue, forKey: Key.displayCurrency)
         }
     }
     

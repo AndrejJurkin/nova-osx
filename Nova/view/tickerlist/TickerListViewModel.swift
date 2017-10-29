@@ -57,7 +57,13 @@ class TickerListViewModel {
     
     var targetCurrency: String {
         set {
-            prefs.targetCurrency = newValue
+            if newValue == "SAT" {
+                self.prefs.targetCurrency = "BTC"
+                self.prefs.displayCurrency = newValue
+            } else {
+                self.prefs.targetCurrency = newValue
+                self.prefs.displayCurrency = newValue
+            }
         }
         
         get {
@@ -75,7 +81,6 @@ class TickerListViewModel {
     private let imageUrlFormat = "https://files.coinmarketcap.com/static/img/coins/128x128/%@.png"
     
     init() {
-        
         self.repo.getAllTickers()
             .subscribe(onNext: { tickers in
                 self.data = tickers
