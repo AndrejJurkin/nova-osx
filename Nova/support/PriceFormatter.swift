@@ -27,8 +27,17 @@ class PriceFormatter {
     let displaySymbol: String
     let displayCurrency: String
     
+    let decimalNumberFormatter: NumberFormatter
+    
     init(displayCurrency: String) {
         self.displayCurrency = displayCurrency
+        
+        self.decimalNumberFormatter = NumberFormatter()
+        decimalNumberFormatter.numberStyle = .decimal
+        decimalNumberFormatter.groupingSeparator = ","
+        decimalNumberFormatter.groupingSize = 3
+        decimalNumberFormatter.minimumFractionDigits = 0
+        decimalNumberFormatter.maximumFractionDigits = 0
         
         let locale = NSLocale(localeIdentifier: self.displayCurrency)
         self.displaySymbol = locale.displayName(
@@ -50,8 +59,9 @@ class PriceFormatter {
         let format = self.getPriceFormat(ticker: ticker)
         
         if displayCurrency == "SAT" && ticker.symbol != "BTC" {
-            let satPrice = ticker.price * 100000000
-            return "\(symbol) \(String(format: format, satPrice))  "
+            let satPrice = ticker.price * 100000000 as NSNumber
+            let formattedPrice = decimalNumberFormatter.string(for: satPrice) ?? "\(satPrice)"
+            return "\(symbol) \(formattedPrice)  "
         }
         
         return "\(symbol) \(String(format: format, ticker.price))  "
