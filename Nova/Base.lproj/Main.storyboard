@@ -1062,7 +1062,10 @@
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <menu key="submenu" title="Target Currency" id="Nfb-ap-sSV" userLabel="Target Currencies">
                                 <items>
-                                    <menuItem title="USD" tag="1" id="UHV-VT-N61">
+                                    <menuItem title="BTC" tag="1" id="wZR-em-mym" userLabel="BTC">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="USD" tag="1" id="nla-ZW-Ddv">
                                         <modifierMask key="keyEquivalentModifierMask"/>
                                     </menuItem>
                                     <menuItem title="EUR" tag="3" id="OzS-4Q-qTI">

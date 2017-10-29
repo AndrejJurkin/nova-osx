@@ -57,7 +57,6 @@ class RemoteDataSource {
     
     /// Get ticker for a single crypto currency
     func getTicker(currencyName: String) -> Observable<Ticker> {
-        
         return self.coinMarketCapProvider.request(.ticker(currencyName: currencyName))
             .mapObject(Ticker.self)
     }
@@ -69,7 +68,7 @@ class RemoteDataSource {
     ///    - target: The optional array of fiat target symbols we are converting into (USD, EUR...)
     ///              Defaults to [\"USD\"]
     func getTickers(base: [String], target: [String] = ["USD"]) -> Observable<[String: [String: Double]]> {
-        
+
         return self.cryptoCompareProvider
             .request(.priceMulti(fromSymbols: base, toSymbols: target))
             .map { response in

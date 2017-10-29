@@ -46,7 +46,6 @@ class Prefs {
     
     /// Ticker refresh interval (seconds), default 30.0
     var rereshInterval: Float {
-        
         get {
             return self.userDefaults.float(forKey: Key.refreshInterval)
         }
@@ -63,14 +62,12 @@ class Prefs {
     ///
     /// Defaults to empty dictionry
     var pinedCurrencies: [String: Double] {
-        
         get {
             if let value = self.userDefaults
                 .dictionary(forKey: Key.pinnedSymbols) as? [String: Double] {
-                
+
                 return value
             }
-            
             return [:]
         }
         
@@ -81,12 +78,10 @@ class Prefs {
     
     /// Target currency to convert all coins into, default USD
     var targetCurrency: String {
-        
         get {
             if let target = self.userDefaults.string(forKey: Key.targetCurrency) {
                 return target
             }
-            
             return "USD"
         }
         
@@ -96,7 +91,6 @@ class Prefs {
     }
     
     var showCurrencySymbol: Bool {
-        
         get {
            return self.userDefaults.bool(forKey: Key.showCurrencySymbol)
         }

@@ -124,7 +124,6 @@
 		0A2D3E341F5AC429002510BA /* Nova */ = {
 			isa = PBXGroup;
 			children = (
-				770C67611F8373A700D3D104 /* Nova.entitlements */,
 				0A2D3E561F5B4EAE002510BA /* data */,
 				7763D0561F6FA888009EE03E /* repository */,
 				7763D0651F6FD043009EE03E /* support */,
@@ -134,6 +133,7 @@
 				0A2D3E3E1F5AC429002510BA /* Info.plist */,
 				7763D05F1F6FB683009EE03E /* Injector.swift */,
 				0A2D3E3B1F5AC429002510BA /* Main.storyboard */,
+				770C67611F8373A700D3D104 /* Nova.entitlements */,
 			);
 			path = Nova;
 			sourceTree = "<group>";

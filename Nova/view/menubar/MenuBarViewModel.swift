@@ -55,10 +55,16 @@ class MenuBarViewModel {
                 
                 // Create menu bar string representation
                 for ticker in tickers {
-                    let priceFormat = ticker.price < 1 ? "%.4f" : "%.2f"
-                    let priceFormatted = String(format: priceFormat, ticker.price)
-                    menuBarText.append("\(ticker.symbol) \(priceFormatted)   ")
+                    let priceFormat = self.getPriceFormat(ticker: ticker)
+                    var priceFormatted = ""
                     
+                    if self.prefs.targetCurrency == "SAT" {
+                        priceFormatted = String(format: priceFormat, ticker.price / 100000000)
+                    } else {
+                        priceFormatted = String(format: priceFormat, ticker.price)
+                    }
+                    
+                    menuBarText.append("\(ticker.symbol) \(priceFormatted)  ")
                     tickerSymbols.append(ticker.symbol)
                 }
                 
@@ -69,7 +75,6 @@ class MenuBarViewModel {
             // Distinct if pinned tickers array has the same size
             // This is to avoid re-subscribing after values update
             .distinctUntilChanged({ (old, new) -> Bool in
-                
                 return old.count == new.count
             })
             .filter { $0.count != 0 }
@@ -85,5 +90,17 @@ class MenuBarViewModel {
     
     func unsubscribe() {
         self.repo.disposeRefreshSubscriptions()
+    }
+    
+    func getPriceFormat(ticker: Ticker) -> String {
+        let targetCurrency = self.prefs.targetCurrency
+        
+        if targetCurrency == "BTC" {
+            return "%.8f"
+        } else if targetCurrency == "SAT" {
+            return "%.2f"
+        }
+        
+        return ticker.price < 1 ? "%.4f" : "%.2f"
     }
 }
