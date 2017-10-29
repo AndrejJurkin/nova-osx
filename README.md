@@ -1,13 +1,18 @@
 ![NOVA OS X crypto currency ticker menu bar app](/Assets/PNG/nova_github_header.png)
 
-[<b>DOWNLOAD FROM APP STORE</b>](https://itunes.apple.com/us/app/nova-menu-bar-ticker/id1290181512?mt=12)
+[<b>DOWNLOAD FROM APP STORE</b>](https://itunes.apple.com/us/app/nova-menu-bar-ticker/id1290181512)
 
-Nova is a menu bar widget for OS X that displays crypto-currency tickers. 
+Nova is a tiny menu bar widget that displays fresh crypto-currency prices (tickers). Simply select coins you are interested in and watch the prices change in your menu bar!
 
-Simply select the coins you wish to follow and watch them change in your menu bar!
+Nova supports all major coins as well as over 1000 altcoins.
+
+Update interval is 15 seconds, it will be possible to configure this interval in the future.
+
+If you have any feedback or suggestions, please do not hesitate to contact me at andrej.jurkin@gmail.com.
 
 Data for the app is provided by [CryptoCompare](https://www.cryptocompare.com/api/) and [CoinMarketCap](https://coinmarketcap.com/api/), thanks!
 
+Enjoy!
 
 ![NOVA OS X crypto currency ticker menu bar app](/Assets/PNG/nova_screenshot.png)
 
