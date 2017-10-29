@@ -58,8 +58,8 @@ class PriceFormatter {
     func format(ticker: Ticker, symbol: String) -> String {
         let format = self.getPriceFormat(ticker: ticker)
         
-        if displayCurrency == "SAT" && ticker.symbol != "BTC" {
-            let satPrice = ticker.price * 100000000 as NSNumber
+        if displayCurrency == "SAT" {
+            let satPrice = ticker.price * 100000000
             let formattedPrice = decimalNumberFormatter.string(for: satPrice) ?? "\(satPrice)"
             return "\(symbol) \(formattedPrice)  "
         }
