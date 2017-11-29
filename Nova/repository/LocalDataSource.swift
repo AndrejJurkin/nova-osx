@@ -49,15 +49,19 @@ class LocalDataSource {
     /// Synchroniously cache tickers into Realm
     func saveTickers(tickers: [Ticker]) {
         let realm = try! Realm()
-
         try! realm.write {
             for ticker in tickers {
-                
-                // Workaround for BAT collision
-                if ticker.symbol == "BAT" && ticker.id != "basic-attention-token" {
-                    continue
+                // Generic fix for symbol collisions.
+                // Some unknown altcoins may have colliding symbols with (BTC, ETH..), this is a problem,
+                // because we use ticker symbol as a primary key for cryptocompare requests.
+                // The trade-off is to drop altcoins with colliding symbols and only display the ticker with the highest market cap.
+                if let localTicker = realm.object(ofType: Ticker.self, forPrimaryKey: ticker.symbol) {
+                    // Skip all colliding ticker symbols
+                    if localTicker.id != ticker.id && localTicker.rank < ticker.rank {
+                        continue
+                    }
                 }
-                
+    
                 realm.create(Ticker.self, value: ticker.toDictionary(), update: true)
             }
         }
