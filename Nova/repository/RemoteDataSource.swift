@@ -50,7 +50,6 @@ class RemoteDataSource {
     
     /// Get top N (limit) tickers, sorted by market cap
     func getTopTickers(limit: Int) -> Observable<[Ticker]> {
-        
         return self.coinMarketCapProvider.request(.topTickers(limit: limit))
             .mapArray(Ticker.self)
     }
