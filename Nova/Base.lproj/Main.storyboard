@@ -1096,6 +1096,9 @@
                                     <menuItem title="SGD" tag="8" id="8zx-Va-YMy">
                                         <modifierMask key="keyEquivalentModifierMask"/>
                                     </menuItem>
+                                    <menuItem title="NZD" tag="8" id="WhI-BK-TZm" userLabel="NZD">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
                                 </items>
                             </menu>
                         </menuItem>
