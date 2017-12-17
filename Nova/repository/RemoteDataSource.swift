@@ -68,11 +68,11 @@ class RemoteDataSource {
     ///    - target: The optional array of fiat target symbols we are converting into (USD, EUR...)
     ///              Defaults to [\"USD\"]
     func getTickers(base: [String], target: [String] = ["USD"]) -> Observable<[String: [String: Double]]> {
-
         return self.cryptoCompareProvider
             .request(.priceMulti(fromSymbols: base, toSymbols: target))
+            .filterSuccessfulStatusCodes()
             .map { response in
-                return try! JSONSerialization.jsonObject(
+                return try JSONSerialization.jsonObject(
                     with: response.data, options: []) as! [String: [String: Double]]
             }
     }

@@ -223,8 +223,8 @@
 				0A8F66371F766B2F00723F8F /* EventMonitor.swift */,
 				0AB59B091F699CF400798BBB /* Extensions.swift */,
 				0AB59B101F69A80900798BBB /* Prefs.swift */,
-				771EBD901F72BE6F00F756ED /* Schedulers.swift */,
 				0AA23C8B1FA6525A000FF632 /* PriceFormatter.swift */,
+				771EBD901F72BE6F00F756ED /* Schedulers.swift */,
 			);
 			path = support;
 			sourceTree = "<group>";
