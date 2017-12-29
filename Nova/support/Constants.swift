@@ -26,6 +26,8 @@ import Cocoa
 struct C {
     
     static let coinMarketCapBaseUrl = URL(string: "https://api.coinmarketcap.com/v1/")!
+    
+    static let firebaseBaseUrl = URL(string: "https://nova-48c48.firebaseio.com/")!
 }
 
 /// Resource constants

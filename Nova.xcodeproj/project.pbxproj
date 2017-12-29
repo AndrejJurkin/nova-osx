@@ -26,6 +26,7 @@
 		0ACE435E1F769A41008059A7 /* license.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0ACE435D1F769A41008059A7 /* license.pdf */; };
 		0ACE43601F769A5D008059A7 /* acknowledgements.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0ACE435F1F769A5D008059A7 /* acknowledgements.pdf */; };
 		0AF23FA11F5BEC4200AB0D15 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF23FA01F5BEC4200AB0D15 /* Ticker.swift */; };
+		0AF549F71FF67D910097430E /* FirebaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF549F61FF67D910097430E /* FirebaseProvider.swift */; };
 		771EBD911F72BE6F00F756ED /* Schedulers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771EBD901F72BE6F00F756ED /* Schedulers.swift */; };
 		7763D05B1F6FAA0C009EE03E /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7763D05A1F6FAA0C009EE03E /* RemoteDataSource.swift */; };
 		7763D05D1F6FAA18009EE03E /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7763D05C1F6FAA18009EE03E /* LocalDataSource.swift */; };
@@ -70,6 +71,7 @@
 		0ACE435D1F769A41008059A7 /* license.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = license.pdf; sourceTree = "<group>"; };
 		0ACE435F1F769A5D008059A7 /* acknowledgements.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = acknowledgements.pdf; sourceTree = "<group>"; };
 		0AF23FA01F5BEC4200AB0D15 /* Ticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
+		0AF549F61FF67D910097430E /* FirebaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseProvider.swift; sourceTree = "<group>"; };
 		207457C11AEF35045A801412 /* Pods-Nova.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nova.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nova/Pods-Nova.release.xcconfig"; sourceTree = "<group>"; };
 		4AC2ED320E03871B42E360B4 /* Pods_Nova.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nova.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		770C67611F8373A700D3D104 /* Nova.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nova.entitlements; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 		0A2D3E561F5B4EAE002510BA /* data */ = {
 			isa = PBXGroup;
 			children = (
+				0AF549F51FF67D6E0097430E /* firebase */,
 				777467491F681E5A00F01AF3 /* coinmarketcap */,
 				0ACB1F9E1F74F296009C3D2D /* cryptocompare */,
 			);
@@ -194,6 +197,14 @@
 				0ACB1FA01F74F430009C3D2D /* CryptoCompareProvider.swift */,
 			);
 			path = cryptocompare;
+			sourceTree = "<group>";
+		};
+		0AF549F51FF67D6E0097430E /* firebase */ = {
+			isa = PBXGroup;
+			children = (
+				0AF549F61FF67D910097430E /* FirebaseProvider.swift */,
+			);
+			path = firebase;
 			sourceTree = "<group>";
 		};
 		0AF9200E1F76935B00C62EBA /* pdf */ = {
@@ -469,6 +480,7 @@
 				7763D0601F6FB683009EE03E /* Injector.swift in Sources */,
 				0AB59B0C1F69A6AD00798BBB /* MenuBarView.swift in Sources */,
 				0AA23C8C1FA6525A000FF632 /* PriceFormatter.swift in Sources */,
+				0AF549F71FF67D910097430E /* FirebaseProvider.swift in Sources */,
 				7763D0641F6FCE64009EE03E /* DataRepository.swift in Sources */,
 				7764E6651F7A962900FC67F0 /* DonateViewController.swift in Sources */,
 				0AB59B0A1F699CF400798BBB /* Extensions.swift in Sources */,

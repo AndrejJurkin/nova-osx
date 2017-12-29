@@ -8,7 +8,6 @@ target 'Nova' do
   pod 'Alamofire'
   pod 'RxSwift'
   pod 'RxCocoa'	
-  pod 'Kingfisher'
   pod 'RxAlamofire'
   pod 'Moya/RxSwift'
   pod 'RxOptional'
