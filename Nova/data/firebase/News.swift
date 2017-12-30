@@ -32,6 +32,7 @@ class News: RealmObject, Mappable {
     dynamic var link: String = ""
     dynamic var imageUrl: String = ""
     dynamic var buttonTitle: String = ""
+    dynamic var hidden: Bool = false
     
     required convenience init?(map: Map) {
         self.init()
@@ -44,6 +45,7 @@ class News: RealmObject, Mappable {
         self.link <- map["link"]
         self.imageUrl <- map["imageUrl"]
         self.buttonTitle <- map["buttonTitle"]
+        self.hidden <- map["hidden"]
     }
     
     override static func primaryKey() -> String? {

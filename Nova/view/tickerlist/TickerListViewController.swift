@@ -33,6 +33,14 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
     @IBOutlet var settingsMenu: NSMenu!
     @IBOutlet weak var targetCurrencies: NSMenu!
     
+    // News
+    @IBOutlet weak var newsContainer: NSBox!
+    @IBOutlet weak var newsTitle: NSTextField!
+    @IBOutlet weak var newsSubtitle: NSTextField!
+    @IBOutlet weak var newsButton: NSTextField!
+    @IBOutlet weak var newsContainerHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tickerListTopConstraint: NSLayoutConstraint!
+    
     var viewModel = Injector.inject(type: TickerListViewModel.self)
     var disposeBag = DisposeBag()
     
@@ -92,19 +100,37 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
     
     override func viewDidAppear() {
         super.viewDidAppear()
-        
         self.view.window?.titleVisibility = .hidden
         self.view.window?.titlebarAppearsTransparent = true
         self.view.window?.styleMask.insert(.fullSizeContentView)
         self.view.window?.isOpaque = false
         self.view.window?.backgroundColor = NSColor.clear
-        
         self.searchTextField.cursorColor = R.Color.primaryLight
         
+        // Bind filtered data
         self.viewModel.filteredData
             .asObservable()
             .subscribe(onNext: { _ in
                 self.tickerTableView.reloadData()
+            })
+            .addDisposableTo(disposeBag)
+        
+        // Bind news
+        self.viewModel.news
+            .asObservable()
+            .subscribe({ news in
+                guard let news = news.element else {
+                    return
+                }
+                if (news.hidden) {
+                    self.hideNewsContainer()
+                } else {
+                    self.showNewsContainer()
+                    self.newsContainer.isHidden = news.hidden
+                    self.newsTitle.stringValue = news.title
+                    self.newsSubtitle.stringValue = news.subtitle
+                    self.newsButton.stringValue = news.buttonTitle
+                }
             })
             .addDisposableTo(disposeBag)
     }
@@ -129,6 +155,13 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
     @IBAction func openSupportWebsite(_ sender: Any) {
         if let url = URL(string: "https://github.com/AndrejJurkin/nova-osx") {
             NSWorkspace.shared().open(url)
+        }
+    }
+    
+    @IBAction func onNewsButtonClick(_ sender: Any) {
+        if let url = URL(string: self.viewModel.news.value.link) {
+            NSWorkspace.shared().open(url)
+            AppDelegate.shared().menuBarView?.hidePopover()
         }
     }
     
@@ -202,9 +235,17 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
     func openPdf(resourceName: String) {
         AppDelegate.shared().menuBarView?.hidePopover()
         
-        if let pdfURL = Bundle.main.url(forResource: resourceName, withExtension: "pdf"){
+        if let pdfURL = Bundle.main.url(forResource: resourceName, withExtension: "pdf") {
             NSWorkspace.shared().open(pdfURL)
         }
+    }
+    
+    func hideNewsContainer() {
+        self.tickerListTopConstraint.constant = 0;
+    }
+    
+    func showNewsContainer() {
+        self.tickerListTopConstraint.constant = self.newsContainer.frame.size.height
     }
 }
 

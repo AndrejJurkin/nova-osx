@@ -44,7 +44,6 @@ class DataRepository {
    
     init(local: LocalDataSource, remote: RemoteDataSource, prefs: Prefs) {
         self.local = local
-        
         self.remote = remote
         self.prefs = prefs
     }
@@ -178,5 +177,9 @@ class DataRepository {
     /// Terminate all running refresh subscriptions
     func disposeRefreshSubscriptions() {
         self.refreshSubscriptions = DisposeBag()
+    }
+    
+    func getNews() -> Observable<News> {
+        return self.remote.getNews()
     }
 }

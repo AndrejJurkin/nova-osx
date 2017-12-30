@@ -52,6 +52,9 @@ class TickerListViewModel {
     /// Bind to UI to show indicator
     var isRefreshing = Variable<Bool>(false)
     
+    /// Firebase news object
+    var news = Variable<News>(News())
+    
     var priceFormatter: PriceFormatter
 
     /// Rx subscriptions
@@ -60,16 +63,13 @@ class TickerListViewModel {
     var displayCurrency: String {
         set {
             self.priceFormatter = PriceFormatter(displayCurrency: newValue)
-            
             if newValue == "SAT" {
                 self.prefs.targetCurrency = "BTC"
             } else {
                 self.prefs.targetCurrency = newValue
             }
-            
             self.prefs.displayCurrency = newValue
         }
-        
         get {
             return prefs.displayCurrency
         }
@@ -96,7 +96,13 @@ class TickerListViewModel {
             .subscribe(onNext: { searchStr in
                 self.filterData(query: searchStr)
             })
-            .addDisposableTo(disposeBag)       
+            .addDisposableTo(disposeBag)
+        
+        self.repo.getNews()
+            .subscribe(onNext: { news in
+                self.news.value = news;
+            })
+            .addDisposableTo(disposeBag)
     }
     
     /// Get single ticker for tableview row
@@ -117,13 +123,11 @@ class TickerListViewModel {
             .replacingOccurrences(of: " ", with: "-")
         
         let urlString = String.init(format: imageUrlFormat, imageName)
-        
         return URL(string: urlString)
     }
     
     func getTargetPrice(row: Int) -> String {
         let ticker = self.getTicker(row: row)
-        
         return self.priceFormatter.formatWithTargetSymbol(ticker: ticker)
     }
     
@@ -139,7 +143,6 @@ class TickerListViewModel {
     
     func pinButtonState(row: Int) -> Int {
         let ticker = getTicker(row: row)
-        
         return ticker.isPinned ? 1 : 0
     }
     
