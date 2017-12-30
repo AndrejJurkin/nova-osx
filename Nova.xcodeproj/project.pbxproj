@@ -27,6 +27,7 @@
 		0ACE43601F769A5D008059A7 /* acknowledgements.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0ACE435F1F769A5D008059A7 /* acknowledgements.pdf */; };
 		0AF23FA11F5BEC4200AB0D15 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF23FA01F5BEC4200AB0D15 /* Ticker.swift */; };
 		0AF549F71FF67D910097430E /* FirebaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF549F61FF67D910097430E /* FirebaseProvider.swift */; };
+		0AF549F91FF796250097430E /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF549F81FF796250097430E /* News.swift */; };
 		771EBD911F72BE6F00F756ED /* Schedulers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771EBD901F72BE6F00F756ED /* Schedulers.swift */; };
 		7763D05B1F6FAA0C009EE03E /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7763D05A1F6FAA0C009EE03E /* RemoteDataSource.swift */; };
 		7763D05D1F6FAA18009EE03E /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7763D05C1F6FAA18009EE03E /* LocalDataSource.swift */; };
@@ -72,6 +73,7 @@
 		0ACE435F1F769A5D008059A7 /* acknowledgements.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = acknowledgements.pdf; sourceTree = "<group>"; };
 		0AF23FA01F5BEC4200AB0D15 /* Ticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		0AF549F61FF67D910097430E /* FirebaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseProvider.swift; sourceTree = "<group>"; };
+		0AF549F81FF796250097430E /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		207457C11AEF35045A801412 /* Pods-Nova.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nova.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nova/Pods-Nova.release.xcconfig"; sourceTree = "<group>"; };
 		4AC2ED320E03871B42E360B4 /* Pods_Nova.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nova.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		770C67611F8373A700D3D104 /* Nova.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nova.entitlements; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				0AF549F61FF67D910097430E /* FirebaseProvider.swift */,
+				0AF549F81FF796250097430E /* News.swift */,
 			);
 			path = firebase;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AB59B111F69A80900798BBB /* Prefs.swift in Sources */,
+				0AF549F91FF796250097430E /* News.swift in Sources */,
 				771EBD911F72BE6F00F756ED /* Schedulers.swift in Sources */,
 				0A2D3E551F5AFA2A002510BA /* Constants.swift in Sources */,
 				0A2D3E381F5AC429002510BA /* TickerListViewController.swift in Sources */,

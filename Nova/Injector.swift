@@ -46,6 +46,7 @@ class Injector {
     }
     
     // MARK: Global dependencies
+    
     private func registerGlobalDependencies() {
 
         self.mainContainer.register(AppDelegate.self, factory: { _ in
@@ -58,13 +59,16 @@ class Injector {
     // MARK: Providers
     
     private func registerProviders() {
-        
         self.mainContainer.register(RxMoyaProvider<CoinMarketCapProvider>.self) { _ in
             return RxMoyaProvider<CoinMarketCapProvider>()
         }
 
         self.mainContainer.register(RxMoyaProvider<CryptoCompareProvider>.self) { _ in
             return RxMoyaProvider<CryptoCompareProvider>()
+        }
+        
+        self.mainContainer.register(RxMoyaProvider<FirebaseProvider>.self) { _ in
+            return RxMoyaProvider<FirebaseProvider>()
         }
     }
     

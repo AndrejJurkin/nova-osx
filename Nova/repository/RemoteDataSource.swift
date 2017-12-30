@@ -31,13 +31,18 @@ class RemoteDataSource {
     private var coinMarketCapProvider: RxMoyaProvider<CoinMarketCapProvider>
 
     private var cryptoCompareProvider: RxMoyaProvider<CryptoCompareProvider>
+    
+    private var firebaseProvider: RxMoyaProvider<FirebaseProvider>
+    
     private let providerPlugins = [NetworkLoggerPlugin()]
     
     init(coinMarketCapProvider: RxMoyaProvider<CoinMarketCapProvider>,
-         cryptoCompareProvider: RxMoyaProvider<CryptoCompareProvider>) {
+         cryptoCompareProvider: RxMoyaProvider<CryptoCompareProvider>,
+         firebaseProvider: RxMoyaProvider<FirebaseProvider>) {
         
         self.coinMarketCapProvider = coinMarketCapProvider
         self.cryptoCompareProvider = cryptoCompareProvider
+        self.firebaseProvider = firebaseProvider
     }
     
     /// Get all available tickers from CoinMarketCap
@@ -74,5 +79,15 @@ class RemoteDataSource {
                 return try JSONSerialization.jsonObject(
                     with: response.data, options: []) as! [String: [String: Double]]
             }
+    }
+    
+    // Get news from Firebase
+    func getNews() -> Observable<News> {
+        return firebaseProvider.request(.news)
+            .filterSuccessfulStatusCodes()
+            .mapObject(News.self)
+            .do(onNext: { news in
+                print("Firebase news fetched successfully:\(news)")
+            })
     }
 }
