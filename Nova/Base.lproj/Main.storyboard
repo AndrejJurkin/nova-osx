@@ -1149,6 +1149,9 @@
                                     <menuItem title="GBP" tag="4" id="UU9-Yz-nva">
                                         <modifierMask key="keyEquivalentModifierMask"/>
                                     </menuItem>
+                                    <menuItem title="KRW" tag="8" id="XrU-su-asT" userLabel="NZD">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
                                     <menuItem title="CAD" tag="5" id="h8U-Sk-G39">
                                         <modifierMask key="keyEquivalentModifierMask"/>
                                     </menuItem>
