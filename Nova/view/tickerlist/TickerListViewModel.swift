@@ -75,6 +75,15 @@ class TickerListViewModel {
         }
     }
     
+    var menuBarFormat: String {
+        set {
+            self.prefs.menuBarFormat = newValue
+        }
+        get {
+            return prefs.menuBarFormat
+        }
+    }
+    
     /// CMC image format
     private let imageUrlFormat = "https://files.coinmarketcap.com/static/img/coins/128x128/%@.png"
     

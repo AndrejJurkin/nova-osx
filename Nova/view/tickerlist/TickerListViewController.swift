@@ -32,6 +32,7 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
     @IBOutlet weak var refreshButton: NSButton!
     @IBOutlet var settingsMenu: NSMenu!
     @IBOutlet weak var targetCurrencies: NSMenu!
+    @IBOutlet weak var menuBarFormats: NSMenu!
     
     // News
     @IBOutlet weak var newsContainer: NSBox!
@@ -79,13 +80,23 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
             self.searchTextField.placeholderAttributedString = searchPlaceholder
         }
         
-        let targetCurrency = self.viewModel.displayCurrency
         // Bind menu item actions
+        let targetCurrency = self.viewModel.displayCurrency
         for menu in targetCurrencies.items {
             menu.target = self
             menu.action = #selector(onTargetCurrencyClick(sender:))
             
             if targetCurrency == menu.title {
+                menu.state = NSOnState
+            }
+        }
+        
+        let menuBarFormat = self.viewModel.menuBarFormat
+        for menu in menuBarFormats.items {
+            menu.target = self
+            menu.action = #selector(onMenuBarFormatClick(sender:))
+            
+            if menuBarFormat == menu.identifier {
                 menu.state = NSOnState
             }
         }
@@ -182,6 +193,21 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
         }
 
         self.viewModel.displayCurrency = sender.title
+        self.refreshData()
+    }
+    
+    func onMenuBarFormatClick(sender: NSMenuItem) {
+        sender.state = NSOnState
+        
+        for menuItem in targetCurrencies.items {
+            if sender.identifier == menuItem.identifier {
+                continue
+            }
+            
+            menuItem.state = NSOffState
+        }
+        
+        self.viewModel.menuBarFormat = sender.identifier
         self.refreshData()
     }
 
