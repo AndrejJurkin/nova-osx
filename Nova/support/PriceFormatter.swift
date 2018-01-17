@@ -26,11 +26,13 @@ class PriceFormatter {
     
     let displaySymbol: String
     let displayCurrency: String
+    let decimalFormat: String
     
     let decimalNumberFormatter: NumberFormatter
     
-    init(displayCurrency: String) {
+    init(displayCurrency: String, decimalFormat: String?) {
         self.displayCurrency = displayCurrency
+        self.decimalFormat = decimalFormat != nil ? decimalFormat! : "auto"
         
         self.decimalNumberFormatter = NumberFormatter()
         decimalNumberFormatter.numberStyle = .decimal
@@ -56,6 +58,39 @@ class PriceFormatter {
     
     /// Format with provided symbol (SYMBOL PRICE)
     func format(ticker: Ticker, symbol: String) -> String {
+        // significant digit formatting
+        if self.decimalFormat.prefix(1) == "s" {
+            let valueFormatter = NumberFormatter()
+            valueFormatter.usesSignificantDigits = true
+            var breakPoint: Double = 1000
+            
+            switch self.decimalFormat {
+            // 3 significant digits
+            case "s3":
+                valueFormatter.minimumSignificantDigits = 3
+                valueFormatter.maximumSignificantDigits = 3
+                breakPoint = 1000
+                break
+            // 4 significant digits
+            case "s4":
+                valueFormatter.minimumSignificantDigits = 4
+                valueFormatter.maximumSignificantDigits = 4
+                breakPoint = 10000
+                break
+            // 5 significant digits
+            case "s5":
+                valueFormatter.minimumSignificantDigits = 5
+                valueFormatter.maximumSignificantDigits = 5
+                breakPoint = 100000
+                break
+            default:
+                break
+            }
+            
+            let price = ticker.price >= breakPoint ? ticker.price / 1000 : ticker.price
+            return "\(symbol) \(String(format: ticker.price >= breakPoint ? "%@K" : "%@", valueFormatter.string(from: NSNumber(value: price))!))  "
+        }
+        
         let format = self.getPriceFormat(ticker: ticker)
         
         if displayCurrency == "SAT" {
@@ -68,6 +103,19 @@ class PriceFormatter {
     }
     
     func getPriceFormat(ticker: Ticker) -> String {
+        switch self.decimalFormat {
+        case "d0":
+            return "%.0f"
+        case "d1":
+            return "%.1f"
+        case "d2":
+            return "%.2f"
+        case "d3":
+            return "%.3f"
+        default:
+            break
+        }
+        
         if self.displayCurrency == "BTC" {
             return "%.8f"
         } else if self.displayCurrency == "SAT" {

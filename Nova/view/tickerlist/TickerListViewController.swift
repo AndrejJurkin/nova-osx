@@ -32,6 +32,7 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
     @IBOutlet weak var refreshButton: NSButton!
     @IBOutlet var settingsMenu: NSMenu!
     @IBOutlet weak var targetCurrencies: NSMenu!
+    @IBOutlet weak var menuBarFormats: NSMenu!
     
     // News
     @IBOutlet weak var newsContainer: NSBox!
@@ -79,13 +80,27 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
             self.searchTextField.placeholderAttributedString = searchPlaceholder
         }
         
-        let targetCurrency = self.viewModel.displayCurrency
         // Bind menu item actions
+        let targetCurrency = self.viewModel.displayCurrency
         for menu in targetCurrencies.items {
             menu.target = self
             menu.action = #selector(onTargetCurrencyClick(sender:))
             
             if targetCurrency == menu.title {
+                menu.state = NSOnState
+            }
+        }
+        
+        let menuBarFormat = self.viewModel.menuBarFormat
+        for menu in menuBarFormats.items {
+            if !menu.isEnabled {
+                continue
+            }
+
+            menu.target = self
+            menu.action = #selector(onMenuBarFormatClick(sender:))
+            
+            if menuBarFormat == menu.identifier {
                 menu.state = NSOnState
             }
         }
@@ -184,6 +199,21 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
         self.viewModel.displayCurrency = sender.title
         self.refreshData()
     }
+    
+    func onMenuBarFormatClick(sender: NSMenuItem) {
+        sender.state = NSOnState
+        
+        for menuItem in menuBarFormats.items {
+            if (sender.identifier == menuItem.identifier) || !menuItem.isEnabled {
+                continue
+            }
+            
+            menuItem.state = NSOffState
+        }
+        
+        self.viewModel.menuBarFormat = sender.identifier!
+        AppDelegate.shared().menuBarView?.refresh()
+    }
 
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
@@ -216,7 +246,7 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
     func startRefreshAnimation() {
         let anim = CABasicAnimation(keyPath: "transform.rotation.z")
         anim.fromValue = 0
-        anim.toValue = -M_PI * 2
+        anim.toValue = Double.pi * -2
         anim.duration = 0.75
         anim.repeatCount = HUGE
         

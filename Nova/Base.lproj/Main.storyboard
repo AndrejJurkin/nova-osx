@@ -1113,6 +1113,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="menuBarFormats" destination="Fa1-Fa-2fD" id="AAh-P9-PsV"/>
                         <outlet property="newsButton" destination="rgt-6v-ICX" id="dMA-mb-md5"/>
                         <outlet property="newsContainer" destination="zq0-4x-bdI" id="1n6-1m-kqy"/>
                         <outlet property="newsContainerHeightConstraint" destination="rR2-kK-S70" id="lKA-g2-Nib"/>
@@ -1171,6 +1172,43 @@
                                         <modifierMask key="keyEquivalentModifierMask"/>
                                     </menuItem>
                                     <menuItem title="NZD" tag="8" id="WhI-BK-TZm" userLabel="NZD">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                </items>
+                            </menu>
+                        </menuItem>
+                        <menuItem title="Menu Bar Formatting" id="rfm-T7-hkf">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <menu key="submenu" title="Menu Bar Formatting" id="Fa1-Fa-2fD">
+                                <items>
+                                    <menuItem title="Decimals" enabled="NO" id="hIR-BO-jjJ">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="Auto" identifier="auto" indentationLevel="1" id="S1g-ix-eFE">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="0" identifier="d0" indentationLevel="1" id="hke-8E-8y7">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="1" identifier="d1" indentationLevel="1" id="L6K-os-UGz">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="2" identifier="d2" indentationLevel="1" id="3L1-H9-g2P">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="3" identifier="d3" indentationLevel="1" id="xCF-a6-fHk">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="Significant Digits" enabled="NO" id="Eul-SU-Iuh">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="3" identifier="s3" indentationLevel="1" id="dTI-dw-Q9y">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="4" identifier="s4" indentationLevel="1" id="UNj-Ef-C5H">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="5" identifier="s5" indentationLevel="1" id="ajv-bN-y0j">
                                         <modifierMask key="keyEquivalentModifierMask"/>
                                     </menuItem>
                                 </items>

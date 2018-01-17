@@ -62,7 +62,7 @@ class TickerListViewModel {
     
     var displayCurrency: String {
         set {
-            self.priceFormatter = PriceFormatter(displayCurrency: newValue)
+            self.priceFormatter = PriceFormatter(displayCurrency: newValue, decimalFormat: nil)
             if newValue == "SAT" {
                 self.prefs.targetCurrency = "BTC"
             } else {
@@ -75,11 +75,20 @@ class TickerListViewModel {
         }
     }
     
+    var menuBarFormat: String {
+        set {
+            self.prefs.menuBarFormat = newValue
+        }
+        get {
+            return prefs.menuBarFormat
+        }
+    }
+    
     /// CMC image format
     private let imageUrlFormat = "https://files.coinmarketcap.com/static/img/coins/128x128/%@.png"
     
     init() {
-        self.priceFormatter = PriceFormatter(displayCurrency: self.prefs.displayCurrency)
+        self.priceFormatter = PriceFormatter(displayCurrency: self.prefs.displayCurrency, decimalFormat:nil)
         
         self.repo.getAllTickers()
             .subscribe(onNext: { tickers in

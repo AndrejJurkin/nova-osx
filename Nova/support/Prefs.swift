@@ -42,6 +42,8 @@ class Prefs {
         static let displayCurrency = "display_currency"
         
         static let showCurrencySymbol = "show_currency_symbol"
+        
+        static let menuBarFormat = "menu_bar_format"
     }
     
     let userDefaults = UserDefaults.standard
@@ -105,6 +107,20 @@ class Prefs {
         
         set {
             self.userDefaults.set(newValue, forKey: Key.displayCurrency)
+        }
+    }
+    
+    /// Menu bar number format (decimal points or significant digits)
+    var menuBarFormat: String {
+        get {
+            if let target = self.userDefaults.string(forKey: Key.menuBarFormat) {
+                return target
+            }
+            return "auto"
+        }
+        
+        set {
+            self.userDefaults.set(newValue, forKey: Key.menuBarFormat)
         }
     }
     
