@@ -93,6 +93,10 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
         
         let menuBarFormat = self.viewModel.menuBarFormat
         for menu in menuBarFormats.items {
+            if !menu.isEnabled {
+                continue
+            }
+
             menu.target = self
             menu.action = #selector(onMenuBarFormatClick(sender:))
             
@@ -199,16 +203,16 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
     func onMenuBarFormatClick(sender: NSMenuItem) {
         sender.state = NSOnState
         
-        for menuItem in targetCurrencies.items {
-            if sender.identifier == menuItem.identifier {
+        for menuItem in menuBarFormats.items {
+            if (sender.identifier == menuItem.identifier) || !menuItem.isEnabled {
                 continue
             }
             
             menuItem.state = NSOffState
         }
         
-        self.viewModel.menuBarFormat = sender.identifier
-        self.refreshData()
+        self.viewModel.menuBarFormat = sender.identifier!
+        AppDelegate.shared().menuBarView?.refresh()
     }
 
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {

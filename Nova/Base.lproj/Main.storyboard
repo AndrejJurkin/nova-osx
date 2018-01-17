@@ -1181,35 +1181,34 @@
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <menu key="submenu" title="Menu Bar Formatting" id="Fa1-Fa-2fD">
                                 <items>
-                                    <menuItem title="Decimals" tag="1" enabled="NO" id="hIR-BO-jjJ">
+                                    <menuItem title="Decimals" enabled="NO" id="hIR-BO-jjJ">
                                         <modifierMask key="keyEquivalentModifierMask"/>
                                     </menuItem>
-                                    <menuItem title="Auto" tag="1" identifier="auto" id="S1g-ix-eFE">
+                                    <menuItem title="Auto" identifier="auto" indentationLevel="1" id="S1g-ix-eFE">
                                         <modifierMask key="keyEquivalentModifierMask"/>
                                     </menuItem>
-                                    <menuItem title="0" tag="1" identifier="d0" id="hke-8E-8y7">
+                                    <menuItem title="0" identifier="d0" indentationLevel="1" id="hke-8E-8y7">
                                         <modifierMask key="keyEquivalentModifierMask"/>
                                     </menuItem>
-                                    <menuItem title="1" tag="1" identifier="d1" id="L6K-os-UGz">
+                                    <menuItem title="1" identifier="d1" indentationLevel="1" id="L6K-os-UGz">
                                         <modifierMask key="keyEquivalentModifierMask"/>
                                     </menuItem>
-                                    <menuItem title="2" tag="3" identifier="d2" id="3L1-H9-g2P">
+                                    <menuItem title="2" identifier="d2" indentationLevel="1" id="3L1-H9-g2P">
                                         <modifierMask key="keyEquivalentModifierMask"/>
                                     </menuItem>
-                                    <menuItem title="3" tag="4" identifier="d3" id="xCF-a6-fHk">
+                                    <menuItem title="3" identifier="d3" indentationLevel="1" id="xCF-a6-fHk">
                                         <modifierMask key="keyEquivalentModifierMask"/>
                                     </menuItem>
-                                    <menuItem isSeparatorItem="YES" id="vKX-Zc-fGx"/>
-                                    <menuItem title="Significant Digits" tag="5" enabled="NO" id="Eul-SU-Iuh">
+                                    <menuItem title="Significant Digits" enabled="NO" id="Eul-SU-Iuh">
                                         <modifierMask key="keyEquivalentModifierMask"/>
                                     </menuItem>
-                                    <menuItem title="3" tag="5" identifier="s3" id="dTI-dw-Q9y">
+                                    <menuItem title="3" identifier="s3" indentationLevel="1" id="dTI-dw-Q9y">
                                         <modifierMask key="keyEquivalentModifierMask"/>
                                     </menuItem>
-                                    <menuItem title="4" tag="7" identifier="s4" id="UNj-Ef-C5H">
+                                    <menuItem title="4" identifier="s4" indentationLevel="1" id="UNj-Ef-C5H">
                                         <modifierMask key="keyEquivalentModifierMask"/>
                                     </menuItem>
-                                    <menuItem title="5" tag="8" identifier="s5" id="ajv-bN-y0j">
+                                    <menuItem title="5" identifier="s5" indentationLevel="1" id="ajv-bN-y0j">
                                         <modifierMask key="keyEquivalentModifierMask"/>
                                     </menuItem>
                                 </items>

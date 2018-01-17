@@ -53,7 +53,7 @@ class MenuBarViewModel {
                 var menuBarText = ""
                 var tickerSymbols: [String] = []
                 
-                let priceFormatter = PriceFormatter(displayCurrency: self.prefs.displayCurrency)
+                let priceFormatter = PriceFormatter(displayCurrency: self.prefs.displayCurrency, decimalFormat: self.prefs.menuBarFormat)
                 
                 // Create menu bar string representation
                 for ticker in tickers {
@@ -83,17 +83,5 @@ class MenuBarViewModel {
     
     func unsubscribe() {
         self.repo.disposeRefreshSubscriptions()
-    }
-    
-    func getPriceFormat(ticker: Ticker) -> String {
-        let targetCurrency = self.prefs.targetCurrency
-        
-        if targetCurrency == "BTC" {
-            return "%.8f"
-        } else if targetCurrency == "SAT" {
-            return "%.2f"
-        }
-        
-        return ticker.price < 1 ? "%.4f" : "%.2f"
     }
 }
