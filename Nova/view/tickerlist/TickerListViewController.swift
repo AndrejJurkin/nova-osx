@@ -246,7 +246,7 @@ class TickerListViewController: NSViewController, NSTableViewDelegate, NSTableVi
     func startRefreshAnimation() {
         let anim = CABasicAnimation(keyPath: "transform.rotation.z")
         anim.fromValue = 0
-        anim.toValue = -M_PI * 2
+        anim.toValue = Double.pi * -2
         anim.duration = 0.75
         anim.repeatCount = HUGE
         
